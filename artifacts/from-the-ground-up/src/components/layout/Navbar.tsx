@@ -17,6 +17,15 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [mobileMenuOpen]);
+
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Programs", path: "/programs" },
@@ -97,7 +106,7 @@ export default function Navbar() {
               </button>
               
               {aboutDropdownOpen && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 w-48 pt-2 animate-in fade-in slide-in-from-top-2">
+                <div className="absolute top-full left-1/2 -translate-x-1/2 w-56 pt-2 animate-in fade-in slide-in-from-top-2">
                   <div className="glass-panel rounded-xl overflow-hidden py-2 flex flex-col shadow-2xl">
                     {aboutLinks.map((link) => (
                       <Link
@@ -154,15 +163,15 @@ export default function Navbar() {
 
       {/* Mobile Nav */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 glass-panel border-t border-border/50 animate-in slide-in-from-top-2 h-screen">
-          <div className="px-4 py-6 space-y-6 flex flex-col">
-            {[...navLinks, ...aboutLinks, { name: "Contact", path: "/contact" }].map((link) => (
+        <div className="md:hidden absolute top-full left-0 right-0 glass-panel border-t border-border/50 animate-in slide-in-from-top-2 max-h-[calc(100vh-80px)] overflow-y-auto">
+          <div className="px-4 py-4 flex flex-col">
+            {navLinks.map((link) => (
               <Link
                 key={link.path}
                 href={link.path}
                 onClick={() => setMobileMenuOpen(false)}
                 className={cn(
-                  "px-4 py-3 rounded-xl text-lg font-bold uppercase tracking-wider transition-colors",
+                  "px-4 py-3 rounded-xl text-base font-bold uppercase tracking-wider transition-colors",
                   location === link.path 
                     ? "bg-primary/10 text-primary" 
                     : "text-foreground/80 hover:bg-muted/50"
@@ -171,18 +180,86 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
-            <div className="pt-6 flex flex-col gap-4">
+            <Link
+              href="/contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className={cn(
+                "px-4 py-3 rounded-xl text-base font-bold uppercase tracking-wider transition-colors",
+                location === "/contact" ? "bg-primary/10 text-primary" : "text-foreground/80 hover:bg-muted/50"
+              )}
+            >
+              Contact
+            </Link>
+
+            <div className="mt-3 mb-1 px-4">
+              <span className="text-xs font-bold uppercase tracking-widest text-foreground/40">Organization</span>
+            </div>
+            {aboutLinks.slice(0, 4).map((link) => (
+              <Link
+                key={link.path}
+                href={link.path}
+                onClick={() => setMobileMenuOpen(false)}
+                className={cn(
+                  "px-4 py-2.5 rounded-xl text-sm font-semibold transition-colors",
+                  location === link.path 
+                    ? "bg-primary/10 text-primary" 
+                    : "text-foreground/70 hover:bg-muted/50"
+                )}
+              >
+                {link.name}
+              </Link>
+            ))}
+
+            <div className="mt-3 mb-1 px-4">
+              <span className="text-xs font-bold uppercase tracking-widest text-foreground/40">Strategy & Funding</span>
+            </div>
+            {aboutLinks.slice(4, 8).map((link) => (
+              <Link
+                key={link.path}
+                href={link.path}
+                onClick={() => setMobileMenuOpen(false)}
+                className={cn(
+                  "px-4 py-2.5 rounded-xl text-sm font-semibold transition-colors",
+                  location === link.path 
+                    ? "bg-primary/10 text-primary" 
+                    : "text-foreground/70 hover:bg-muted/50"
+                )}
+              >
+                {link.name}
+              </Link>
+            ))}
+
+            <div className="mt-3 mb-1 px-4">
+              <span className="text-xs font-bold uppercase tracking-widest text-foreground/40">Planning & Docs</span>
+            </div>
+            {aboutLinks.slice(8).map((link) => (
+              <Link
+                key={link.path}
+                href={link.path}
+                onClick={() => setMobileMenuOpen(false)}
+                className={cn(
+                  "px-4 py-2.5 rounded-xl text-sm font-semibold transition-colors",
+                  location === link.path 
+                    ? "bg-primary/10 text-primary" 
+                    : "text-foreground/70 hover:bg-muted/50"
+                )}
+              >
+                {link.name}
+              </Link>
+            ))}
+
+            <div className="pt-4 mt-3 border-t border-border/30 flex flex-col gap-3">
               <Link 
                 href="/donate"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full py-4 text-center border-2 border-primary text-primary font-bold uppercase tracking-wider hover:bg-primary hover:text-white transition-all"
+                className="w-full py-3.5 text-center border-2 border-primary text-primary font-bold uppercase tracking-wider text-sm hover:bg-primary hover:text-white transition-all"
               >
                 Donate
               </Link>
               <Link 
                 href="/contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full py-4 text-center bg-foreground text-background font-bold uppercase tracking-wider hover:bg-primary hover:text-primary-foreground transition-all"
+                className="w-full py-3.5 text-center bg-foreground text-background font-bold uppercase tracking-wider text-sm hover:bg-primary hover:text-primary-foreground transition-all"
               >
                 Enroll Now
               </Link>

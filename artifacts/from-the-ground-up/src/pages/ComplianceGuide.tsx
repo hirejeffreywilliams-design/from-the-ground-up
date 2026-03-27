@@ -463,8 +463,8 @@ export default function ComplianceGuide() {
           <div className="flex items-start gap-3">
             <AlertTriangle size={24} className="text-amber-400 flex-shrink-0 mt-1" />
             <div>
-              <h3 className="text-lg font-bold text-white mb-2">Important Legal Disclaimer</h3>
-              <p className="text-white/70">
+              <h3 className="text-lg font-bold text-amber-900 mb-2">Important Legal Disclaimer</h3>
+              <p className="text-amber-900/80 text-sm sm:text-base">
                 This guide is for informational and planning purposes only and does not constitute legal, tax, or professional advice.
                 Laws and regulations change frequently. Consult with a qualified attorney and CPA before making compliance decisions.
                 Have all documents reviewed by a legal professional before filing.

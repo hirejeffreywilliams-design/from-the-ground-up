@@ -242,10 +242,10 @@ export default function StudentEarningHub() {
             { label: "Stadium Jobs", value: "5,000+", sub: "DC Commanders project" },
             { label: "Business Owner", value: "$100K+/yr", sub: "With FTGU support" },
           ].map((stat) => (
-            <div key={stat.label} className="bg-white/5 border border-white/10 rounded-xl p-5 text-center">
-              <div className="text-3xl font-display font-black text-primary">{stat.value}</div>
-              <div className="text-sm font-bold text-white mt-1">{stat.label}</div>
-              <div className="text-xs text-white/50 mt-1">{stat.sub}</div>
+            <div key={stat.label} className="bg-white/5 border border-white/10 rounded-xl p-4 sm:p-5 text-center">
+              <div className="text-xl sm:text-3xl font-display font-black text-primary">{stat.value}</div>
+              <div className="text-xs sm:text-sm font-bold text-white mt-1">{stat.label}</div>
+              <div className="text-[10px] sm:text-xs text-white/50 mt-1">{stat.sub}</div>
             </div>
           ))}
         </motion.div>
@@ -290,22 +290,22 @@ export default function StudentEarningHub() {
                       <track.icon size={28} className="text-primary" />
                       {track.name} — Earning Potential
                     </h3>
-                    <div className="flex gap-4">
-                      <div className="text-center px-3 py-2 bg-black/20 rounded-lg">
-                        <div className="text-sm font-bold text-white">{track.apprenticeWage}</div>
-                        <div className="text-xs text-white/50">Apprentice</div>
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                      <div className="text-center px-2 py-2 bg-black/20 rounded-lg">
+                        <div className="text-xs sm:text-sm font-bold text-white">{track.apprenticeWage}</div>
+                        <div className="text-[10px] sm:text-xs text-white/50">Apprentice</div>
                       </div>
-                      <div className="text-center px-3 py-2 bg-black/20 rounded-lg">
-                        <div className="text-sm font-bold text-white">{track.journeyWage}</div>
-                        <div className="text-xs text-white/50">Journeyman</div>
+                      <div className="text-center px-2 py-2 bg-black/20 rounded-lg">
+                        <div className="text-xs sm:text-sm font-bold text-white">{track.journeyWage}</div>
+                        <div className="text-[10px] sm:text-xs text-white/50">Journeyman</div>
                       </div>
-                      <div className="text-center px-3 py-2 bg-black/20 rounded-lg">
-                        <div className="text-sm font-bold text-primary">{track.masterWage}</div>
-                        <div className="text-xs text-white/50">Master</div>
+                      <div className="text-center px-2 py-2 bg-black/20 rounded-lg">
+                        <div className="text-xs sm:text-sm font-bold text-primary">{track.masterWage}</div>
+                        <div className="text-[10px] sm:text-xs text-white/50">Master</div>
                       </div>
-                      <div className="text-center px-3 py-2 bg-primary/20 rounded-lg">
-                        <div className="text-sm font-bold text-primary">{track.businessOwner}</div>
-                        <div className="text-xs text-white/50">Owner</div>
+                      <div className="text-center px-2 py-2 bg-primary/20 rounded-lg">
+                        <div className="text-xs sm:text-sm font-bold text-primary">{track.businessOwner}</div>
+                        <div className="text-[10px] sm:text-xs text-white/50">Owner</div>
                       </div>
                     </div>
                   </div>

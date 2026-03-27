@@ -607,7 +607,7 @@ export default function FundraisingPlaybook() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-bold text-sm uppercase tracking-wider transition-all ${
+                className={`flex items-center justify-center gap-1.5 px-3 py-3 rounded-xl font-bold text-xs sm:text-sm uppercase tracking-wider transition-all ${
                   activeTab === tab.id
                     ? "bg-primary text-white shadow-lg"
                     : "text-white/60 hover:text-white hover:bg-white/5"
