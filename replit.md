@@ -57,6 +57,9 @@ artifacts-monorepo/
 - **financial_records** — Income/expense tracking by fiscal year and quarter
 - **impact_metrics** — Student outcome tracking for Impact Cascade algorithm
 - **activity_log** — Admin activity audit trail
+- **grants** — Grant application tracking (name, funder, amount, status, deadlines)
+- **compliance_tasks** — Regulatory filing deadlines and compliance tracking
+- **board_meetings** — Board meeting scheduling, agendas, minutes, action items
 
 ## API Endpoints
 
@@ -86,6 +89,10 @@ artifacts-monorepo/
 - `GET/POST/PUT /api/admin/impact` — Track student impact metrics
 - `GET /api/admin/impact/cascade` — Impact Cascade Algorithm (novel)
 - `GET /api/admin/skills-gap` — Skills Gap Analyzer (novel)
+- `GET/POST/PUT/DELETE /api/admin/grants` — Grant application tracking
+- `GET/POST/PUT/DELETE /api/admin/compliance` — Compliance task management
+- `GET /api/admin/compliance/defaults` — Pre-built DC nonprofit compliance tasks
+- `GET/POST/PUT/DELETE /api/admin/board-meetings` — Board meeting management
 - `GET /api/admin/activity` — Activity log
 
 ## Website Pages
@@ -103,6 +110,9 @@ artifacts-monorepo/
 - **Foundation Strategy** (`/strategy`) — Comprehensive nonprofit-to-foundation transition plan
 - **DC Startup Guide** (`/startup-guide`) — 13-step checklist for forming a 501(c)(3) in DC
 - **Formation Documents** (`/documents`) — 12 complete organizational documents
+- **Career Pathways** (`/careers`) — Interactive career progression explorer for all 6 trades with salary ranges, certifications, timelines, DC job market data, and Commander Stadium opportunity
+- **Skills Assessment** (`/assessment`) — 10-question interactive quiz that recommends the best trade program based on interests, goals, and aptitude
+- **Resource Library** (`/resources`) — 60+ curated external resources across 8 categories (certifications, apprenticeships, licensing, unions, financial aid, tools, safety, business startup)
 - **404** — Custom not found page
 
 ### Admin Dashboard (`/admin/*`)
@@ -115,6 +125,9 @@ artifacts-monorepo/
 - **Financials** (`/admin/financials`) — Income/expense tracking, fiscal year summary
 - **Impact Cascade** (`/admin/impact`) — Novel Impact Cascade Algorithm tracker
 - **Skills Gap** (`/admin/skills-gap`) — Novel Community Skills Gap Analyzer
+- **Grant Tracker** (`/admin/grants`) — Track grant applications, deadlines, amounts, status, funder contacts
+- **Compliance Calendar** (`/admin/compliance`) — Annual filing deadlines, renewals, regulatory requirements with pre-built DC nonprofit defaults
+- **Board Meetings** (`/admin/meetings`) — Schedule meetings, manage agendas, minutes, decisions, action items, attendees
 - **Activity Log** (`/admin/activity`) — Admin action audit trail
 
 ## Novel Systems

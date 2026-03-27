@@ -57,10 +57,10 @@ export default function Footer() {
           <div className="md:col-span-2">
             <h4 className="font-sans font-bold uppercase tracking-widest text-sm mb-8 text-white">Programs</h4>
             <ul className="space-y-4 text-white/70 font-medium">
-              <li><Link href="/programs#1" className="hover:text-primary transition-colors">Construction</Link></li>
-              <li><Link href="/programs#2" className="hover:text-primary transition-colors">Electrical</Link></li>
-              <li><Link href="/programs#3" className="hover:text-primary transition-colors">Plumbing</Link></li>
               <li><Link href="/programs" className="hover:text-primary transition-colors">All Programs</Link></li>
+              <li><Link href="/careers" className="hover:text-primary transition-colors">Career Pathways</Link></li>
+              <li><Link href="/assessment" className="hover:text-primary transition-colors">Skills Assessment</Link></li>
+              <li><Link href="/resources" className="hover:text-primary transition-colors">Resource Library</Link></li>
             </ul>
           </div>
 
@@ -76,6 +76,7 @@ export default function Footer() {
               <li><Link href="/strategy" className="hover:text-primary transition-colors">Foundation Strategy</Link></li>
               <li><Link href="/startup-guide" className="hover:text-primary transition-colors">DC Startup Guide</Link></li>
               <li><Link href="/documents" className="hover:text-primary transition-colors">Documents</Link></li>
+              <li><Link href="/assessment" className="hover:text-primary transition-colors">Take Assessment</Link></li>
             </ul>
           </div>
           

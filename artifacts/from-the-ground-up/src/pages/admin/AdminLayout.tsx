@@ -13,6 +13,9 @@ import {
   LogOut,
   Shield,
   Activity,
+  FileSearch,
+  Calendar,
+  ClipboardList,
 } from "lucide-react";
 
 const sidebarLinks = [
@@ -23,6 +26,9 @@ const sidebarLinks = [
   { name: "Donors", path: "/admin/donors", icon: Heart },
   { name: "Volunteers", path: "/admin/volunteers", icon: HandHelping },
   { name: "Financials", path: "/admin/financials", icon: DollarSign },
+  { name: "Grant Tracker", path: "/admin/grants", icon: FileSearch },
+  { name: "Compliance", path: "/admin/compliance", icon: ClipboardList },
+  { name: "Board Meetings", path: "/admin/meetings", icon: Calendar },
   { name: "Impact Cascade", path: "/admin/impact", icon: TrendingUp },
   { name: "Skills Gap", path: "/admin/skills-gap", icon: BarChart3 },
   { name: "Activity Log", path: "/admin/activity", icon: Activity },

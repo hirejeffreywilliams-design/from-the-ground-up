@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { ArrowRight, Wrench, Zap, Droplet, Hammer, Cpu, Quote, Users, GraduationCap, Briefcase, Handshake } from "lucide-react";
+import { ArrowRight, Wrench, Zap, Droplet, Hammer, Cpu, Quote, Users, GraduationCap, Briefcase, Handshake, HardHat, MapPin, Star, ClipboardCheck } from "lucide-react";
 import { motion } from "framer-motion";
 import { useListPrograms, useListTestimonials } from "@/hooks/use-api-hooks";
 
@@ -234,6 +234,92 @@ export default function Home() {
         </div>
       </section>
 
+      {/* DC Commander Stadium Opportunity */}
+      <section className="py-32 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="glass-panel p-12 md:p-20 rounded-[3rem] relative overflow-hidden border-2 border-primary/20"
+          >
+            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary via-accent to-primary"></div>
+            <div className="absolute -top-32 -right-32 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+            
+            <div className="grid md:grid-cols-2 gap-16 items-center relative z-10">
+              <div>
+                <div className="inline-flex items-center gap-2 py-2 px-6 rounded-full bg-primary/10 border border-primary/20 text-primary font-bold uppercase tracking-widest text-xs mb-8">
+                  <Star size={14} className="fill-primary" />
+                  Once-In-A-Generation Opportunity
+                </div>
+                <h2 className="text-4xl md:text-5xl font-display font-black text-foreground mb-6 uppercase tracking-tight leading-tight">
+                  DC Commanders <br/><span className="text-primary">Stadium</span>
+                </h2>
+                <p className="text-xl text-foreground/80 font-medium leading-relaxed mb-8">
+                  Washington DC's new multi-billion dollar Commanders stadium project is creating thousands of construction, electrical, plumbing, and HVAC jobs starting in 2026. FTGU is training the next generation of skilled workers to meet this historic demand.
+                </p>
+                <div className="grid grid-cols-2 gap-4 mb-8">
+                  {[
+                    { icon: HardHat, label: "5,000+ Jobs", desc: "Construction positions" },
+                    { icon: MapPin, label: "Washington DC", desc: "Right in our backyard" },
+                    { icon: Briefcase, label: "Multi-Year", desc: "Long-term employment" },
+                    { icon: ClipboardCheck, label: "All Trades", desc: "Every skill we teach" },
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center gap-3 p-3 bg-white/5 rounded-xl border border-white/10">
+                      <item.icon size={24} className="text-primary flex-shrink-0" />
+                      <div>
+                        <p className="font-bold text-foreground text-sm">{item.label}</p>
+                        <p className="text-xs text-foreground/60">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="flex gap-4">
+                  <Link href="/careers" className="px-8 py-4 bg-primary text-white font-bold uppercase tracking-wider text-sm hover:bg-primary/90 transition-colors flex items-center gap-2" style={{ borderRadius: '6px 18px 6px 18px' }}>
+                    View Career Paths <ArrowRight size={18} />
+                  </Link>
+                  <Link href="/assessment" className="px-8 py-4 border-2 border-foreground text-foreground font-bold uppercase tracking-wider text-sm hover:bg-foreground hover:text-background transition-colors" style={{ borderRadius: '18px 6px 18px 6px' }}>
+                    Take Assessment
+                  </Link>
+                </div>
+              </div>
+              <div className="bg-foreground rounded-3xl p-10 shadow-2xl relative">
+                <div className="space-y-6">
+                  <div className="flex items-center gap-3 pb-4 border-b border-white/10">
+                    <HardHat className="text-primary" size={28} />
+                    <h3 className="text-white font-display font-bold text-xl">Stadium Project Trades Needed</h3>
+                  </div>
+                  {[
+                    { trade: "Construction & Framing", demand: "Critical", pct: 95 },
+                    { trade: "Electrical Systems", demand: "Critical", pct: 90 },
+                    { trade: "Plumbing & Pipefitting", demand: "High", pct: 85 },
+                    { trade: "HVAC Installation", demand: "High", pct: 80 },
+                    { trade: "Carpentry & Finishing", demand: "High", pct: 75 },
+                    { trade: "AI Project Management", demand: "Growing", pct: 60 },
+                  ].map((t, i) => (
+                    <div key={i} className="space-y-2">
+                      <div className="flex justify-between text-sm">
+                        <span className="text-white/90 font-medium">{t.trade}</span>
+                        <span className={`font-bold ${t.demand === "Critical" ? "text-red-400" : t.demand === "High" ? "text-yellow-400" : "text-green-400"}`}>{t.demand}</span>
+                      </div>
+                      <div className="h-2 bg-white/10 rounded-full overflow-hidden">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          whileInView={{ width: `${t.pct}%` }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 1, delay: i * 0.1 }}
+                          className="h-full bg-gradient-to-r from-primary to-accent rounded-full"
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-32 relative z-10">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -249,13 +335,22 @@ export default function Home() {
             <p className="text-2xl text-accent-foreground/80 mb-12 max-w-2xl mx-auto font-medium relative z-10">
               Whether you're starting a new career or learning a new skill, there's a place for you here.
             </p>
-            <Link 
-              href="/contact"
-              className="inline-flex items-center justify-center px-12 py-6 bg-foreground text-background font-black uppercase tracking-widest text-lg hover:bg-primary hover:text-white transition-all duration-300 shadow-xl relative z-10 hover:scale-105"
-              style={{ borderRadius: '12px 32px 12px 32px' }}
-            >
-              Join a Program Today
-            </Link>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 relative z-10">
+              <Link 
+                href="/contact"
+                className="inline-flex items-center justify-center px-12 py-6 bg-foreground text-background font-black uppercase tracking-widest text-lg hover:bg-primary hover:text-white transition-all duration-300 shadow-xl hover:scale-105"
+                style={{ borderRadius: '12px 32px 12px 32px' }}
+              >
+                Join a Program Today
+              </Link>
+              <Link 
+                href="/assessment"
+                className="inline-flex items-center justify-center px-12 py-6 border-2 border-accent-foreground text-accent-foreground font-black uppercase tracking-widest text-sm hover:bg-accent-foreground hover:text-accent transition-all duration-300"
+                style={{ borderRadius: '32px 12px 32px 12px' }}
+              >
+                Find Your Trade
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>

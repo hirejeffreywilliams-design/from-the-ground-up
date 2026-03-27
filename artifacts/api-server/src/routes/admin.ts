@@ -10,12 +10,18 @@ import {
   financialRecordsTable,
   impactMetricsTable,
   activityLogTable,
+  grantsTable,
+  complianceTasksTable,
+  boardMeetingsTable,
   insertProgramSchema,
   insertDonorSchema,
   insertDonationSchema,
   insertVolunteerSchema,
   insertFinancialRecordSchema,
   insertImpactMetricSchema,
+  insertGrantSchema,
+  insertComplianceTaskSchema,
+  insertBoardMeetingSchema,
 } from "@workspace/db/schema";
 import { eq, desc, sql, count, sum } from "drizzle-orm";
 
@@ -486,6 +492,115 @@ function generateActions(trade: string, priority: string, capacityGap: number, g
   actions.push("Conduct quarterly labor market review to adjust program priorities");
   return actions;
 }
+
+router.get("/grants", asyncHandler(async (_req, res) => {
+  const grants = await db.select().from(grantsTable).orderBy(desc(grantsTable.deadline));
+  res.json(grants);
+}));
+
+router.post("/grants", asyncHandler(async (req, res) => {
+  const parsed = insertGrantSchema.parse(req.body);
+  const [grant] = await db.insert(grantsTable).values(parsed).returning();
+  await db.insert(activityLogTable).values({ action: "created", entityType: "grant", entityId: String(grant.id), details: `Grant: ${grant.name} from ${grant.funder}`, userId: (req as any).userId, userName: (req as any).userName });
+  res.status(201).json(grant);
+}));
+
+router.put("/grants/:id", asyncHandler(async (req, res) => {
+  const id = parseId(req.params.id);
+  if (!id) { res.status(400).json({ error: "Invalid ID" }); return; }
+  const [updated] = await db.update(grantsTable).set(req.body).where(eq(grantsTable.id, id)).returning();
+  if (!updated) { res.status(404).json({ error: "Not found" }); return; }
+  await db.insert(activityLogTable).values({ action: "updated", entityType: "grant", entityId: String(id), details: `Updated grant: ${updated.name}`, userId: (req as any).userId, userName: (req as any).userName });
+  res.json(updated);
+}));
+
+router.delete("/grants/:id", asyncHandler(async (req, res) => {
+  const id = parseId(req.params.id);
+  if (!id) { res.status(400).json({ error: "Invalid ID" }); return; }
+  await db.delete(grantsTable).where(eq(grantsTable.id, id));
+  await db.insert(activityLogTable).values({ action: "deleted", entityType: "grant", entityId: String(id), userId: (req as any).userId, userName: (req as any).userName });
+  res.json({ success: true });
+}));
+
+router.get("/compliance", asyncHandler(async (_req, res) => {
+  const tasks = await db.select().from(complianceTasksTable).orderBy(complianceTasksTable.dueDate);
+  res.json(tasks);
+}));
+
+router.post("/compliance", asyncHandler(async (req, res) => {
+  const parsed = insertComplianceTaskSchema.parse(req.body);
+  const [task] = await db.insert(complianceTasksTable).values(parsed).returning();
+  await db.insert(activityLogTable).values({ action: "created", entityType: "compliance_task", entityId: String(task.id), details: `Compliance: ${task.title}`, userId: (req as any).userId, userName: (req as any).userName });
+  res.status(201).json(task);
+}));
+
+router.put("/compliance/:id", asyncHandler(async (req, res) => {
+  const id = parseId(req.params.id);
+  if (!id) { res.status(400).json({ error: "Invalid ID" }); return; }
+  const [updated] = await db.update(complianceTasksTable).set(req.body).where(eq(complianceTasksTable.id, id)).returning();
+  if (!updated) { res.status(404).json({ error: "Not found" }); return; }
+  await db.insert(activityLogTable).values({ action: "updated", entityType: "compliance_task", entityId: String(id), details: `Updated: ${updated.title}`, userId: (req as any).userId, userName: (req as any).userName });
+  res.json(updated);
+}));
+
+router.delete("/compliance/:id", asyncHandler(async (req, res) => {
+  const id = parseId(req.params.id);
+  if (!id) { res.status(400).json({ error: "Invalid ID" }); return; }
+  await db.delete(complianceTasksTable).where(eq(complianceTasksTable.id, id));
+  await db.insert(activityLogTable).values({ action: "deleted", entityType: "compliance_task", entityId: String(id), userId: (req as any).userId, userName: (req as any).userName });
+  res.json({ success: true });
+}));
+
+router.get("/board-meetings", asyncHandler(async (_req, res) => {
+  const meetings = await db.select().from(boardMeetingsTable).orderBy(desc(boardMeetingsTable.date));
+  res.json(meetings);
+}));
+
+router.post("/board-meetings", asyncHandler(async (req, res) => {
+  const parsed = insertBoardMeetingSchema.parse(req.body);
+  const [meeting] = await db.insert(boardMeetingsTable).values(parsed).returning();
+  await db.insert(activityLogTable).values({ action: "created", entityType: "board_meeting", entityId: String(meeting.id), details: `Meeting: ${meeting.title}`, userId: (req as any).userId, userName: (req as any).userName });
+  res.status(201).json(meeting);
+}));
+
+router.put("/board-meetings/:id", asyncHandler(async (req, res) => {
+  const id = parseId(req.params.id);
+  if (!id) { res.status(400).json({ error: "Invalid ID" }); return; }
+  const [updated] = await db.update(boardMeetingsTable).set(req.body).where(eq(boardMeetingsTable.id, id)).returning();
+  if (!updated) { res.status(404).json({ error: "Not found" }); return; }
+  await db.insert(activityLogTable).values({ action: "updated", entityType: "board_meeting", entityId: String(id), details: `Updated meeting: ${updated.title}`, userId: (req as any).userId, userName: (req as any).userName });
+  res.json(updated);
+}));
+
+router.delete("/board-meetings/:id", asyncHandler(async (req, res) => {
+  const id = parseId(req.params.id);
+  if (!id) { res.status(400).json({ error: "Invalid ID" }); return; }
+  await db.delete(boardMeetingsTable).where(eq(boardMeetingsTable.id, id));
+  await db.insert(activityLogTable).values({ action: "deleted", entityType: "board_meeting", entityId: String(id), userId: (req as any).userId, userName: (req as any).userName });
+  res.json({ success: true });
+}));
+
+router.get("/compliance/defaults", asyncHandler(async (_req, res) => {
+  const defaults = [
+    { title: "IRS Form 990 Annual Filing", category: "irs", frequency: "annual", filingAgency: "Internal Revenue Service", description: "Annual information return required for tax-exempt organizations", estimatedCost: 0 },
+    { title: "DC Nonprofit Annual Report", category: "state", frequency: "annual", filingAgency: "DC DLCP", description: "Annual report filed with DC Department of Licensing and Consumer Protection", estimatedCost: 80 },
+    { title: "DC Charitable Solicitation Renewal", category: "state", frequency: "annual", filingAgency: "DC Office of Attorney General", description: "Renewal of registration to solicit charitable contributions in DC", estimatedCost: 0 },
+    { title: "DC Business License Renewal", category: "state", frequency: "biennial", filingAgency: "DC DLCP", description: "Basic business license renewal for nonprofit operations", estimatedCost: 95 },
+    { title: "Workers Compensation Insurance Renewal", category: "insurance", frequency: "annual", filingAgency: "Insurance Provider", description: "Required if you have employees — renew workers comp coverage", estimatedCost: 1200 },
+    { title: "D&O Insurance Renewal", category: "insurance", frequency: "annual", filingAgency: "Insurance Provider", description: "Directors and Officers liability insurance renewal", estimatedCost: 800 },
+    { title: "General Liability Insurance Renewal", category: "insurance", frequency: "annual", filingAgency: "Insurance Provider", description: "General liability coverage — essential for trade training operations", estimatedCost: 1500 },
+    { title: "Board of Directors Annual Meeting", category: "governance", frequency: "annual", filingAgency: "Internal", description: "Annual meeting of the full board as required by bylaws", estimatedCost: 0 },
+    { title: "Quarterly Board Meeting (Q1)", category: "governance", frequency: "quarterly", filingAgency: "Internal", description: "Regular quarterly board meeting — January through March", estimatedCost: 0 },
+    { title: "Quarterly Board Meeting (Q2)", category: "governance", frequency: "quarterly", filingAgency: "Internal", description: "Regular quarterly board meeting — April through June", estimatedCost: 0 },
+    { title: "Quarterly Board Meeting (Q3)", category: "governance", frequency: "quarterly", filingAgency: "Internal", description: "Regular quarterly board meeting — July through September", estimatedCost: 0 },
+    { title: "Quarterly Board Meeting (Q4)", category: "governance", frequency: "quarterly", filingAgency: "Internal", description: "Regular quarterly board meeting — October through December", estimatedCost: 0 },
+    { title: "Annual Conflict of Interest Disclosure", category: "governance", frequency: "annual", filingAgency: "Internal", description: "All board members and key employees must complete annual disclosure forms", estimatedCost: 0 },
+    { title: "Financial Audit / Review", category: "financial", frequency: "annual", filingAgency: "Independent Auditor", description: "Annual financial review or audit — required once revenue exceeds thresholds", estimatedCost: 5000 },
+    { title: "DC Unemployment Tax Filing", category: "tax", frequency: "quarterly", filingAgency: "DC DOES", description: "Quarterly unemployment tax filing with DC Department of Employment Services", estimatedCost: 0 },
+    { title: "Payroll Tax Filings (941)", category: "tax", frequency: "quarterly", filingAgency: "IRS", description: "Quarterly payroll tax return if you have employees", estimatedCost: 0 },
+  ];
+  res.json(defaults);
+}));
 
 router.get("/activity", asyncHandler(async (_req, res) => {
   const log = await db.select().from(activityLogTable).orderBy(desc(activityLogTable.timestamp)).limit(50);

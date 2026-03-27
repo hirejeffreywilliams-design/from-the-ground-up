@@ -15,6 +15,9 @@ import Roadmap from "@/pages/Roadmap";
 import FoundationStrategy from "@/pages/FoundationStrategy";
 import StartupGuide from "@/pages/StartupGuide";
 import Documents from "@/pages/Documents";
+import Resources from "@/pages/Resources";
+import Assessment from "@/pages/Assessment";
+import CareerPathways from "@/pages/CareerPathways";
 import NotFound from "@/pages/not-found";
 
 import AdminLayout from "@/pages/admin/AdminLayout";
@@ -28,6 +31,9 @@ import AdminFinancials from "@/pages/admin/Financials";
 import AdminImpactCascade from "@/pages/admin/ImpactCascade";
 import AdminSkillsGap from "@/pages/admin/SkillsGap";
 import AdminActivityLog from "@/pages/admin/ActivityLog";
+import AdminGrantTracker from "@/pages/admin/GrantTracker";
+import AdminComplianceCalendar from "@/pages/admin/ComplianceCalendar";
+import AdminBoardMeetings from "@/pages/admin/BoardMeetings";
 
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -52,6 +58,9 @@ function AdminRouter() {
         <Route path="/admin/donors" component={AdminDonors} />
         <Route path="/admin/volunteers" component={AdminVolunteers} />
         <Route path="/admin/financials" component={AdminFinancials} />
+        <Route path="/admin/grants" component={AdminGrantTracker} />
+        <Route path="/admin/compliance" component={AdminComplianceCalendar} />
+        <Route path="/admin/meetings" component={AdminBoardMeetings} />
         <Route path="/admin/impact" component={AdminImpactCascade} />
         <Route path="/admin/skills-gap" component={AdminSkillsGap} />
         <Route path="/admin/activity" component={AdminActivityLog} />
@@ -85,6 +94,9 @@ function Router() {
           <Route path="/strategy" component={FoundationStrategy} />
           <Route path="/startup-guide" component={StartupGuide} />
           <Route path="/documents" component={Documents} />
+          <Route path="/resources" component={Resources} />
+          <Route path="/assessment" component={Assessment} />
+          <Route path="/careers" component={CareerPathways} />
           <Route component={NotFound} />
         </Switch>
       </main>

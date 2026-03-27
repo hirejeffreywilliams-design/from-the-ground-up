@@ -99,6 +99,67 @@ export const insertFinancialRecordSchema = createInsertSchema(financialRecordsTa
 export type InsertFinancialRecord = z.infer<typeof insertFinancialRecordSchema>;
 export type FinancialRecord = typeof financialRecordsTable.$inferSelect;
 
+export const grantsTable = pgTable("grants", {
+  id: serial("id").primaryKey(),
+  name: text("name").notNull(),
+  funder: text("funder").notNull(),
+  amount: real("amount").notNull(),
+  status: text("status").notNull().default("researching"),
+  deadline: timestamp("deadline"),
+  submittedDate: timestamp("submitted_date"),
+  awardedDate: timestamp("awarded_date"),
+  category: text("category").notNull().default("general"),
+  contactName: text("contact_name"),
+  contactEmail: text("contact_email"),
+  requirements: text("requirements"),
+  notes: text("notes"),
+  reportingDeadline: timestamp("reporting_deadline"),
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
+export const complianceTasksTable = pgTable("compliance_tasks", {
+  id: serial("id").primaryKey(),
+  title: text("title").notNull(),
+  description: text("description"),
+  category: text("category").notNull().default("filing"),
+  dueDate: timestamp("due_date").notNull(),
+  status: text("status").notNull().default("upcoming"),
+  frequency: text("frequency").notNull().default("annual"),
+  filingAgency: text("filing_agency"),
+  estimatedCost: real("estimated_cost"),
+  completedDate: timestamp("completed_date"),
+  notes: text("notes"),
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
+export const boardMeetingsTable = pgTable("board_meetings", {
+  id: serial("id").primaryKey(),
+  title: text("title").notNull(),
+  date: timestamp("date").notNull(),
+  location: text("location"),
+  type: text("type").notNull().default("regular"),
+  status: text("status").notNull().default("scheduled"),
+  agenda: text("agenda"),
+  minutes: text("minutes"),
+  attendees: json("attendees").$type<string[]>(),
+  decisions: text("decisions"),
+  actionItems: text("action_items"),
+  nextMeetingDate: timestamp("next_meeting_date"),
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
 export const insertImpactMetricSchema = createInsertSchema(impactMetricsTable).omit({ id: true, createdAt: true, updatedAt: true });
 export type InsertImpactMetric = z.infer<typeof insertImpactMetricSchema>;
 export type ImpactMetric = typeof impactMetricsTable.$inferSelect;
+
+export const insertGrantSchema = createInsertSchema(grantsTable).omit({ id: true, createdAt: true });
+export type InsertGrant = z.infer<typeof insertGrantSchema>;
+export type Grant = typeof grantsTable.$inferSelect;
+
+export const insertComplianceTaskSchema = createInsertSchema(complianceTasksTable).omit({ id: true, createdAt: true });
+export type InsertComplianceTask = z.infer<typeof insertComplianceTaskSchema>;
+export type ComplianceTask = typeof complianceTasksTable.$inferSelect;
+
+export const insertBoardMeetingSchema = createInsertSchema(boardMeetingsTable).omit({ id: true, createdAt: true });
+export type InsertBoardMeeting = z.infer<typeof insertBoardMeetingSchema>;
+export type BoardMeeting = typeof boardMeetingsTable.$inferSelect;

@@ -3,7 +3,8 @@ import { Link } from "wouter";
 import {
   FileText, Shield, Scale, Users, DollarSign, Heart,
   ChevronDown, ChevronUp, Landmark, BookOpen, AlertTriangle,
-  Archive, Award, ClipboardCheck, Printer, Eye
+  Archive, Award, ClipboardCheck, Printer, Eye, HandHelping,
+  HardHat, Camera, Handshake, Mail, BarChart3
 } from "lucide-react";
 import { useState } from "react";
 
@@ -39,6 +40,14 @@ export default function Documents() {
     { id: "minutes", title: "Organizational Meeting Minutes Template", icon: ClipboardCheck },
     { id: "narrative", title: "IRS Form 1023 Narrative Description", icon: FileText },
     { id: "projections", title: "3-Year Financial Projections", icon: DollarSign },
+    { id: "volunteer-agreement", title: "Volunteer Agreement & Waiver", icon: HandHelping },
+    { id: "safety-waiver", title: "Safety & Liability Waiver", icon: HardHat },
+    { id: "media-release", title: "Media & Photo Release Form", icon: Camera },
+    { id: "board-agenda", title: "Board Meeting Agenda Template", icon: ClipboardCheck },
+    { id: "grant-template", title: "Grant Proposal Template", icon: DollarSign },
+    { id: "annual-report", title: "Annual Report Template", icon: BarChart3 },
+    { id: "donor-letter", title: "Donor Acknowledgment Letter", icon: Mail },
+    { id: "partnership-mou", title: "Partnership / MOU Agreement", icon: Handshake },
   ];
 
   return (
@@ -782,6 +791,498 @@ export default function Documents() {
                   <li>Net income is allocated to operating reserves (3-month target).</li>
                   <li>These projections should be updated with actual figures as the organization grows.</li>
                 </ul>
+              </div>
+            </div>
+          </DocSection>
+
+          <DocSection title="Volunteer Agreement & Waiver" icon={HandHelping} id="volunteer-agreement">
+            <p className="font-bold text-foreground text-lg mb-4">VOLUNTEER AGREEMENT AND WAIVER OF LIABILITY — FROM THE GROUND UP</p>
+            <div className="space-y-6">
+              <div>
+                <p className="font-bold text-foreground">SECTION 1 — VOLUNTEER INFORMATION</p>
+                <div className="mt-2 space-y-2 text-sm">
+                  <p>Full Name: _________________________________ Date: _____________</p>
+                  <p>Address: _________________________________________________</p>
+                  <p>Phone: __________________ Email: __________________________</p>
+                  <p>Emergency Contact: _________________ Phone: _______________</p>
+                  <p>Date of Birth: _______________ (Volunteers under 18 require parent/guardian signature)</p>
+                </div>
+              </div>
+              <div>
+                <p className="font-bold text-foreground">SECTION 2 — VOLUNTEER COMMITMENT</p>
+                <p>I, the undersigned, voluntarily agree to serve as a volunteer for From The Ground Up ("Organization"). I understand that as a volunteer, I will not receive compensation for my services. I agree to:</p>
+                <ol className="list-decimal pl-6 space-y-2 mt-2">
+                  <li>Follow all safety rules, regulations, and instructions provided by the Organization;</li>
+                  <li>Conduct myself in a professional and respectful manner at all times;</li>
+                  <li>Protect the confidentiality of all proprietary information, student records, and donor information;</li>
+                  <li>Report any safety hazards, injuries, or concerns to a supervisor immediately;</li>
+                  <li>Wear appropriate safety gear and clothing as required for the assigned task;</li>
+                  <li>Comply with the Organization's Code of Ethics, Nondiscrimination Policy, and all other applicable policies.</li>
+                </ol>
+              </div>
+              <div>
+                <p className="font-bold text-foreground">SECTION 3 — ASSUMPTION OF RISK</p>
+                <p>I understand that volunteer activities may involve physical labor, exposure to construction sites, power tools, electrical systems, plumbing equipment, and other potentially hazardous conditions. I voluntarily assume all risks associated with my participation as a volunteer, including but not limited to: physical injury, illness, property damage, or death.</p>
+              </div>
+              <div>
+                <p className="font-bold text-foreground">SECTION 4 — WAIVER AND RELEASE OF LIABILITY</p>
+                <p>I hereby release, waive, discharge, and covenant not to sue From The Ground Up, its officers, directors, employees, agents, and volunteers (collectively "Releasees") from any and all liability, claims, demands, actions, or causes of action whatsoever arising out of or related to any loss, damage, or injury that may be sustained by me while participating in volunteer activities, whether caused by the negligence of the Releasees or otherwise.</p>
+              </div>
+              <div>
+                <p className="font-bold text-foreground">SECTION 5 — INDEMNIFICATION</p>
+                <p>I agree to indemnify and hold harmless From The Ground Up from any loss, liability, damage, or costs, including attorney's fees, that may be incurred due to my participation in volunteer activities, whether caused by my negligence or otherwise.</p>
+              </div>
+              <div>
+                <p className="font-bold text-foreground">SECTION 6 — MEDIA CONSENT</p>
+                <p>I grant From The Ground Up permission to use my name, image, and likeness in photographs, video recordings, and other media for promotional, educational, and fundraising purposes.</p>
+              </div>
+              <div className="mt-8 pt-4 border-t border-border space-y-6">
+                <div>
+                  <p>Volunteer Signature: _________________________ Date: _____________</p>
+                  <p className="mt-2">Print Name: _________________________________</p>
+                </div>
+                <div>
+                  <p className="font-bold text-foreground text-sm">FOR VOLUNTEERS UNDER 18:</p>
+                  <p className="mt-2">Parent/Guardian Signature: _________________________ Date: _____________</p>
+                  <p className="mt-2">Print Name: _________________________________</p>
+                </div>
+              </div>
+            </div>
+          </DocSection>
+
+          <DocSection title="Safety & Liability Waiver" icon={HardHat} id="safety-waiver">
+            <p className="font-bold text-foreground text-lg mb-4">SAFETY WAIVER AND LIABILITY RELEASE — FROM THE GROUND UP</p>
+            <p className="text-sm italic mb-4">Required for all program participants before engaging in hands-on training activities.</p>
+            <div className="space-y-6">
+              <div>
+                <p className="font-bold text-foreground">SECTION 1 — PARTICIPANT INFORMATION</p>
+                <div className="mt-2 space-y-2 text-sm">
+                  <p>Full Name: _________________________________ Date: _____________</p>
+                  <p>Program Enrolled: _________________________________________</p>
+                  <p>Emergency Contact: _________________ Relationship: _____________</p>
+                  <p>Emergency Phone: _________________</p>
+                  <p>Known Medical Conditions/Allergies: _________________________________</p>
+                </div>
+              </div>
+              <div>
+                <p className="font-bold text-foreground">SECTION 2 — ACKNOWLEDGMENT OF RISKS</p>
+                <p>I acknowledge that participation in trade skills training programs operated by From The Ground Up involves inherent risks, including but not limited to:</p>
+                <ul className="list-disc pl-6 space-y-1 mt-2">
+                  <li>Use of power tools, hand tools, and heavy equipment</li>
+                  <li>Exposure to electrical systems, live wiring, and high voltage</li>
+                  <li>Work with plumbing systems, water, and chemical solvents</li>
+                  <li>Elevated work surfaces, ladders, scaffolding, and roofing</li>
+                  <li>Exposure to construction materials including wood, metal, concrete, and insulation</li>
+                  <li>HVAC systems involving refrigerants, heat, and pressurized systems</li>
+                  <li>Physical exertion, lifting, bending, and repetitive motions</li>
+                  <li>Noise exposure, dust, and airborne particles</li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-bold text-foreground">SECTION 3 — SAFETY COMMITMENT</p>
+                <p>I agree to:</p>
+                <ol className="list-decimal pl-6 space-y-1 mt-2">
+                  <li>Attend all required safety orientations before participating in hands-on activities;</li>
+                  <li>Wear all required personal protective equipment (PPE) including hard hats, safety glasses, gloves, steel-toe boots, and hearing protection as directed;</li>
+                  <li>Never operate tools or equipment without proper instruction and authorization;</li>
+                  <li>Report any unsafe conditions, equipment malfunctions, or injuries immediately;</li>
+                  <li>Abstain from alcohol, drugs, or any substance that may impair judgment during training;</li>
+                  <li>Follow all OSHA safety standards and Organization safety protocols.</li>
+                </ol>
+              </div>
+              <div>
+                <p className="font-bold text-foreground">SECTION 4 — WAIVER AND RELEASE</p>
+                <p>In consideration of being allowed to participate in programs offered by From The Ground Up, I hereby release, discharge, and hold harmless the Organization, its officers, directors, employees, instructors, volunteers, and agents from any and all liability, claims, demands, or causes of action arising from my participation, including those caused by negligence.</p>
+              </div>
+              <div>
+                <p className="font-bold text-foreground">SECTION 5 — MEDICAL AUTHORIZATION</p>
+                <p>In the event of an emergency, I authorize From The Ground Up to secure emergency medical treatment on my behalf. I understand that I am responsible for any medical expenses incurred.</p>
+              </div>
+              <div className="mt-8 pt-4 border-t border-border">
+                <p>Participant Signature: _________________________ Date: _____________</p>
+                <p className="mt-2">Print Name: _________________________________</p>
+                <p className="mt-6 text-sm font-bold text-foreground">FOR PARTICIPANTS UNDER 18:</p>
+                <p className="mt-2">Parent/Guardian Signature: _________________________ Date: _____________</p>
+              </div>
+            </div>
+          </DocSection>
+
+          <DocSection title="Media & Photo Release Form" icon={Camera} id="media-release">
+            <p className="font-bold text-foreground text-lg mb-4">MEDIA AND PHOTO RELEASE CONSENT FORM — FROM THE GROUND UP</p>
+            <div className="space-y-6">
+              <div>
+                <p>I, _________________________________ ("Participant"), hereby grant to From The Ground Up ("Organization"), its employees, agents, and authorized representatives, the irrevocable and unrestricted right to use, reproduce, publish, and distribute photographs, video recordings, audio recordings, and any other media or digital content featuring my name, image, likeness, and/or voice (collectively, "Media") for the following purposes:</p>
+                <ul className="list-disc pl-6 space-y-1 mt-2">
+                  <li>Website content and social media platforms (Facebook, Instagram, Twitter/X, LinkedIn, YouTube, TikTok)</li>
+                  <li>Marketing and promotional materials (brochures, flyers, banners, advertisements)</li>
+                  <li>Fundraising campaigns, grant applications, and donor communications</li>
+                  <li>Annual reports, newsletters, and press releases</li>
+                  <li>Educational materials, presentations, and training documentation</li>
+                  <li>News media and public relations activities</li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-bold text-foreground">TERMS AND CONDITIONS</p>
+                <ol className="list-decimal pl-6 space-y-2 mt-2">
+                  <li>This release is valid in perpetuity unless revoked in writing.</li>
+                  <li>No compensation is expected or will be provided for the use of Media covered by this release.</li>
+                  <li>The Organization may edit, alter, or modify Media as it deems appropriate, provided such modifications do not misrepresent the Participant.</li>
+                  <li>The Participant waives the right to inspect or approve the finished product in which the Media appears.</li>
+                  <li>The Participant releases the Organization from any claims arising from the use of Media, including claims of invasion of privacy, defamation, or right of publicity.</li>
+                  <li>This release is binding on the Participant's heirs, assigns, and legal representatives.</li>
+                </ol>
+              </div>
+              <div className="mt-8 pt-4 border-t border-border space-y-4">
+                <p>Participant Signature: _________________________ Date: _____________</p>
+                <p>Print Name: _________________________________</p>
+                <p className="mt-4 font-bold text-foreground text-sm">FOR PARTICIPANTS UNDER 18:</p>
+                <p>Parent/Guardian Signature: _________________________ Date: _____________</p>
+                <p>Print Name: _________________________________</p>
+                <p>Relationship to Participant: _________________________</p>
+              </div>
+            </div>
+          </DocSection>
+
+          <DocSection title="Board Meeting Agenda Template" icon={ClipboardCheck} id="board-agenda">
+            <p className="font-bold text-foreground text-lg mb-4">BOARD OF DIRECTORS MEETING AGENDA — FROM THE GROUND UP</p>
+            <div className="space-y-6">
+              <div className="p-4 bg-muted/30 border border-border rounded-xl">
+                <div className="grid grid-cols-2 gap-4 text-sm">
+                  <p><strong>Date:</strong> [INSERT DATE]</p>
+                  <p><strong>Time:</strong> [INSERT TIME]</p>
+                  <p><strong>Location:</strong> [INSERT LOCATION / Virtual Link]</p>
+                  <p><strong>Presiding:</strong> [Board Chair Name]</p>
+                </div>
+              </div>
+              <div>
+                <p className="font-bold text-foreground">I. CALL TO ORDER</p>
+                <ul className="list-disc pl-6 mt-2 space-y-1">
+                  <li>Chair calls meeting to order at [TIME]</li>
+                  <li>Roll call and establishment of quorum</li>
+                  <li>Welcome and introductions (if applicable)</li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-bold text-foreground">II. APPROVAL OF MINUTES</p>
+                <ul className="list-disc pl-6 mt-2 space-y-1">
+                  <li>Review of minutes from previous meeting dated [DATE]</li>
+                  <li>Motion to approve, discussion, and vote</li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-bold text-foreground">III. EXECUTIVE DIRECTOR'S REPORT</p>
+                <ul className="list-disc pl-6 mt-2 space-y-1">
+                  <li>Program updates and enrollment numbers</li>
+                  <li>Staffing and personnel updates</li>
+                  <li>Key accomplishments since last meeting</li>
+                  <li>Challenges and areas needing board attention</li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-bold text-foreground">IV. FINANCIAL REPORT</p>
+                <ul className="list-disc pl-6 mt-2 space-y-1">
+                  <li>Treasurer's report: income, expenses, and current balance</li>
+                  <li>Budget vs. actual comparison for current period</li>
+                  <li>Grant status updates and fundraising progress</li>
+                  <li>Upcoming financial obligations</li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-bold text-foreground">V. COMMITTEE REPORTS</p>
+                <ul className="list-disc pl-6 mt-2 space-y-1">
+                  <li>Finance Committee</li>
+                  <li>Program Committee</li>
+                  <li>Fundraising / Development Committee</li>
+                  <li>Governance / Nominating Committee</li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-bold text-foreground">VI. OLD BUSINESS</p>
+                <ul className="list-disc pl-6 mt-2 space-y-1">
+                  <li>Follow-up on action items from previous meeting</li>
+                  <li>[Specific old business items]</li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-bold text-foreground">VII. NEW BUSINESS</p>
+                <ul className="list-disc pl-6 mt-2 space-y-1">
+                  <li>[New items requiring board discussion or vote]</li>
+                  <li>Policy reviews or amendments</li>
+                  <li>Strategic planning items</li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-bold text-foreground">VIII. UPCOMING DATES</p>
+                <ul className="list-disc pl-6 mt-2 space-y-1">
+                  <li>Next board meeting: [DATE]</li>
+                  <li>Key upcoming events and deadlines</li>
+                  <li>Filing/compliance deadlines</li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-bold text-foreground">IX. ADJOURNMENT</p>
+                <ul className="list-disc pl-6 mt-2 space-y-1">
+                  <li>Motion to adjourn</li>
+                  <li>Meeting adjourned at [TIME]</li>
+                </ul>
+              </div>
+              <div className="p-4 bg-muted/30 border border-border rounded-xl mt-4">
+                <p className="text-sm font-bold text-foreground mb-2">ACTION ITEMS SUMMARY</p>
+                <table className="w-full text-sm">
+                  <thead><tr className="border-b border-border"><th className="text-left p-2">Action Item</th><th className="text-left p-2">Assigned To</th><th className="text-left p-2">Due Date</th></tr></thead>
+                  <tbody>
+                    <tr className="border-b border-border/50"><td className="p-2">1. _______________</td><td className="p-2">___________</td><td className="p-2">___________</td></tr>
+                    <tr className="border-b border-border/50"><td className="p-2">2. _______________</td><td className="p-2">___________</td><td className="p-2">___________</td></tr>
+                    <tr><td className="p-2">3. _______________</td><td className="p-2">___________</td><td className="p-2">___________</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </DocSection>
+
+          <DocSection title="Grant Proposal Template" icon={DollarSign} id="grant-template">
+            <p className="font-bold text-foreground text-lg mb-4">GRANT PROPOSAL TEMPLATE — FROM THE GROUND UP</p>
+            <p className="text-sm italic mb-4">Adapt this template to the specific requirements of each funder. Most funders provide their own application form, but these core sections are commonly requested.</p>
+            <div className="space-y-6">
+              <div>
+                <p className="font-bold text-foreground">I. COVER LETTER</p>
+                <div className="mt-2 p-4 bg-muted/30 border border-border rounded-xl text-sm space-y-2">
+                  <p>[Date]</p>
+                  <p>[Funder Name]<br/>[Address]</p>
+                  <p>Dear [Grant Program Officer / Committee],</p>
+                  <p>From The Ground Up respectfully requests [$ AMOUNT] to support [SPECIFIC PROJECT/PROGRAM]. Founded in Washington, DC in 2026 by Jeffrey Williams in honor of his father Jeffrey Williams Sr., our organization empowers individuals of all ages with hands-on trade skills — construction, electrical, plumbing, carpentry, HVAC, and AI-enhanced learning — to build sustainable careers and stronger communities.</p>
+                  <p>[1-2 sentences on how this specific funding aligns with the funder's priorities]</p>
+                  <p>Sincerely,<br/>Jeffrey Williams, Executive Director</p>
+                </div>
+              </div>
+              <div>
+                <p className="font-bold text-foreground">II. EXECUTIVE SUMMARY</p>
+                <ul className="list-disc pl-6 mt-2 space-y-1">
+                  <li>Organization name, location, and mission (1-2 sentences)</li>
+                  <li>Amount requested and project title</li>
+                  <li>Brief description of the proposed project (2-3 sentences)</li>
+                  <li>Target population and expected outcomes</li>
+                  <li>Timeline for implementation</li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-bold text-foreground">III. STATEMENT OF NEED</p>
+                <ul className="list-disc pl-6 mt-2 space-y-1">
+                  <li>Data on the skills gap in the DC metro area trades workforce</li>
+                  <li>Unemployment and underemployment statistics for target demographics</li>
+                  <li>Connection to the DC Commanders stadium construction boom (5,000+ jobs)</li>
+                  <li>Barriers to entry that your program addresses (cost, access, awareness, training availability)</li>
+                  <li>Why existing programs are insufficient to meet demand</li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-bold text-foreground">IV. PROJECT DESCRIPTION</p>
+                <ul className="list-disc pl-6 mt-2 space-y-1">
+                  <li>Goals and measurable objectives (SMART format)</li>
+                  <li>Detailed program activities and curriculum overview</li>
+                  <li>How AI-enhanced learning differentiates your approach</li>
+                  <li>Timeline and milestones</li>
+                  <li>Staffing and organizational capacity</li>
+                  <li>Partnerships and collaboration (employers, unions, DC DOES, apprenticeship programs)</li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-bold text-foreground">V. EVALUATION PLAN</p>
+                <ul className="list-disc pl-6 mt-2 space-y-1">
+                  <li>How success will be measured (job placement rate, certification completion, wage increases)</li>
+                  <li>Data collection methods and frequency</li>
+                  <li>Use of Impact Cascade Algorithm to track multi-order community impact</li>
+                  <li>Reporting schedule and format</li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-bold text-foreground">VI. BUDGET</p>
+                <ul className="list-disc pl-6 mt-2 space-y-1">
+                  <li>Line-item budget for the proposed project</li>
+                  <li>Budget narrative explaining each line item</li>
+                  <li>Other funding sources (secured and pending)</li>
+                  <li>Sustainability plan beyond the grant period</li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-bold text-foreground">VII. ATTACHMENTS</p>
+                <ul className="list-disc pl-6 mt-2 space-y-1">
+                  <li>IRS Determination Letter (501(c)(3) status)</li>
+                  <li>Current year operating budget</li>
+                  <li>Board of Directors list with affiliations</li>
+                  <li>Most recent Form 990 (once filed)</li>
+                  <li>Most recent audited financial statements (if applicable)</li>
+                  <li>Letters of support from partners and community stakeholders</li>
+                </ul>
+              </div>
+            </div>
+          </DocSection>
+
+          <DocSection title="Annual Report Template" icon={BarChart3} id="annual-report">
+            <p className="font-bold text-foreground text-lg mb-4">ANNUAL REPORT OUTLINE — FROM THE GROUND UP</p>
+            <p className="text-sm italic mb-4">Use this template to create your annual report for stakeholders, donors, and the public. A well-crafted annual report is both a transparency tool and a fundraising asset.</p>
+            <div className="space-y-6">
+              <div>
+                <p className="font-bold text-foreground">I. LETTER FROM THE FOUNDER</p>
+                <p>Personal letter from Jeffrey Williams reflecting on the year's accomplishments, challenges, and vision for the future. Set the tone for the entire report — make it heartfelt and forward-looking.</p>
+              </div>
+              <div>
+                <p className="font-bold text-foreground">II. MISSION AND IMPACT OVERVIEW</p>
+                <ul className="list-disc pl-6 mt-2 space-y-1">
+                  <li>Mission statement and year-at-a-glance statistics</li>
+                  <li>Key impact metrics: students trained, certifications earned, job placement rate</li>
+                  <li>Impact Cascade data: total economic impact generated by graduates</li>
+                  <li>Year-over-year comparison showing growth</li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-bold text-foreground">III. PROGRAM HIGHLIGHTS</p>
+                <ul className="list-disc pl-6 mt-2 space-y-1">
+                  <li>Summary of each program's performance (Construction, Electrical, Plumbing, Carpentry, HVAC, AI in Trades)</li>
+                  <li>New programs or curriculum additions launched</li>
+                  <li>Graduation and certification statistics per program</li>
+                  <li>Employer partnerships and apprenticeship placements</li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-bold text-foreground">IV. STUDENT SUCCESS STORIES</p>
+                <p>2-3 featured stories of students whose lives were transformed. Include quotes, photos (with media release), and specific outcomes (salary before/after, career trajectory).</p>
+              </div>
+              <div>
+                <p className="font-bold text-foreground">V. FINANCIAL SUMMARY</p>
+                <ul className="list-disc pl-6 mt-2 space-y-1">
+                  <li>Total revenue by source (grants, donations, earned income, events)</li>
+                  <li>Total expenses by category (programs, admin, fundraising)</li>
+                  <li>Program expense ratio (target: 75%+ to programs)</li>
+                  <li>Pie chart showing fund allocation</li>
+                  <li>Note on financial health and reserve status</li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-bold text-foreground">VI. DONOR AND SUPPORTER RECOGNITION</p>
+                <ul className="list-disc pl-6 mt-2 space-y-1">
+                  <li>List donors by tier (Founding, Cornerstone, Builder, Supporter)</li>
+                  <li>Corporate and institutional sponsors</li>
+                  <li>In-kind contributors</li>
+                  <li>Volunteer appreciation</li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-bold text-foreground">VII. BOARD OF DIRECTORS AND LEADERSHIP</p>
+                <p>Names, titles, and brief bios of all board members and key staff. Demonstrate the expertise and diversity of your leadership team.</p>
+              </div>
+              <div>
+                <p className="font-bold text-foreground">VIII. LOOKING AHEAD</p>
+                <ul className="list-disc pl-6 mt-2 space-y-1">
+                  <li>Goals for the upcoming year</li>
+                  <li>New programs or expansions planned</li>
+                  <li>Capital campaign or major initiative announcements</li>
+                  <li>Call to action for donors, volunteers, and partners</li>
+                </ul>
+              </div>
+            </div>
+          </DocSection>
+
+          <DocSection title="Donor Acknowledgment Letter" icon={Mail} id="donor-letter">
+            <p className="font-bold text-foreground text-lg mb-4">DONOR ACKNOWLEDGMENT LETTER TEMPLATE — FROM THE GROUND UP</p>
+            <p className="text-sm italic mb-4">IRS requires written acknowledgment for any single contribution of $250 or more. Best practice is to acknowledge all gifts. Send within 48 hours of receiving the donation.</p>
+            <div className="space-y-6">
+              <div className="p-4 bg-muted/30 border border-border rounded-xl text-sm space-y-4">
+                <p>[Organization Letterhead]</p>
+                <p>[Date]</p>
+                <p>[Donor Name]<br/>[Address]</p>
+                <p>Dear [Donor Name],</p>
+                <p>On behalf of From The Ground Up and the communities we serve, thank you for your generous contribution of <strong>$[AMOUNT]</strong> received on <strong>[DATE]</strong>.</p>
+                <p>Your gift will directly support [SPECIFIC IMPACT — e.g., "providing hands-on construction training for 10 aspiring tradespeople in Washington, DC" or "purchasing essential safety equipment for our electrical systems program"].</p>
+                <p>[Optional: Share a brief impact story or statistic. Example: "Last year, 92% of our graduates secured employment within 90 days, earning an average starting salary of $45,000. Your support makes this possible."]</p>
+                <p>From The Ground Up is a 501(c)(3) tax-exempt organization. Our EIN is [INSERT EIN]. <strong>No goods or services were provided in exchange for this contribution</strong> [OR: "In exchange for your contribution, you received [DESCRIPTION OF GOODS/SERVICES] with a fair market value of $[AMOUNT]. Your tax-deductible amount is $[DONATION MINUS FMV]."]</p>
+                <p>Please retain this letter for your tax records.</p>
+                <p>With gratitude,</p>
+                <p>Jeffrey Williams<br/>Founder & Executive Director<br/>From The Ground Up<br/>[Phone] | [Email]</p>
+              </div>
+              <div className="p-4 bg-primary/5 border border-primary/20 rounded-xl">
+                <p className="text-sm font-bold text-foreground mb-2">IRS Requirements for Gift Acknowledgment:</p>
+                <ul className="list-disc pl-6 space-y-1 text-sm">
+                  <li>Name of the organization</li>
+                  <li>Amount of cash contribution or description of non-cash contribution</li>
+                  <li>Statement that no goods or services were provided in return (or description and value of any goods/services)</li>
+                  <li>Must be provided before the donor files their tax return for the year of the gift</li>
+                  <li>For contributions over $250, the donor needs this written acknowledgment to claim a deduction</li>
+                </ul>
+              </div>
+            </div>
+          </DocSection>
+
+          <DocSection title="Partnership / MOU Agreement" icon={Handshake} id="partnership-mou">
+            <p className="font-bold text-foreground text-lg mb-4">MEMORANDUM OF UNDERSTANDING (MOU) — FROM THE GROUND UP</p>
+            <p className="text-sm italic mb-4">Use this template when formalizing partnerships with employers, training centers, community organizations, government agencies, or educational institutions.</p>
+            <div className="space-y-6">
+              <div>
+                <p className="font-bold text-foreground">PARTIES</p>
+                <p className="mt-2">This Memorandum of Understanding ("MOU") is entered into between:</p>
+                <p className="mt-2"><strong>From The Ground Up</strong> ("FTGU"), a District of Columbia 501(c)(3) nonprofit corporation, with its principal office at [ADDRESS];</p>
+                <p className="mt-2">and</p>
+                <p className="mt-2"><strong>[PARTNER ORGANIZATION NAME]</strong> ("Partner"), a [TYPE OF ENTITY] with its principal office at [ADDRESS].</p>
+              </div>
+              <div>
+                <p className="font-bold text-foreground">PURPOSE</p>
+                <p className="mt-2">The purpose of this MOU is to establish a collaborative partnership between FTGU and Partner to [DESCRIBE PURPOSE — e.g., "provide apprenticeship placement opportunities for FTGU program graduates" or "co-deliver a construction training curriculum" or "provide job site access for hands-on training"].</p>
+              </div>
+              <div>
+                <p className="font-bold text-foreground">SCOPE OF COLLABORATION</p>
+                <p className="mt-2 font-bold">FTGU agrees to:</p>
+                <ol className="list-decimal pl-6 space-y-1 mt-1">
+                  <li>[Specific commitment — e.g., "Provide trained, safety-certified graduates ready for entry-level positions"]</li>
+                  <li>[Specific commitment — e.g., "Share curriculum content and training outcomes data"]</li>
+                  <li>[Specific commitment — e.g., "Coordinate scheduling and logistics for joint training sessions"]</li>
+                  <li>[Specific commitment — e.g., "Maintain insurance coverage for all FTGU participants"]</li>
+                </ol>
+                <p className="mt-4 font-bold">Partner agrees to:</p>
+                <ol className="list-decimal pl-6 space-y-1 mt-1">
+                  <li>[Specific commitment — e.g., "Provide apprenticeship slots for a minimum of [X] FTGU graduates per year"]</li>
+                  <li>[Specific commitment — e.g., "Allow FTGU students access to job sites for supervised training"]</li>
+                  <li>[Specific commitment — e.g., "Provide mentorship and subject matter expertise"]</li>
+                  <li>[Specific commitment — e.g., "Share industry-specific safety protocols and equipment"]</li>
+                </ol>
+              </div>
+              <div>
+                <p className="font-bold text-foreground">TERM AND TERMINATION</p>
+                <p className="mt-2">This MOU shall be effective from [START DATE] through [END DATE], a period of [X] months/years. Either party may terminate this MOU with [30/60/90] days' written notice. This MOU may be renewed by mutual written agreement of both parties.</p>
+              </div>
+              <div>
+                <p className="font-bold text-foreground">FINANCIAL ARRANGEMENTS</p>
+                <p className="mt-2">[Describe any financial terms — e.g., "This MOU does not involve the exchange of funds between the parties" or "Partner agrees to contribute $[AMOUNT] toward [SPECIFIC PURPOSE]" or "Costs will be shared as follows..."]</p>
+              </div>
+              <div>
+                <p className="font-bold text-foreground">CONFIDENTIALITY</p>
+                <p className="mt-2">Both parties agree to maintain the confidentiality of any proprietary information shared during the course of this partnership, including student records, business information, and training materials.</p>
+              </div>
+              <div>
+                <p className="font-bold text-foreground">LIABILITY AND INSURANCE</p>
+                <p className="mt-2">Each party shall maintain appropriate insurance coverage for its respective activities under this MOU. Neither party shall be liable for the acts or omissions of the other party's employees, agents, or volunteers.</p>
+              </div>
+              <div>
+                <p className="font-bold text-foreground">DISPUTE RESOLUTION</p>
+                <p className="mt-2">The parties agree to resolve any disputes arising from this MOU through good-faith negotiation. If negotiation fails, the parties will seek mediation before pursuing any legal remedies.</p>
+              </div>
+              <div className="mt-8 pt-4 border-t border-border">
+                <p className="font-bold text-foreground mb-4">SIGNATURES</p>
+                <div className="grid grid-cols-2 gap-8">
+                  <div className="space-y-4">
+                    <p className="font-bold text-foreground text-sm">FROM THE GROUND UP</p>
+                    <p>Signature: _________________________</p>
+                    <p>Name: Jeffrey Williams</p>
+                    <p>Title: Executive Director</p>
+                    <p>Date: _____________</p>
+                  </div>
+                  <div className="space-y-4">
+                    <p className="font-bold text-foreground text-sm">[PARTNER ORGANIZATION]</p>
+                    <p>Signature: _________________________</p>
+                    <p>Name: _________________________</p>
+                    <p>Title: _________________________</p>
+                    <p>Date: _____________</p>
+                  </div>
+                </div>
               </div>
             </div>
           </DocSection>
