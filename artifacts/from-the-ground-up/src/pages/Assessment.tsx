@@ -419,7 +419,7 @@ export default function Assessment() {
               <ClipboardCheck size={14} />
               Skills Assessment
             </div>
-            <h1 className="text-5xl md:text-7xl font-display font-black text-foreground mb-8 uppercase tracking-tight leading-none">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-black text-foreground mb-8 uppercase tracking-tight leading-none">
               Find Your <span className="text-primary">Perfect Trade</span>
             </h1>
             <p className="text-xl md:text-2xl text-foreground/80 font-medium leading-relaxed max-w-3xl mx-auto mb-12">
@@ -433,8 +433,8 @@ export default function Assessment() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="glass-panel p-10 md:p-16 relative overflow-hidden"
-            style={{ borderRadius: "24px 80px 24px 80px" }}
+            className="glass-panel p-6 sm:p-10 md:p-16 relative overflow-hidden"
+            style={{ borderRadius: "16px 40px 16px 40px" }}
           >
             <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
             <div className="relative z-10 text-center">
@@ -509,7 +509,7 @@ export default function Assessment() {
                 <CheckCircle2 size={14} className="text-green-500" />
                 Assessment Complete
               </div>
-              <h1 className="text-5xl md:text-7xl font-display font-black text-foreground mb-6 uppercase tracking-tight leading-none">
+              <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-black text-foreground mb-6 uppercase tracking-tight leading-none">
                 Your <span className="text-primary">Results</span>
               </h1>
               <p className="text-xl text-foreground/80 font-medium">
@@ -518,7 +518,7 @@ export default function Assessment() {
             </div>
 
             <div
-              className="glass-panel p-10 md:p-16 mb-12 relative overflow-hidden border-2 border-primary/30"
+              className="glass-panel p-6 sm:p-10 md:p-16 mb-12 relative overflow-hidden border-2 border-primary/30"
               style={{ borderRadius: "24px 80px 24px 80px" }}
             >
               <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />

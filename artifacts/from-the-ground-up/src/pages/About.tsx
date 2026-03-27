@@ -17,7 +17,7 @@ export default function About() {
             <div className="inline-flex items-center gap-2 py-2 px-6 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-foreground font-bold uppercase tracking-widest text-xs mb-8">
               Our Story
             </div>
-            <h1 className="text-5xl md:text-7xl font-display font-black text-foreground mb-8 leading-[1.1] uppercase tracking-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-black text-foreground mb-8 leading-[1.1] uppercase tracking-tight">
               A Legacy Built <br/><span className="text-primary">From The Ground Up.</span>
             </h1>
             <div className="space-y-6 text-xl text-foreground/80 font-medium leading-relaxed">
@@ -36,7 +36,7 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <div className="aspect-[4/5] overflow-hidden shadow-2xl border border-white/20 relative group" style={{ borderRadius: '24px 80px 24px 80px' }}>
+            <div className="aspect-[4/5] overflow-hidden shadow-2xl border border-white/20 relative group" style={{ borderRadius: '16px 48px 16px 48px' }}>
               <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
               <img 
                 src={`${import.meta.env.BASE_URL}images/about-founder.png`} 
@@ -62,8 +62,8 @@ export default function About() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="glass-panel p-12 md:p-16 relative overflow-hidden"
-            style={{ borderRadius: '8px 48px 8px 48px' }}
+            className="glass-panel p-6 sm:p-12 md:p-16 relative overflow-hidden"
+            style={{ borderRadius: '8px 32px 8px 32px' }}
           >
             <Target className="w-16 h-16 text-primary mb-8" />
             <h2 className="text-4xl font-display font-black uppercase tracking-tight mb-6">Our Mission</h2>
@@ -77,8 +77,8 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="bg-foreground text-background p-12 md:p-16 relative overflow-hidden"
-            style={{ borderRadius: '48px 8px 48px 8px' }}
+            className="bg-foreground text-background p-6 sm:p-12 md:p-16 relative overflow-hidden"
+            style={{ borderRadius: '32px 8px 32px 8px' }}
           >
             <Compass className="w-16 h-16 text-accent mb-8" />
             <h2 className="text-4xl font-display font-black uppercase tracking-tight mb-6 text-white">Our Vision</h2>
@@ -92,7 +92,7 @@ export default function About() {
         <section className="py-24 border-y border-white/10 mb-32">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             <div className="lg:col-span-5 flex justify-center order-2 lg:order-1">
-              <div className="w-72 h-72 md:w-96 md:h-96 bg-white shadow-2xl flex items-center justify-center p-10 relative transform hover:scale-105 transition-transform duration-500" style={{ borderRadius: '24px 80px 24px 80px' }}>
+              <div className="w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96 bg-white shadow-2xl flex items-center justify-center p-8 sm:p-10 relative transform hover:scale-105 transition-transform duration-500" style={{ borderRadius: '16px 48px 16px 48px' }}>
                 <div className="absolute inset-0 bg-primary/5 rounded-[inherit] animate-pulse"></div>
                 <img 
                   src={`${import.meta.env.BASE_URL}images/logo.png`} 

@@ -359,7 +359,7 @@ export default function CareerPathways() {
           <div className="inline-flex items-center gap-2 py-2 px-6 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-foreground font-bold uppercase tracking-widest text-xs mb-8">
             <TrendingUp size={14} /> Career Pathways
           </div>
-          <h1 className="text-5xl md:text-7xl font-display font-black text-foreground mb-8 uppercase tracking-tight leading-none">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-black text-foreground mb-8 uppercase tracking-tight leading-none">
             Your Path to <br /><span className="text-primary">Success.</span>
           </h1>
           <p className="text-xl md:text-2xl text-foreground/80 font-medium leading-relaxed">
@@ -526,7 +526,7 @@ export default function CareerPathways() {
           </motion.div>
         </AnimatePresence>
 
-        <div className="mt-20 glass-panel p-10 md:p-16 relative overflow-hidden" style={{ borderRadius: '24px 80px 24px 80px' }}>
+        <div className="mt-20 glass-panel p-6 sm:p-10 md:p-16 relative overflow-hidden" style={{ borderRadius: '16px 40px 16px 40px' }}>
           <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
           <div className="grid md:grid-cols-2 gap-12 items-center relative z-10">
             <div>
@@ -580,7 +580,7 @@ export default function CareerPathways() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-accent text-accent-foreground p-16 md:p-24 rounded-[3rem] shadow-2xl relative overflow-hidden"
+            className="bg-accent text-accent-foreground p-8 sm:p-16 md:p-24 rounded-2xl sm:rounded-[3rem] shadow-2xl relative overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
             <h2 className="text-4xl md:text-6xl font-display font-black mb-8 uppercase tracking-tight relative z-10">
@@ -592,14 +592,14 @@ export default function CareerPathways() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 relative z-10">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-12 py-6 bg-foreground text-background font-black uppercase tracking-widest text-lg hover:bg-primary hover:text-white transition-all duration-300 shadow-xl hover:scale-105"
+                className="inline-flex items-center justify-center px-8 sm:px-12 py-4 sm:py-6 bg-foreground text-background font-black uppercase tracking-widest text-base sm:text-lg hover:bg-primary hover:text-white transition-all duration-300 shadow-xl hover:scale-105"
                 style={{ borderRadius: '12px 32px 12px 32px' }}
               >
                 Enroll Now
               </Link>
               <Link
                 href="/assessment"
-                className="inline-flex items-center justify-center px-12 py-6 border-2 border-foreground text-foreground font-black uppercase tracking-widest text-lg hover:bg-foreground hover:text-background transition-all duration-300"
+                className="inline-flex items-center justify-center px-8 sm:px-12 py-4 sm:py-6 border-2 border-foreground text-foreground font-black uppercase tracking-widest text-base sm:text-lg hover:bg-foreground hover:text-background transition-all duration-300"
                 style={{ borderRadius: '32px 12px 32px 12px' }}
               >
                 Take Assessment

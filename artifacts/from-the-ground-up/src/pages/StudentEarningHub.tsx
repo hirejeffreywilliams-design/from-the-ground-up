@@ -226,7 +226,7 @@ export default function StudentEarningHub() {
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 text-green-400 text-sm font-bold uppercase tracking-wider mb-6">
             <DollarSign size={16} /> Start Earning Now
           </span>
-          <h1 className="text-5xl md:text-7xl font-display font-black text-foreground mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-black text-foreground mb-6">
             Student <span className="text-primary">Earning Hub</span>
           </h1>
           <p className="text-xl text-foreground/70 max-w-3xl mx-auto leading-relaxed">

@@ -593,7 +593,7 @@ export default function FundraisingPlaybook() {
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold uppercase tracking-wider mb-6">
             <DollarSign size={16} /> Fundraising Playbook
           </span>
-          <h1 className="text-5xl md:text-7xl font-display font-black text-foreground mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-black text-foreground mb-6">
             Complete <span className="text-primary">Funding</span> Guide
           </h1>
           <p className="text-xl text-foreground/70 max-w-3xl mx-auto leading-relaxed">

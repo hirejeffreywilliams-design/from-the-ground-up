@@ -50,7 +50,7 @@ export default function Donate() {
             
             <Heart className="w-20 h-20 text-primary mx-auto mb-8 drop-shadow-xl" />
             
-            <h1 className="text-5xl md:text-7xl font-display font-black text-foreground mb-8 uppercase tracking-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-black text-foreground mb-8 uppercase tracking-tight">
               Invest in a <br/><span className="text-primary">Stronger Future</span>
             </h1>
             <p className="text-xl md:text-2xl text-foreground/80 max-w-3xl mx-auto font-medium leading-relaxed">
@@ -73,7 +73,7 @@ export default function Donate() {
                 transition={{ delay: i * 0.1 }}
                 className="text-center"
               >
-                <div className="text-4xl md:text-6xl font-display font-black text-foreground mb-2">{stat.number}</div>
+                <div className="text-3xl sm:text-4xl md:text-6xl font-display font-black text-foreground mb-2">{stat.number}</div>
                 <div className="text-foreground/70 font-bold uppercase tracking-wider text-sm">{stat.label}</div>
               </motion.div>
             ))}
@@ -99,7 +99,7 @@ export default function Donate() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15, duration: 0.6 }}
-                className={`relative glass-panel p-10 flex flex-col h-full transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 border ${
+                className={`relative glass-panel p-6 sm:p-10 flex flex-col h-full transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 border ${
                   tier.featured
                     ? "border-primary/50 bg-primary/5"
                     : "border-white/20"
@@ -147,7 +147,7 @@ export default function Donate() {
         </div>
       </section>
 
-      <section className="py-32 relative z-10 bg-foreground text-background rounded-[3rem] mx-4 sm:mx-6 lg:mx-8 overflow-hidden shadow-2xl">
+      <section className="py-24 sm:py-32 relative z-10 bg-foreground text-background rounded-2xl sm:rounded-[3rem] mx-4 sm:mx-6 lg:mx-8 overflow-hidden shadow-2xl">
         <div className="absolute top-0 left-0 w-96 h-96 bg-primary/20 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2"></div>
         <div className="max-w-5xl mx-auto px-6 relative z-10">
           <h2 className="text-4xl md:text-6xl font-display font-black mb-16 text-center uppercase tracking-tight text-white">Where Your Money Goes</h2>

@@ -146,7 +146,7 @@ export default function Bylaws() {
           
           <FileText className="w-20 h-20 text-primary mx-auto mb-8 drop-shadow-xl" />
           
-          <h1 className="text-5xl md:text-7xl font-display font-black text-foreground mb-8 uppercase tracking-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-black text-foreground mb-8 uppercase tracking-tight">
             Organizational <br/><span className="text-primary">Bylaws</span>
           </h1>
           <p className="text-xl text-foreground/80 max-w-3xl mx-auto font-medium leading-relaxed">
@@ -165,7 +165,7 @@ export default function Bylaws() {
           ))}
         </div>
 
-        <div className="p-12 md:p-16 bg-foreground text-background shadow-2xl text-center relative overflow-hidden" style={{ borderRadius: '24px 64px 24px 64px' }}>
+        <div className="p-6 sm:p-12 md:p-16 bg-foreground text-background shadow-2xl text-center relative overflow-hidden" style={{ borderRadius: '16px 40px 16px 40px' }}>
           <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
           <h3 className="text-3xl md:text-4xl font-display font-black text-white mb-6 uppercase tracking-tight relative z-10">Questions About Our Governance?</h3>
           <p className="text-white/70 text-lg font-medium mb-10 max-w-2xl mx-auto relative z-10">

@@ -23,7 +23,7 @@ export default function Programs() {
           <div className="inline-flex items-center gap-2 py-2 px-6 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-foreground font-bold uppercase tracking-widest text-xs mb-8">
             Our Curriculum
           </div>
-          <h1 className="text-5xl md:text-7xl font-display font-black text-foreground mb-8 uppercase tracking-tight leading-none">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-black text-foreground mb-8 uppercase tracking-tight leading-none">
             Master The Trades.<br/> <span className="text-primary">Leverage AI.</span>
           </h1>
           <p className="text-xl md:text-2xl text-foreground/80 font-medium leading-relaxed">
@@ -32,7 +32,7 @@ export default function Programs() {
         </div>
 
         {/* Why AI explainer */}
-        <div className="mb-32 glass-panel p-10 md:p-16 relative overflow-hidden" style={{ borderRadius: '24px 80px 24px 80px' }}>
+        <div className="mb-32 glass-panel p-6 sm:p-10 md:p-16 relative overflow-hidden" style={{ borderRadius: '16px 40px 16px 40px' }}>
           <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
           <div className="grid md:grid-cols-2 gap-12 items-center relative z-10">
             <div>
@@ -106,7 +106,7 @@ export default function Programs() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
-                className="glass-panel p-10 md:p-14 flex flex-col h-full relative group border border-white/20 transition-all duration-500 hover:shadow-2xl hover:border-primary/50"
+                className="glass-panel p-6 sm:p-10 md:p-14 flex flex-col h-full relative group border border-white/20 transition-all duration-500 hover:shadow-2xl hover:border-primary/50"
                 style={{ borderRadius: index % 2 === 0 ? '16px 64px 16px 64px' : '64px 16px 64px 16px' }}
               >
                 <div className="flex flex-wrap items-start justify-between gap-4 mb-10 relative z-10">

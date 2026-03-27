@@ -46,7 +46,7 @@ export default function Home() {
               Welcome to From The Ground Up
             </div>
             
-            <h1 className="text-5xl md:text-8xl font-display font-black text-foreground max-w-5xl mx-auto leading-[1.1] mb-8 uppercase tracking-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-8xl font-display font-black text-foreground max-w-5xl mx-auto leading-[1.1] mb-8 uppercase tracking-tight">
               Build Your Future, <br className="hidden md:block" />
               <span className="text-primary relative inline-block">
                 One Skill at a Time.
@@ -123,7 +123,7 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="glass-panel p-12 md:p-20 rounded-[3rem] relative"
+            className="glass-panel p-6 sm:p-12 md:p-20 rounded-2xl sm:rounded-[3rem] relative"
           >
             <Quote className="absolute top-10 left-10 w-20 h-20 text-primary/10 rotate-180" />
             <h2 className="text-4xl md:text-6xl font-display font-bold text-foreground leading-tight relative z-10">
@@ -143,7 +143,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
             <div className="max-w-3xl">
-              <h2 className="text-5xl md:text-7xl font-display font-black text-foreground mb-6 uppercase tracking-tight">Hands-On <br/><span className="text-primary text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Learning</span></h2>
+              <h2 className="text-4xl sm:text-5xl md:text-7xl font-display font-black text-foreground mb-6 uppercase tracking-tight">Hands-On <br/><span className="text-primary text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Learning</span></h2>
               <p className="text-xl text-foreground/80 font-medium leading-relaxed">
                 Our programs combine traditional craftsmanship with modern AI technologies to give you an unparalleled competitive edge in the trades.
               </p>
@@ -172,7 +172,7 @@ export default function Home() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.15, duration: 0.6 }}
-                    className="group glass-panel p-10 relative overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 border border-white/20"
+                    className="group glass-panel p-6 sm:p-10 relative overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 border border-white/20"
                     style={{ borderRadius: index % 2 === 0 ? '8px 48px 8px 48px' : '48px 8px 48px 8px' }}
                   >
                     <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/20 transition-colors duration-500 -translate-y-1/2 translate-x-1/2"></div>
@@ -208,7 +208,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-5xl md:text-7xl font-display font-black text-white mb-8 uppercase tracking-tight">Built By <br/><span className="text-primary">Our Students</span></h2>
+              <h2 className="text-4xl sm:text-5xl md:text-7xl font-display font-black text-white mb-8 uppercase tracking-tight">Built By <br/><span className="text-primary">Our Students</span></h2>
               <p className="text-xl text-white/70 font-medium leading-relaxed mb-10">
                 Don't just take our word for it. Hear from the people who have transformed their lives through our programs.
               </p>
@@ -217,7 +217,7 @@ export default function Home() {
               </Link>
             </div>
             
-            <div className="bg-white/5 border border-white/10 p-10 md:p-16 backdrop-blur-md rounded-[2rem]">
+            <div className="bg-white/5 border border-white/10 p-6 sm:p-10 md:p-16 backdrop-blur-md rounded-2xl sm:rounded-[2rem]">
               <Quote className="w-16 h-16 text-primary mb-8" />
               <p className="text-2xl md:text-3xl text-white font-display font-medium leading-tight mb-8">
                 "The combination of hands-on plumbing skills with AI layout tools made me hirable before I even finished the program. It's not just a class, it's a career launchpad."
@@ -241,7 +241,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="glass-panel p-12 md:p-20 rounded-[3rem] relative overflow-hidden border-2 border-primary/20"
+            className="glass-panel p-6 sm:p-12 md:p-20 rounded-2xl sm:rounded-[3rem] relative overflow-hidden border-2 border-primary/20"
           >
             <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary via-accent to-primary"></div>
             <div className="absolute -top-32 -right-32 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
@@ -274,16 +274,16 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
-                <div className="flex gap-4">
-                  <Link href="/careers" className="px-8 py-4 bg-primary text-white font-bold uppercase tracking-wider text-sm hover:bg-primary/90 transition-colors flex items-center gap-2" style={{ borderRadius: '6px 18px 6px 18px' }}>
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                  <Link href="/careers" className="px-6 sm:px-8 py-3 sm:py-4 bg-primary text-white font-bold uppercase tracking-wider text-sm hover:bg-primary/90 transition-colors flex items-center justify-center gap-2" style={{ borderRadius: '6px 18px 6px 18px' }}>
                     View Career Paths <ArrowRight size={18} />
                   </Link>
-                  <Link href="/assessment" className="px-8 py-4 border-2 border-foreground text-foreground font-bold uppercase tracking-wider text-sm hover:bg-foreground hover:text-background transition-colors" style={{ borderRadius: '18px 6px 18px 6px' }}>
+                  <Link href="/assessment" className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-foreground text-foreground font-bold uppercase tracking-wider text-sm hover:bg-foreground hover:text-background transition-colors text-center" style={{ borderRadius: '18px 6px 18px 6px' }}>
                     Take Assessment
                   </Link>
                 </div>
               </div>
-              <div className="bg-foreground rounded-3xl p-10 shadow-2xl relative">
+              <div className="bg-foreground rounded-2xl sm:rounded-3xl p-6 sm:p-10 shadow-2xl relative">
                 <div className="space-y-6">
                   <div className="flex items-center gap-3 pb-4 border-b border-white/10">
                     <HardHat className="text-primary" size={28} />
@@ -327,25 +327,25 @@ export default function Home() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-accent text-accent-foreground p-16 md:p-24 rounded-[3rem] shadow-2xl relative overflow-hidden"
+            className="bg-accent text-accent-foreground p-8 sm:p-16 md:p-24 rounded-2xl sm:rounded-[3rem] shadow-2xl relative overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
             
-            <h2 className="text-5xl md:text-7xl font-display font-black mb-8 uppercase tracking-tight relative z-10">Ready to start <br/>building?</h2>
+            <h2 className="text-4xl sm:text-5xl md:text-7xl font-display font-black mb-8 uppercase tracking-tight relative z-10">Ready to start <br/>building?</h2>
             <p className="text-2xl text-accent-foreground/80 mb-12 max-w-2xl mx-auto font-medium relative z-10">
               Whether you're starting a new career or learning a new skill, there's a place for you here.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 relative z-10">
               <Link 
                 href="/contact"
-                className="inline-flex items-center justify-center px-12 py-6 bg-foreground text-background font-black uppercase tracking-widest text-lg hover:bg-primary hover:text-white transition-all duration-300 shadow-xl hover:scale-105"
+                className="inline-flex items-center justify-center px-8 sm:px-12 py-4 sm:py-6 bg-foreground text-background font-black uppercase tracking-widest text-base sm:text-lg hover:bg-primary hover:text-white transition-all duration-300 shadow-xl hover:scale-105"
                 style={{ borderRadius: '12px 32px 12px 32px' }}
               >
                 Join a Program Today
               </Link>
               <Link 
                 href="/assessment"
-                className="inline-flex items-center justify-center px-12 py-6 border-2 border-accent-foreground text-accent-foreground font-black uppercase tracking-widest text-sm hover:bg-accent-foreground hover:text-accent transition-all duration-300"
+                className="inline-flex items-center justify-center px-8 sm:px-12 py-4 sm:py-6 border-2 border-accent-foreground text-accent-foreground font-black uppercase tracking-widest text-sm hover:bg-accent-foreground hover:text-accent transition-all duration-300"
                 style={{ borderRadius: '32px 12px 32px 12px' }}
               >
                 Find Your Trade

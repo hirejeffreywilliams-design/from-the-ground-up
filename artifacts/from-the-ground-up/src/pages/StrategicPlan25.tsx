@@ -357,7 +357,7 @@ export default function StrategicPlan25() {
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold uppercase tracking-wider mb-6">
             <Target size={16} /> Strategic Blueprint
           </span>
-          <h1 className="text-5xl md:text-7xl font-display font-black text-foreground mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-black text-foreground mb-6">
             25-Year <span className="text-primary">Strategic Plan</span>
           </h1>
           <p className="text-xl text-foreground/70 max-w-3xl mx-auto leading-relaxed">

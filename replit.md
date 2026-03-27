@@ -157,6 +157,14 @@ Workforce demand-supply analysis for the DC metro area that calculates urgency s
 - **Theme**: Building, uplifting, growth, community, legacy
 - **Gender-neutral** and inclusive
 
+## Mobile Responsive Patterns
+
+All pages follow consistent responsive typography to prevent text overflow at 320px:
+- **Headings**: `text-4xl sm:text-5xl md:text-7xl` (hero h1/h2)
+- **Padding**: `p-6 sm:p-10 md:p-16` for large sections
+- **Border radius**: `rounded-2xl sm:rounded-[3rem]` for rounded panels
+- `overflow-x-hidden` applied globally to html/body in `index.css`
+
 ## TypeScript & Composite Projects
 
 Every package extends `tsconfig.base.json` which sets `composite: true`. The root `tsconfig.json` lists all packages as project references.

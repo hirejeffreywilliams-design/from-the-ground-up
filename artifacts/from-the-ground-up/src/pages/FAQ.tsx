@@ -125,7 +125,7 @@ export default function FAQ() {
           
           <HelpCircle className="w-20 h-20 text-primary mx-auto mb-8 drop-shadow-xl" />
           
-          <h1 className="text-5xl md:text-7xl font-display font-black text-foreground mb-8 uppercase tracking-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-black text-foreground mb-8 uppercase tracking-tight">
             Frequently Asked <br/><span className="text-primary">Questions</span>
           </h1>
           <p className="text-xl md:text-2xl text-foreground/80 max-w-3xl mx-auto font-medium leading-relaxed">
@@ -158,8 +158,8 @@ export default function FAQ() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="p-12 md:p-20 bg-foreground text-background shadow-2xl text-center relative overflow-hidden"
-          style={{ borderRadius: '64px 24px 64px 24px' }}
+          className="p-6 sm:p-12 md:p-20 bg-foreground text-background shadow-2xl text-center relative overflow-hidden"
+          style={{ borderRadius: '24px 40px 24px 40px' }}
         >
           <div className="absolute top-0 left-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2"></div>
           

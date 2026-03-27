@@ -58,7 +58,7 @@ export default function Contact() {
           <div className="inline-flex items-center gap-2 py-2 px-6 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-foreground font-bold uppercase tracking-widest text-xs mb-8">
             Get In Touch
           </div>
-          <h1 className="text-5xl md:text-7xl font-display font-black text-foreground mb-6 uppercase tracking-tight">Let's Build <span className="text-primary">Together</span></h1>
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-black text-foreground mb-6 uppercase tracking-tight">Let's Build <span className="text-primary">Together</span></h1>
           <p className="text-xl md:text-2xl text-foreground/80 font-medium">
             Ready to enroll, volunteer, or partner with us? Our team is standing by.
           </p>
@@ -68,7 +68,7 @@ export default function Contact() {
           
           {/* Contact Info */}
           <div className="lg:col-span-5 space-y-8">
-            <div className="bg-foreground text-background p-10 md:p-14 relative overflow-hidden shadow-2xl" style={{ borderRadius: '16px 64px 16px 64px' }}>
+            <div className="bg-foreground text-background p-6 sm:p-10 md:p-14 relative overflow-hidden shadow-2xl" style={{ borderRadius: '16px 40px 16px 40px' }}>
               <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl"></div>
               
               <h3 className="text-3xl font-display font-black uppercase tracking-tight mb-12 relative z-10 text-white">Contact Info</h3>
@@ -119,7 +119,7 @@ export default function Contact() {
 
           {/* Form */}
           <div className="lg:col-span-7">
-            <div className="glass-panel p-10 md:p-16 border border-white/20 shadow-2xl relative" style={{ borderRadius: '64px 16px 64px 16px' }}>
+            <div className="glass-panel p-6 sm:p-10 md:p-16 border border-white/20 shadow-2xl relative" style={{ borderRadius: '40px 16px 40px 16px' }}>
               {isSuccess ? (
                 <motion.div 
                   initial={{ opacity: 0, scale: 0.9 }}

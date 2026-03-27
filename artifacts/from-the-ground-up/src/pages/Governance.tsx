@@ -74,7 +74,7 @@ export default function Governance() {
             
             <Users className="w-20 h-20 text-primary mx-auto mb-8 drop-shadow-xl" />
             
-            <h1 className="text-5xl md:text-7xl font-display font-black text-foreground mb-8 uppercase tracking-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-black text-foreground mb-8 uppercase tracking-tight">
               Our <span className="text-primary">Leadership</span>
             </h1>
             <p className="text-xl md:text-2xl text-foreground/80 max-w-3xl mx-auto font-medium leading-relaxed">
@@ -100,7 +100,7 @@ export default function Governance() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.6 }}
-                className="glass-panel p-10 border border-white/20 hover:shadow-2xl hover:border-primary/40 transition-all duration-500 group"
+                className="glass-panel p-6 sm:p-10 border border-white/20 hover:shadow-2xl hover:border-primary/40 transition-all duration-500 group"
                 style={{ borderRadius: i % 2 === 0 ? '16px 48px 16px 48px' : '48px 16px 48px 16px' }}
               >
                 <div className="w-20 h-20 bg-white shadow-xl flex items-center justify-center mb-8 transform group-hover:scale-110 group-hover:bg-primary transition-all duration-500" style={{ borderRadius: '8px 24px 8px 24px' }}>
@@ -135,7 +135,7 @@ export default function Governance() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.6 }}
-                className="flex flex-col sm:flex-row gap-8 p-10 glass-panel border border-white/20 hover:border-primary/40 hover:shadow-2xl transition-all duration-500"
+                className="flex flex-col sm:flex-row gap-6 sm:gap-8 p-6 sm:p-10 glass-panel border border-white/20 hover:border-primary/40 hover:shadow-2xl transition-all duration-500"
                 style={{ borderRadius: '24px' }}
               >
                 <div className="w-20 h-20 bg-primary/10 text-primary flex items-center justify-center flex-shrink-0" style={{ borderRadius: '8px 24px 8px 24px' }}>
@@ -151,7 +151,7 @@ export default function Governance() {
         </div>
       </section>
 
-      <section className="py-24 relative z-10 bg-foreground text-background shadow-2xl mx-4 sm:mx-6 lg:mx-8 overflow-hidden" style={{ borderRadius: '32px 100px 32px 100px' }}>
+      <section className="py-24 relative z-10 bg-foreground text-background shadow-2xl mx-4 sm:mx-6 lg:mx-8 overflow-hidden rounded-2xl sm:rounded-[3rem]">
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }}></div>
         <div className="absolute top-1/2 right-0 w-96 h-96 bg-primary/20 rounded-full blur-[100px] -translate-y-1/2"></div>
         
@@ -163,14 +163,14 @@ export default function Governance() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <Link
               href="/bylaws"
-              className="inline-flex items-center gap-3 px-10 py-5 bg-primary text-white font-black uppercase tracking-widest text-sm hover:bg-primary/90 hover:scale-105 transition-all shadow-xl"
+              className="inline-flex items-center gap-3 px-6 sm:px-10 py-4 sm:py-5 bg-primary text-white font-black uppercase tracking-widest text-sm hover:bg-primary/90 hover:scale-105 transition-all shadow-xl"
               style={{ borderRadius: '8px 24px 8px 24px' }}
             >
               Read Our Bylaws <ChevronRight size={18} />
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-3 px-10 py-5 bg-white/10 backdrop-blur-md border border-white/20 text-white font-black uppercase tracking-widest text-sm hover:bg-white/20 transition-all"
+              className="inline-flex items-center gap-3 px-6 sm:px-10 py-4 sm:py-5 bg-white/10 backdrop-blur-md border border-white/20 text-white font-black uppercase tracking-widest text-sm hover:bg-white/20 transition-all"
               style={{ borderRadius: '24px 8px 24px 8px' }}
             >
               Request Annual Report

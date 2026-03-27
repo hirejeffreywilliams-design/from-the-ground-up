@@ -702,7 +702,7 @@ export default function GrantApplications() {
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold uppercase tracking-wider mb-6">
             <FileText size={16} /> Ready-to-Submit Documents
           </span>
-          <h1 className="text-5xl md:text-7xl font-display font-black text-foreground mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-black text-foreground mb-6">
             Grant <span className="text-primary">Applications</span>
           </h1>
           <p className="text-xl text-foreground/70 max-w-3xl mx-auto leading-relaxed">
