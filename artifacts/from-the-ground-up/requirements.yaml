@@ -1,0 +1,21 @@
+packages:
+  "framer-motion": "For smooth page transitions and scroll-triggered animations"
+  "react-hook-form": "For robust contact and enrollment form handling"
+  "@hookform/resolvers": "For Zod validation integration with react-hook-form"
+  "clsx": "Utility for constructing className strings conditionally"
+  "tailwind-merge": "Utility for merging tailwind classes safely"
+
+images:
+  - path: "artifacts/from-the-ground-up/public/images/logo.png"
+    description: "A concrete or stone letter 'J' with a whimsical, innocent rose growing out of it, drawn in a child-like crayon style. Clean white background, conveying growth from a strong foundation, uplifting and professional."
+    aspect_ratio: "1:1"
+  - path: "artifacts/from-the-ground-up/public/images/hero-bg.png"
+    description: "Warm, uplifting abstract background with soft terracotta and sage green gradients, subtle textures resembling concrete and wood grain, conveying growth, foundation, and a welcoming community space."
+    aspect_ratio: "16:9"
+  - path: "artifacts/from-the-ground-up/public/images/about-founder.png"
+    description: "A warm, inspiring illustration of a father teaching his child how to build something, sunset lighting, soft earthy colors, conveying legacy, learning from the ground up, and community empowerment."
+    aspect_ratio: "16:9"
+
+notes:
+  - Expects backend API endpoints to match the provided OpenAPI schemas exactly.
+  - Using generated React Query hooks from @workspace/api-client-react.

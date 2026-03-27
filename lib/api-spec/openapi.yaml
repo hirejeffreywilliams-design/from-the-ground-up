@@ -1,15 +1,20 @@
 openapi: 3.1.0
 info:
-  # Do not change the title, if the title changes, the import paths will be broken
   title: Api
   version: 0.1.0
-  description: API specification
+  description: From The Ground Up nonprofit API
 servers:
   - url: /api
     description: Base API path
 tags:
   - name: health
     description: Health operations
+  - name: programs
+    description: Trade programs
+  - name: contact
+    description: Contact and enrollment
+  - name: testimonials
+    description: Testimonials
 paths:
   /healthz:
     get:
@@ -24,6 +29,75 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+  /programs:
+    get:
+      operationId: listPrograms
+      tags: [programs]
+      summary: List all programs
+      description: Returns all available trade programs
+      responses:
+        "200":
+          description: Programs list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Program"
+  /programs/{id}:
+    get:
+      operationId: getProgram
+      tags: [programs]
+      summary: Get a single program
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Program detail
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Program"
+        "404":
+          description: Not found
+  /contact:
+    post:
+      operationId: submitContact
+      tags: [contact]
+      summary: Submit contact or enrollment form
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ContactSubmission"
+      responses:
+        "201":
+          description: Submission created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ContactResponse"
+        "400":
+          description: Validation error
+  /testimonials:
+    get:
+      operationId: listTestimonials
+      tags: [testimonials]
+      summary: List testimonials
+      responses:
+        "200":
+          description: Testimonials list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Testimonial"
 components:
   schemas:
     HealthStatus:
@@ -33,4 +107,85 @@ components:
           type: string
       required:
         - status
-
+    Program:
+      type: object
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        slug:
+          type: string
+        description:
+          type: string
+        longDescription:
+          type: string
+        icon:
+          type: string
+        duration:
+          type: string
+        skillLevel:
+          type: string
+        aiFeatures:
+          type: string
+        outcomes:
+          type: array
+          items:
+            type: string
+      required:
+        - id
+        - title
+        - slug
+        - description
+        - icon
+        - duration
+        - skillLevel
+    Testimonial:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        program:
+          type: string
+        quote:
+          type: string
+        avatar:
+          type: string
+      required:
+        - id
+        - name
+        - program
+        - quote
+    ContactSubmission:
+      type: object
+      properties:
+        fullName:
+          type: string
+        email:
+          type: string
+          format: email
+        phone:
+          type: string
+        programInterest:
+          type: string
+        message:
+          type: string
+        type:
+          type: string
+          enum: [enrollment, general, volunteer, donate]
+      required:
+        - fullName
+        - email
+        - type
+    ContactResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+        message:
+          type: string
+      required:
+        - id
+        - message
