@@ -42,63 +42,63 @@
 }
 
 :root {
-  /* Warm Earthy Tones Palette */
-  --background: 40 33% 98%;      /* Warm off-white/cream */
-  --foreground: 20 14% 16%;      /* Deep charcoal brown */
+  /* Premium Ombre Palette */
+  --background: 20 20% 98%;      
+  --foreground: 220 15% 15%;     
   
-  --card: 40 33% 100%;           /* Pure warm white */
-  --card-foreground: 20 14% 16%;
+  --card: 0 0% 100%;             
+  --card-foreground: 220 15% 15%;
   
-  --popover: 40 33% 100%;
-  --popover-foreground: 20 14% 16%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 220 15% 15%;
   
-  --primary: 15 65% 50%;         /* Terracotta/Rust - building, clay, bricks */
-  --primary-foreground: 40 33% 98%;
+  --primary: 350 80% 45%;        /* Deep rose/crimson */
+  --primary-foreground: 0 0% 100%;
   
-  --secondary: 140 25% 35%;      /* Forest/Sage Green - growth, life, the rose */
-  --secondary-foreground: 40 33% 98%;
+  --secondary: 140 25% 35%;      /* Sage/forest green */
+  --secondary-foreground: 0 0% 100%;
   
-  --muted: 35 20% 92%;           /* Light warm gray */
-  --muted-foreground: 25 15% 45%;
+  --muted: 220 10% 90%;          /* Light concrete */
+  --muted-foreground: 220 10% 40%;
   
-  --accent: 40 85% 50%;          /* Golden Ochre - energy, uplifting */
-  --accent-foreground: 20 14% 16%;
+  --accent: 40 90% 50%;          /* Rich golden/amber */
+  --accent-foreground: 220 15% 15%;
   
   --destructive: 0 84% 60%;
   --destructive-foreground: 210 40% 98%;
   
-  --border: 30 15% 85%;
-  --input: 30 15% 85%;
-  --ring: 15 65% 50%;
+  --border: 220 10% 85%;
+  --input: 220 10% 85%;
+  --ring: 350 80% 45%;
   
-  --radius: 0.75rem;
+  --radius: 1rem;
 }
 
 .dark {
-  --background: 20 14% 12%;      /* Very deep warm gray */
-  --foreground: 40 33% 95%;      /* Soft warm white */
+  --background: 220 15% 10%;     
+  --foreground: 20 20% 95%;      
   
-  --card: 20 14% 15%;
-  --card-foreground: 40 33% 95%;
+  --card: 220 15% 14%;
+  --card-foreground: 20 20% 95%;
   
-  --popover: 20 14% 15%;
-  --popover-foreground: 40 33% 95%;
+  --popover: 220 15% 14%;
+  --popover-foreground: 20 20% 95%;
   
-  --primary: 15 65% 55%;         /* Slightly brighter terracotta for dark mode */
-  --primary-foreground: 20 14% 12%;
+  --primary: 350 80% 55%;        
+  --primary-foreground: 0 0% 100%;
   
-  --secondary: 140 25% 45%;      /* Brighter sage */
-  --secondary-foreground: 20 14% 12%;
+  --secondary: 140 25% 45%;      
+  --secondary-foreground: 0 0% 100%;
   
-  --muted: 20 10% 20%;
-  --muted-foreground: 30 15% 65%;
+  --muted: 220 15% 20%;
+  --muted-foreground: 220 10% 65%;
   
-  --accent: 40 85% 55%;
-  --accent-foreground: 20 14% 12%;
+  --accent: 40 90% 60%;
+  --accent-foreground: 220 15% 10%;
   
-  --border: 20 10% 25%;
-  --input: 20 10% 25%;
-  --ring: 15 65% 55%;
+  --border: 220 15% 25%;
+  --input: 220 15% 25%;
+  --ring: 350 80% 55%;
 }
 
 @layer base {
@@ -109,17 +109,34 @@
     @apply bg-background text-foreground font-sans antialiased selection:bg-primary/20 selection:text-primary;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display tracking-tight text-foreground;
+    @apply font-display tracking-tight;
   }
 }
 
-/* Custom Utilities for Polish */
 @layer utilities {
   .glass-panel {
-    @apply bg-background/80 backdrop-blur-md border border-border/50 shadow-sm;
+    @apply bg-background/70 backdrop-blur-xl border border-white/20 shadow-xl;
   }
   
   .text-balance {
     text-wrap: balance;
+  }
+  
+  .page-gradient {
+    /* Ombre gradient: ambient red/rose at top, warm tones mid, deep dark concrete bottom */
+    background: linear-gradient(180deg, 
+      rgba(220, 20, 60, 0.05) 0%, 
+      rgba(220, 20, 60, 0.02) 15%, 
+      rgba(245, 240, 235, 0.2) 30%, 
+      rgba(100, 105, 115, 0.4) 70%,
+      rgba(35, 40, 45, 1) 100%);
+  }
+
+  .dark .page-gradient {
+    background: linear-gradient(180deg, 
+      rgba(220, 20, 60, 0.15) 0%, 
+      rgba(220, 20, 60, 0.05) 15%, 
+      rgba(30, 35, 45, 0.8) 50%, 
+      rgba(20, 22, 25, 1) 100%);
   }
 }

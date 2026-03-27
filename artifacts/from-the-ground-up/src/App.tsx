@@ -3,14 +3,16 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
-// Pages
 import Home from "@/pages/Home";
 import Programs from "@/pages/Programs";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
+import Donate from "@/pages/Donate";
+import Bylaws from "@/pages/Bylaws";
+import Governance from "@/pages/Governance";
+import FAQ from "@/pages/FAQ";
 import NotFound from "@/pages/not-found";
 
-// Components
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
@@ -33,6 +35,10 @@ function Router() {
           <Route path="/programs" component={Programs} />
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
+          <Route path="/donate" component={Donate} />
+          <Route path="/bylaws" component={Bylaws} />
+          <Route path="/governance" component={Governance} />
+          <Route path="/faq" component={FAQ} />
           <Route component={NotFound} />
         </Switch>
       </main>

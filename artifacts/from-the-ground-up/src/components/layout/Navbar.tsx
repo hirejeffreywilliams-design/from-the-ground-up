@@ -1,5 +1,5 @@
 import { Link, useLocation } from "wouter";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 
@@ -7,6 +7,7 @@ export default function Navbar() {
   const [location] = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,30 +20,40 @@ export default function Navbar() {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Programs", path: "/programs" },
+  ];
+
+  const aboutLinks = [
     { name: "About Us", path: "/about" },
-    { name: "Contact", path: "/contact" },
+    { name: "Governance", path: "/governance" },
+    { name: "Bylaws", path: "/bylaws" },
+    { name: "FAQ", path: "/faq" },
   ];
 
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out",
-        isScrolled ? "glass-panel py-3" : "bg-transparent py-5"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out",
+        isScrolled ? "glass-panel py-3" : "bg-transparent py-6"
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-10 h-10 overflow-hidden rounded-xl bg-white shadow-sm border border-border group-hover:shadow-md transition-shadow">
+          <Link href="/" className="flex items-center gap-4 group">
+            <div className="relative w-12 h-12 overflow-hidden bg-white/90 shadow-xl border border-white/50 group-hover:shadow-2xl transition-all duration-300 flex items-center justify-center" style={{ borderRadius: '4px 16px 4px 16px' }}>
               <img 
                 src={`${import.meta.env.BASE_URL}images/logo.png`} 
                 alt="From The Ground Up Logo" 
-                className="w-full h-full object-cover p-1"
+                className="w-full h-full object-contain p-1.5 transform group-hover:scale-110 transition-transform duration-300"
               />
             </div>
-            <span className="font-display font-bold text-xl tracking-tight text-foreground group-hover:text-primary transition-colors">
-              From The Ground Up
-            </span>
+            <div className="flex flex-col">
+              <span className="font-display font-black text-xl tracking-widest text-foreground uppercase leading-none group-hover:text-primary transition-colors">
+                From The
+              </span>
+              <span className="font-sans font-bold text-sm tracking-[0.2em] text-foreground/70 uppercase leading-none mt-1">
+                Ground Up
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Nav */}
@@ -52,22 +63,72 @@ export default function Navbar() {
                 key={link.path}
                 href={link.path}
                 className={cn(
-                  "text-sm font-medium transition-colors hover:text-primary relative py-1",
-                  location === link.path ? "text-primary" : "text-muted-foreground"
+                  "text-sm font-bold uppercase tracking-wider transition-colors hover:text-primary relative py-2",
+                  location === link.path ? "text-primary" : "text-foreground/80"
                 )}
               >
                 {link.name}
-                {location === link.path && (
-                  <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-primary rounded-full" />
-                )}
               </Link>
             ))}
-            <Link 
-              href="/contact"
-              className="px-5 py-2.5 rounded-full bg-primary text-primary-foreground text-sm font-semibold shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5 transition-all duration-200"
+
+            <div 
+              className="relative"
+              onMouseEnter={() => setAboutDropdownOpen(true)}
+              onMouseLeave={() => setAboutDropdownOpen(false)}
             >
-              Enroll Now
+              <button 
+                className={cn(
+                  "text-sm font-bold uppercase tracking-wider transition-colors hover:text-primary relative py-2 flex items-center gap-1",
+                  aboutLinks.some(l => location === l.path) ? "text-primary" : "text-foreground/80"
+                )}
+              >
+                About <ChevronDown size={14} className={cn("transition-transform", aboutDropdownOpen && "rotate-180")} />
+              </button>
+              
+              {aboutDropdownOpen && (
+                <div className="absolute top-full left-1/2 -translate-x-1/2 w-48 pt-2 animate-in fade-in slide-in-from-top-2">
+                  <div className="glass-panel rounded-xl overflow-hidden py-2 flex flex-col shadow-2xl">
+                    {aboutLinks.map((link) => (
+                      <Link
+                        key={link.path}
+                        href={link.path}
+                        className={cn(
+                          "px-4 py-2 text-sm font-semibold transition-colors hover:bg-primary/10 hover:text-primary",
+                          location === link.path ? "text-primary bg-primary/5" : "text-foreground/80"
+                        )}
+                      >
+                        {link.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <Link
+              href="/contact"
+              className={cn(
+                "text-sm font-bold uppercase tracking-wider transition-colors hover:text-primary relative py-2",
+                location === "/contact" ? "text-primary" : "text-foreground/80"
+              )}
+            >
+              Contact
             </Link>
+
+            <div className="flex items-center gap-4 ml-4">
+              <Link 
+                href="/donate"
+                className="px-6 py-2.5 rounded-none border-2 border-primary text-primary font-bold uppercase tracking-wider text-sm hover:bg-primary hover:text-white transition-all duration-300"
+              >
+                Donate
+              </Link>
+              <Link 
+                href="/contact"
+                className="px-6 py-2.5 rounded-none bg-foreground text-background font-bold uppercase tracking-wider text-sm hover:bg-primary hover:text-primary-foreground shadow-xl transition-all duration-300"
+              >
+                Enroll Now
+              </Link>
+            </div>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -82,23 +143,39 @@ export default function Navbar() {
 
       {/* Mobile Nav */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 glass-panel border-t border-border/50 animate-in slide-in-from-top-2">
-          <div className="px-4 py-4 space-y-4 flex flex-col">
-            {navLinks.map((link) => (
+        <div className="md:hidden absolute top-full left-0 right-0 glass-panel border-t border-border/50 animate-in slide-in-from-top-2 h-screen">
+          <div className="px-4 py-6 space-y-6 flex flex-col">
+            {[...navLinks, ...aboutLinks, { name: "Contact", path: "/contact" }].map((link) => (
               <Link
                 key={link.path}
                 href={link.path}
                 onClick={() => setMobileMenuOpen(false)}
                 className={cn(
-                  "px-4 py-3 rounded-xl text-base font-medium transition-colors",
+                  "px-4 py-3 rounded-xl text-lg font-bold uppercase tracking-wider transition-colors",
                   location === link.path 
                     ? "bg-primary/10 text-primary" 
-                    : "text-muted-foreground hover:bg-muted/50"
+                    : "text-foreground/80 hover:bg-muted/50"
                 )}
               >
                 {link.name}
               </Link>
             ))}
+            <div className="pt-6 flex flex-col gap-4">
+              <Link 
+                href="/donate"
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-full py-4 text-center border-2 border-primary text-primary font-bold uppercase tracking-wider hover:bg-primary hover:text-white transition-all"
+              >
+                Donate
+              </Link>
+              <Link 
+                href="/contact"
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-full py-4 text-center bg-foreground text-background font-bold uppercase tracking-wider hover:bg-primary hover:text-primary-foreground transition-all"
+              >
+                Enroll Now
+              </Link>
+            </div>
           </div>
         </div>
       )}
