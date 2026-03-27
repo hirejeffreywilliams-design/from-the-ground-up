@@ -21,6 +21,7 @@ export default function Navbar() {
     { name: "Home", path: "/" },
     { name: "Programs", path: "/programs" },
     { name: "Careers", path: "/careers" },
+    { name: "Earn", path: "/earn" },
     { name: "Resources", path: "/resources" },
   ];
 
@@ -29,6 +30,10 @@ export default function Navbar() {
     { name: "Governance", path: "/governance" },
     { name: "Bylaws", path: "/bylaws" },
     { name: "FAQ", path: "/faq" },
+    { name: "Fundraising Playbook", path: "/fundraising" },
+    { name: "Grant Applications", path: "/grant-applications" },
+    { name: "25-Year Strategic Plan", path: "/strategic-plan" },
+    { name: "Compliance Guide", path: "/compliance-guide" },
     { name: "100-Year Roadmap", path: "/roadmap" },
     { name: "Foundation Strategy", path: "/strategy" },
     { name: "DC Startup Guide", path: "/startup-guide" },

@@ -18,6 +18,11 @@ import Documents from "@/pages/Documents";
 import Resources from "@/pages/Resources";
 import Assessment from "@/pages/Assessment";
 import CareerPathways from "@/pages/CareerPathways";
+import FundraisingPlaybook from "@/pages/FundraisingPlaybook";
+import StrategicPlan25 from "@/pages/StrategicPlan25";
+import ComplianceGuide from "@/pages/ComplianceGuide";
+import StudentEarningHub from "@/pages/StudentEarningHub";
+import GrantApplications from "@/pages/GrantApplications";
 import NotFound from "@/pages/not-found";
 
 import AdminLayout from "@/pages/admin/AdminLayout";
@@ -97,6 +102,11 @@ function Router() {
           <Route path="/resources" component={Resources} />
           <Route path="/assessment" component={Assessment} />
           <Route path="/careers" component={CareerPathways} />
+          <Route path="/fundraising" component={FundraisingPlaybook} />
+          <Route path="/strategic-plan" component={StrategicPlan25} />
+          <Route path="/compliance-guide" component={ComplianceGuide} />
+          <Route path="/earn" component={StudentEarningHub} />
+          <Route path="/grant-applications" component={GrantApplications} />
           <Route component={NotFound} />
         </Switch>
       </main>

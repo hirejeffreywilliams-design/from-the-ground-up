@@ -59,6 +59,7 @@ export default function Footer() {
             <ul className="space-y-4 text-white/70 font-medium">
               <li><Link href="/programs" className="hover:text-primary transition-colors">All Programs</Link></li>
               <li><Link href="/careers" className="hover:text-primary transition-colors">Career Pathways</Link></li>
+              <li><Link href="/earn" className="hover:text-primary transition-colors">Student Earning Hub</Link></li>
               <li><Link href="/assessment" className="hover:text-primary transition-colors">Skills Assessment</Link></li>
               <li><Link href="/resources" className="hover:text-primary transition-colors">Resource Library</Link></li>
             </ul>
@@ -76,7 +77,10 @@ export default function Footer() {
               <li><Link href="/strategy" className="hover:text-primary transition-colors">Foundation Strategy</Link></li>
               <li><Link href="/startup-guide" className="hover:text-primary transition-colors">DC Startup Guide</Link></li>
               <li><Link href="/documents" className="hover:text-primary transition-colors">Documents</Link></li>
-              <li><Link href="/assessment" className="hover:text-primary transition-colors">Take Assessment</Link></li>
+              <li><Link href="/fundraising" className="hover:text-primary transition-colors">Fundraising Playbook</Link></li>
+              <li><Link href="/grant-applications" className="hover:text-primary transition-colors">Grant Applications</Link></li>
+              <li><Link href="/strategic-plan" className="hover:text-primary transition-colors">25-Year Plan</Link></li>
+              <li><Link href="/compliance-guide" className="hover:text-primary transition-colors">Compliance Guide</Link></li>
             </ul>
           </div>
           

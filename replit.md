@@ -113,6 +113,11 @@ artifacts-monorepo/
 - **Career Pathways** (`/careers`) — Interactive career progression explorer for all 6 trades with salary ranges, certifications, timelines, DC job market data, and Commander Stadium opportunity
 - **Skills Assessment** (`/assessment`) — 10-question interactive quiz that recommends the best trade program based on interests, goals, and aptitude
 - **Resource Library** (`/resources`) — 60+ curated external resources across 8 categories (certifications, apprenticeships, licensing, unions, financial aid, tools, safety, business startup)
+- **Student Earning Hub** (`/earn`) — 25+ side job/freelance opportunities by trade, 5 FTGU earning programs (Project Marketplace, Tool Library, Cert Fast-Track, Apprenticeship Pipeline, Business Launcher), DC Commanders Stadium job table
+- **Fundraising Playbook** (`/fundraising`) — 12 funding sources with pre-written applications, 12-month fundraising calendar, 10-year revenue projections ($315K→$4.5M), $5M capital campaign strategy, social enterprise revenue streams
+- **Grant Applications** (`/grant-applications`) — 4 complete pre-written grant applications: DOES Workforce Development ($250K), Foundation General Template, Corporate Partnership Proposal, Case for Support
+- **25-Year Strategic Plan** (`/strategic-plan`) — 5-phase growth plan (Foundation→Growth→Leadership→Transformation→Legacy) with milestones, KPIs, revenue projections ($315K→$20M+), risk mitigation, "What to Watch Out For" compliance/legal/financial guide
+- **Compliance Guide** (`/compliance-guide`) — Complete federal/DC/employment/safety compliance reference with 15+ filing requirements, step-by-step processes, deadlines, fees, consequences, insurance requirements table, annual compliance calendar
 - **404** — Custom not found page
 
 ### Admin Dashboard (`/admin/*`)
