@@ -29,6 +29,8 @@ export default function Navbar() {
     { name: "FAQ", path: "/faq" },
     { name: "100-Year Roadmap", path: "/roadmap" },
     { name: "Foundation Strategy", path: "/strategy" },
+    { name: "DC Startup Guide", path: "/startup-guide" },
+    { name: "Documents", path: "/documents" },
   ];
 
   return (

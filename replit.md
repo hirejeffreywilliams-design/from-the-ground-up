@@ -68,6 +68,8 @@ artifacts-monorepo/
 - **FAQ** (`/faq`) — 12 frequently asked questions organized by category
 - **100-Year Roadmap** (`/roadmap`) — 5-phase century-long strategic roadmap (Foundation → Growth → National → Global → Legacy) with goals, milestones, metrics, and leadership structure for each phase
 - **Foundation Strategy** (`/strategy`) — Comprehensive nonprofit-to-foundation transition plan with foundation type analysis, 4-phase transition playbook, financial roadmap, and key success factors
+- **DC Startup Guide** (`/startup-guide`) — 13-step ordered checklist for forming a 501(c)(3) nonprofit in Washington DC, with timelines, costs, links, and pro tips
+- **Formation Documents** (`/documents`) — 12 complete organizational documents: Articles of Incorporation, Conflict of Interest Policy, Whistleblower Policy, Document Retention Policy, Compensation Policy, Code of Ethics, Nondiscrimination Policy, Gift Acceptance Policy, Financial Policies, Meeting Minutes Template, IRS Form 1023 Narrative, and 3-Year Financial Projections
 - **404** — Custom not found page
 
 ## Brand Identity

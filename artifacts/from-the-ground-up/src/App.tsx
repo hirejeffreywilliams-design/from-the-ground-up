@@ -13,6 +13,8 @@ import Governance from "@/pages/Governance";
 import FAQ from "@/pages/FAQ";
 import Roadmap from "@/pages/Roadmap";
 import FoundationStrategy from "@/pages/FoundationStrategy";
+import StartupGuide from "@/pages/StartupGuide";
+import Documents from "@/pages/Documents";
 import NotFound from "@/pages/not-found";
 
 import Navbar from "@/components/layout/Navbar";
@@ -43,6 +45,8 @@ function Router() {
           <Route path="/faq" component={FAQ} />
           <Route path="/roadmap" component={Roadmap} />
           <Route path="/strategy" component={FoundationStrategy} />
+          <Route path="/startup-guide" component={StartupGuide} />
+          <Route path="/documents" component={Documents} />
           <Route component={NotFound} />
         </Switch>
       </main>
