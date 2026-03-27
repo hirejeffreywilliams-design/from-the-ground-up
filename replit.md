@@ -22,19 +22,21 @@ A nonprofit website for "From The Ground Up" — a trade skills training nonprof
 - **Build**: esbuild (CJS bundle)
 - **UI Components**: shadcn/ui, Lucide icons, Framer Motion animations
 - **Fonts**: DM Sans (body), Fraunces (display/headings)
+- **Auth**: Replit OIDC (OpenID Connect with PKCE), openid-client v6
 
 ## Structure
 
 ```text
 artifacts-monorepo/
 ├── artifacts/
-│   ├── api-server/         # Express API server
-│   └── from-the-ground-up/ # React + Vite nonprofit website
+│   ├── api-server/         # Express API server (auth + admin + public routes)
+│   └── from-the-ground-up/ # React + Vite nonprofit website + admin dashboard
 ├── lib/
 │   ├── api-spec/           # OpenAPI spec + Orval codegen config
 │   ├── api-client-react/   # Generated React Query hooks
 │   ├── api-zod/            # Generated Zod schemas from OpenAPI
-│   └── db/                 # Drizzle ORM schema + DB connection
+│   ├── db/                 # Drizzle ORM schema + DB connection
+│   └── replit-auth-web/    # Browser auth hook (useAuth)
 ├── scripts/                # Utility scripts
 ├── pnpm-workspace.yaml
 ├── tsconfig.base.json
@@ -47,17 +49,48 @@ artifacts-monorepo/
 - **programs** — Trade training programs (construction, electrical, plumbing, carpentry, HVAC, AI in trades)
 - **contacts** — Contact form submissions (enrollment, general inquiry, volunteer, donate)
 - **testimonials** — Student testimonials
+- **users** — Authenticated users (Replit OIDC)
+- **sessions** — Auth sessions (server-side cookie sessions)
+- **donors** — Donor profiles with tier, total donated, recurring status
+- **donations** — Individual donation records linked to donors
+- **volunteers** — Volunteer profiles with skills, availability, hours logged
+- **financial_records** — Income/expense tracking by fiscal year and quarter
+- **impact_metrics** — Student outcome tracking for Impact Cascade algorithm
+- **activity_log** — Admin activity audit trail
 
 ## API Endpoints
 
+### Public
 - `GET /api/healthz` — Health check
 - `GET /api/programs` — List all programs
 - `GET /api/programs/:id` — Get program detail
 - `POST /api/contact` — Submit contact/enrollment form
 - `GET /api/testimonials` — List testimonials
 
+### Auth (Replit OIDC)
+- `GET /api/auth/user` — Get current authenticated user
+- `GET /api/login` — Start browser OIDC login flow
+- `GET /api/callback` — OIDC callback handler
+- `GET /api/logout` — Clear session and OIDC logout
+
+### Admin (requires authentication)
+- `GET /api/admin/dashboard` — Dashboard stats and recent activity
+- `GET/DELETE /api/admin/contacts` — Manage contact submissions
+- `GET/POST/PUT/DELETE /api/admin/programs` — CRUD programs
+- `GET/POST/DELETE /api/admin/testimonials` — Manage testimonials
+- `GET/POST/PUT/DELETE /api/admin/donors` — Manage donors
+- `GET/POST /api/admin/donations` — Record donations (auto-updates donor totals)
+- `GET/POST/PUT/DELETE /api/admin/volunteers` — Manage volunteers
+- `GET/POST /api/admin/financials` — Financial records
+- `GET /api/admin/financials/summary` — Fiscal year summary
+- `GET/POST/PUT /api/admin/impact` — Track student impact metrics
+- `GET /api/admin/impact/cascade` — Impact Cascade Algorithm (novel)
+- `GET /api/admin/skills-gap` — Skills Gap Analyzer (novel)
+- `GET /api/admin/activity` — Activity log
+
 ## Website Pages
 
+### Public
 - **Home** (`/`) — Hero with ombre gradient, impact stats, vision statement, featured programs, testimonials, newsletter signup, CTA
 - **Programs** (`/programs`) — All 6 trade programs with AI advantage section, detailed cards with outcomes
 - **About Us** (`/about`) — Founder story, mission & vision statements, logo meaning, board preview
@@ -66,11 +99,35 @@ artifacts-monorepo/
 - **Governance** (`/governance`) — Board of directors, core values, governance documents links
 - **Bylaws** (`/bylaws`) — Full organizational bylaws with accordion sections (10 articles)
 - **FAQ** (`/faq`) — 12 frequently asked questions organized by category
-- **100-Year Roadmap** (`/roadmap`) — 5-phase century-long strategic roadmap (Foundation → Growth → National → Global → Legacy) with goals, milestones, metrics, and leadership structure for each phase
-- **Foundation Strategy** (`/strategy`) — Comprehensive nonprofit-to-foundation transition plan with foundation type analysis, 4-phase transition playbook, financial roadmap, and key success factors
-- **DC Startup Guide** (`/startup-guide`) — 13-step ordered checklist for forming a 501(c)(3) nonprofit in Washington DC, with timelines, costs, links, and pro tips
-- **Formation Documents** (`/documents`) — 12 complete organizational documents: Articles of Incorporation, Conflict of Interest Policy, Whistleblower Policy, Document Retention Policy, Compensation Policy, Code of Ethics, Nondiscrimination Policy, Gift Acceptance Policy, Financial Policies, Meeting Minutes Template, IRS Form 1023 Narrative, and 3-Year Financial Projections
+- **100-Year Roadmap** (`/roadmap`) — 5-phase century-long strategic roadmap
+- **Foundation Strategy** (`/strategy`) — Comprehensive nonprofit-to-foundation transition plan
+- **DC Startup Guide** (`/startup-guide`) — 13-step checklist for forming a 501(c)(3) in DC
+- **Formation Documents** (`/documents`) — 12 complete organizational documents
 - **404** — Custom not found page
+
+### Admin Dashboard (`/admin/*`)
+- **Dashboard** (`/admin`) — Overview with 8 key metrics, recent contacts, donations, activity
+- **Contacts** (`/admin/contacts`) — View/filter/delete contact submissions
+- **Programs** (`/admin/programs`) — Full CRUD for programs
+- **Testimonials** (`/admin/testimonials`) — Add/delete testimonials
+- **Donors** (`/admin/donors`) — Donor management with tiers, record donations
+- **Volunteers** (`/admin/volunteers`) — Volunteer tracking with hours logging
+- **Financials** (`/admin/financials`) — Income/expense tracking, fiscal year summary
+- **Impact Cascade** (`/admin/impact`) — Novel Impact Cascade Algorithm tracker
+- **Skills Gap** (`/admin/skills-gap`) — Novel Community Skills Gap Analyzer
+- **Activity Log** (`/admin/activity`) — Admin action audit trail
+
+## Novel Systems
+
+### Impact Cascade Algorithm v1.0
+Multi-order economic ripple effect analysis that traces how trade education creates cascading community value. Unlike simple output counting, it quantifies:
+- 1st Order: Direct student earnings, project revenue, certification value
+- 2nd Order: Jobs created by graduates, community projects, local economic multiplier
+- 3rd Order: Generational skill transfer, tax revenue, long-term community infrastructure
+Uses configurable economic multipliers (salary 1.8x, projects $15K, hires $45K, community $75K, etc.)
+
+### Community Skills Gap Analyzer v1.0
+Workforce demand-supply analysis for the DC metro area that calculates urgency scores based on gap percentage (30%), growth rate (30%), wage potential (20%), and projected openings (20%). Cross-references with program graduate outcomes to recommend capacity expansions and strategic priorities. Covers Construction, Electrical, Plumbing, Carpentry, HVAC, and AI in Trades.
 
 ## Brand Identity
 
@@ -95,19 +152,23 @@ Every package extends `tsconfig.base.json` which sets `composite: true`. The roo
 
 ### `artifacts/from-the-ground-up` (`@workspace/from-the-ground-up`)
 
-React + Vite nonprofit website with 8 pages. Uses wouter for routing, TanStack React Query for data fetching, Framer Motion for animations, and react-hook-form for forms.
+React + Vite nonprofit website with 12 public pages and 10 admin dashboard pages. Uses wouter for routing, TanStack React Query for data fetching, Framer Motion for animations, and react-hook-form for forms. Auth via @workspace/replit-auth-web.
 
 ### `artifacts/api-server` (`@workspace/api-server`)
 
-Express 5 API server with routes for programs, contacts, and testimonials.
+Express 5 API server with auth (Replit OIDC), public routes (programs, contacts, testimonials), and admin routes (dashboard, CRUD for all entities, Impact Cascade algorithm, Skills Gap Analyzer).
 
 ### `lib/db` (`@workspace/db`)
 
-Database layer with Drizzle ORM schemas for programs, contacts, and testimonials tables.
+Database layer with Drizzle ORM schemas for programs, contacts, testimonials, users, sessions, donors, donations, volunteers, financial_records, impact_metrics, and activity_log tables.
+
+### `lib/replit-auth-web` (`@workspace/replit-auth-web`)
+
+Browser auth package providing `useAuth()` hook for React components (login, logout, user state).
 
 ### `lib/api-spec` (`@workspace/api-spec`)
 
-OpenAPI 3.1 spec and Orval codegen config.
+OpenAPI 3.1 spec and Orval codegen config. Includes auth endpoints.
 
 ### `scripts` (`@workspace/scripts`)
 

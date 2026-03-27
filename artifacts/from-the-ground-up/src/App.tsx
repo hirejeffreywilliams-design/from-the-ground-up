@@ -1,4 +1,4 @@
-import { Switch, Route, Router as WouterRouter } from "wouter";
+import { Switch, Route, Router as WouterRouter, useLocation } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -17,6 +17,18 @@ import StartupGuide from "@/pages/StartupGuide";
 import Documents from "@/pages/Documents";
 import NotFound from "@/pages/not-found";
 
+import AdminLayout from "@/pages/admin/AdminLayout";
+import Dashboard from "@/pages/admin/Dashboard";
+import AdminContacts from "@/pages/admin/Contacts";
+import AdminPrograms from "@/pages/admin/Programs";
+import AdminTestimonials from "@/pages/admin/Testimonials";
+import AdminDonors from "@/pages/admin/Donors";
+import AdminVolunteers from "@/pages/admin/Volunteers";
+import AdminFinancials from "@/pages/admin/Financials";
+import AdminImpactCascade from "@/pages/admin/ImpactCascade";
+import AdminSkillsGap from "@/pages/admin/SkillsGap";
+import AdminActivityLog from "@/pages/admin/ActivityLog";
+
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
@@ -29,7 +41,33 @@ const queryClient = new QueryClient({
   },
 });
 
+function AdminRouter() {
+  return (
+    <AdminLayout>
+      <Switch>
+        <Route path="/admin" component={Dashboard} />
+        <Route path="/admin/contacts" component={AdminContacts} />
+        <Route path="/admin/programs" component={AdminPrograms} />
+        <Route path="/admin/testimonials" component={AdminTestimonials} />
+        <Route path="/admin/donors" component={AdminDonors} />
+        <Route path="/admin/volunteers" component={AdminVolunteers} />
+        <Route path="/admin/financials" component={AdminFinancials} />
+        <Route path="/admin/impact" component={AdminImpactCascade} />
+        <Route path="/admin/skills-gap" component={AdminSkillsGap} />
+        <Route path="/admin/activity" component={AdminActivityLog} />
+      </Switch>
+    </AdminLayout>
+  );
+}
+
 function Router() {
+  const [location] = useLocation();
+  const isAdmin = location.startsWith("/admin");
+
+  if (isAdmin) {
+    return <AdminRouter />;
+  }
+
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
