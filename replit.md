@@ -66,6 +66,8 @@ artifacts-monorepo/
 - **Governance** (`/governance`) — Board of directors, core values, governance documents links
 - **Bylaws** (`/bylaws`) — Full organizational bylaws with accordion sections (10 articles)
 - **FAQ** (`/faq`) — 12 frequently asked questions organized by category
+- **100-Year Roadmap** (`/roadmap`) — 5-phase century-long strategic roadmap (Foundation → Growth → National → Global → Legacy) with goals, milestones, metrics, and leadership structure for each phase
+- **Foundation Strategy** (`/strategy`) — Comprehensive nonprofit-to-foundation transition plan with foundation type analysis, 4-phase transition playbook, financial roadmap, and key success factors
 - **404** — Custom not found page
 
 ## Brand Identity

@@ -72,6 +72,8 @@ export default function Footer() {
               <li><Link href="/bylaws" className="hover:text-primary transition-colors">Bylaws</Link></li>
               <li><Link href="/faq" className="hover:text-primary transition-colors">FAQ</Link></li>
               <li><Link href="/donate" className="hover:text-primary transition-colors">Donate</Link></li>
+              <li><Link href="/roadmap" className="hover:text-primary transition-colors">100-Year Roadmap</Link></li>
+              <li><Link href="/strategy" className="hover:text-primary transition-colors">Foundation Strategy</Link></li>
             </ul>
           </div>
           

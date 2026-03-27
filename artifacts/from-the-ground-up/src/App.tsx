@@ -11,6 +11,8 @@ import Donate from "@/pages/Donate";
 import Bylaws from "@/pages/Bylaws";
 import Governance from "@/pages/Governance";
 import FAQ from "@/pages/FAQ";
+import Roadmap from "@/pages/Roadmap";
+import FoundationStrategy from "@/pages/FoundationStrategy";
 import NotFound from "@/pages/not-found";
 
 import Navbar from "@/components/layout/Navbar";
@@ -39,6 +41,8 @@ function Router() {
           <Route path="/bylaws" component={Bylaws} />
           <Route path="/governance" component={Governance} />
           <Route path="/faq" component={FAQ} />
+          <Route path="/roadmap" component={Roadmap} />
+          <Route path="/strategy" component={FoundationStrategy} />
           <Route component={NotFound} />
         </Switch>
       </main>

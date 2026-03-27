@@ -27,6 +27,8 @@ export default function Navbar() {
     { name: "Governance", path: "/governance" },
     { name: "Bylaws", path: "/bylaws" },
     { name: "FAQ", path: "/faq" },
+    { name: "100-Year Roadmap", path: "/roadmap" },
+    { name: "Foundation Strategy", path: "/strategy" },
   ];
 
   return (
