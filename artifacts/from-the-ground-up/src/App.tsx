@@ -2,6 +2,7 @@ import { Switch, Route, Router as WouterRouter, useLocation } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { lazy, Suspense } from "react";
 
 import Home from "@/pages/Home";
 import Programs from "@/pages/Programs";
@@ -12,17 +13,11 @@ import Bylaws from "@/pages/Bylaws";
 import Governance from "@/pages/Governance";
 import FAQ from "@/pages/FAQ";
 import Roadmap from "@/pages/Roadmap";
-import FoundationStrategy from "@/pages/FoundationStrategy";
 import StartupGuide from "@/pages/StartupGuide";
-import Documents from "@/pages/Documents";
 import Resources from "@/pages/Resources";
 import Assessment from "@/pages/Assessment";
 import CareerPathways from "@/pages/CareerPathways";
-import FundraisingPlaybook from "@/pages/FundraisingPlaybook";
-import StrategicPlan25 from "@/pages/StrategicPlan25";
-import ComplianceGuide from "@/pages/ComplianceGuide";
 import StudentEarningHub from "@/pages/StudentEarningHub";
-import GrantApplications from "@/pages/GrantApplications";
 import NotFound from "@/pages/not-found";
 
 import AdminLayout from "@/pages/admin/AdminLayout";
@@ -43,6 +38,13 @@ import AdminOwnersVault from "@/pages/admin/OwnersVault";
 import AdminGuide from "@/pages/admin/AdminGuide";
 import AdminDMVPartnerships from "@/pages/admin/DMVPartnerships";
 
+const GrantApplications = lazy(() => import("@/pages/GrantApplications"));
+const FundraisingPlaybook = lazy(() => import("@/pages/FundraisingPlaybook"));
+const StrategicPlan25 = lazy(() => import("@/pages/StrategicPlan25"));
+const FoundationStrategy = lazy(() => import("@/pages/FoundationStrategy"));
+const ComplianceGuide = lazy(() => import("@/pages/ComplianceGuide"));
+const Documents = lazy(() => import("@/pages/Documents"));
+
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
@@ -54,6 +56,14 @@ const queryClient = new QueryClient({
     },
   },
 });
+
+function VaultFallback() {
+  return (
+    <div className="flex items-center justify-center h-64">
+      <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin" />
+    </div>
+  );
+}
 
 function AdminRouter() {
   return (
@@ -73,12 +83,12 @@ function AdminRouter() {
         <Route path="/admin/skills-gap" component={AdminSkillsGap} />
         <Route path="/admin/activity" component={AdminActivityLog} />
         <Route path="/admin/vault" component={AdminOwnersVault} />
-        <Route path="/admin/vault/grants" component={GrantApplications} />
-        <Route path="/admin/vault/fundraising" component={FundraisingPlaybook} />
-        <Route path="/admin/vault/strategic-plan" component={StrategicPlan25} />
-        <Route path="/admin/vault/strategy" component={FoundationStrategy} />
-        <Route path="/admin/vault/compliance" component={ComplianceGuide} />
-        <Route path="/admin/vault/documents" component={Documents} />
+        <Route path="/admin/vault/grants">{() => <Suspense fallback={<VaultFallback />}><GrantApplications /></Suspense>}</Route>
+        <Route path="/admin/vault/fundraising">{() => <Suspense fallback={<VaultFallback />}><FundraisingPlaybook /></Suspense>}</Route>
+        <Route path="/admin/vault/strategic-plan">{() => <Suspense fallback={<VaultFallback />}><StrategicPlan25 /></Suspense>}</Route>
+        <Route path="/admin/vault/strategy">{() => <Suspense fallback={<VaultFallback />}><FoundationStrategy /></Suspense>}</Route>
+        <Route path="/admin/vault/compliance">{() => <Suspense fallback={<VaultFallback />}><ComplianceGuide /></Suspense>}</Route>
+        <Route path="/admin/vault/documents">{() => <Suspense fallback={<VaultFallback />}><Documents /></Suspense>}</Route>
         <Route path="/admin/guide" component={AdminGuide} />
         <Route path="/admin/partnerships" component={AdminDMVPartnerships} />
       </Switch>
