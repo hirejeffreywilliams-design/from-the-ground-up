@@ -1,4 +1,4 @@
-import { Switch, Route, Router as WouterRouter, useLocation } from "wouter";
+import { Switch, Route, Router as WouterRouter, useLocation, Redirect } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -123,6 +123,12 @@ function Router() {
           <Route path="/assessment" component={Assessment} />
           <Route path="/careers" component={CareerPathways} />
           <Route path="/earn" component={StudentEarningHub} />
+          <Route path="/fundraising">{() => <Redirect to="/admin/vault/fundraising" />}</Route>
+          <Route path="/grant-applications">{() => <Redirect to="/admin/vault/grants" />}</Route>
+          <Route path="/strategic-plan">{() => <Redirect to="/admin/vault/strategic-plan" />}</Route>
+          <Route path="/strategy">{() => <Redirect to="/admin/vault/strategy" />}</Route>
+          <Route path="/compliance-guide">{() => <Redirect to="/admin/vault/compliance" />}</Route>
+          <Route path="/documents">{() => <Redirect to="/admin/vault/documents" />}</Route>
           <Route component={NotFound} />
         </Switch>
       </main>
