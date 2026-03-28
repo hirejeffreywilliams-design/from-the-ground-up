@@ -374,7 +374,7 @@ export default function StrategicPlan25() {
               className={`p-4 rounded-xl text-left transition-all ${
                 activePhase === i
                   ? "bg-primary text-white shadow-lg shadow-primary/20"
-                  : "bg-white/5 border border-white/10 text-white/60 hover:text-white hover:bg-white/10"
+                  : "glass-panel text-foreground/60 hover:text-foreground hover:bg-white/40"
               }`}
             >
               <div className="text-xs font-bold uppercase tracking-wider opacity-70 mb-1">{phase.years.split("(")[0]}</div>
@@ -399,34 +399,34 @@ export default function StrategicPlan25() {
               <div className={`bg-gradient-to-r ${phase.color} border border-white/10 rounded-2xl p-8`}>
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
                   <div>
-                    <h2 className="text-3xl font-display font-black text-white">{phase.name}</h2>
-                    <p className="text-white/60 text-lg">{phase.years} — "{phase.theme}"</p>
+                    <h2 className="text-3xl font-display font-black text-foreground">{phase.name}</h2>
+                    <p className="text-foreground/60 text-lg">{phase.years} — "{phase.theme}"</p>
                   </div>
                   <div className="flex gap-4">
                     <div className="text-center px-4 py-2 bg-black/20 rounded-xl">
                       <div className="text-xl font-display font-black text-primary">{phase.revenue}</div>
-                      <div className="text-xs text-white/50 uppercase tracking-wider">Revenue</div>
+                      <div className="text-xs text-foreground/50 uppercase tracking-wider">Revenue</div>
                     </div>
                     <div className="text-center px-4 py-2 bg-black/20 rounded-xl">
-                      <div className="text-xl font-display font-black text-white">{phase.students}</div>
-                      <div className="text-xs text-white/50 uppercase tracking-wider">Students/Year</div>
+                      <div className="text-xl font-display font-black text-foreground">{phase.students}</div>
+                      <div className="text-xs text-foreground/50 uppercase tracking-wider">Students/Year</div>
                     </div>
                     <div className="text-center px-4 py-2 bg-black/20 rounded-xl">
-                      <div className="text-xl font-display font-black text-white">{phase.staff}</div>
-                      <div className="text-xs text-white/50 uppercase tracking-wider">Staff</div>
+                      <div className="text-xl font-display font-black text-foreground">{phase.staff}</div>
+                      <div className="text-xs text-foreground/50 uppercase tracking-wider">Staff</div>
                     </div>
                   </div>
                 </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
-                  <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <div className="glass-panel rounded-2xl p-6">
+                  <h3 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
                     <CheckCircle size={18} className="text-primary" /> Key Milestones
                   </h3>
                   <ul className="space-y-3">
                     {phase.milestones.map((m, i) => (
-                      <li key={i} className="flex items-start gap-2 text-white/70 text-sm">
+                      <li key={i} className="flex items-start gap-2 text-foreground/70 text-sm">
                         <Star size={14} className="text-amber-400 mt-0.5 flex-shrink-0" />
                         {m}
                       </li>
@@ -434,13 +434,13 @@ export default function StrategicPlan25() {
                   </ul>
                 </div>
 
-                <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
-                  <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <div className="glass-panel rounded-2xl p-6">
+                  <h3 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
                     <GraduationCap size={18} className="text-primary" /> Programs & Services
                   </h3>
                   <ul className="space-y-3">
                     {phase.programs.map((p, i) => (
-                      <li key={i} className="flex items-start gap-2 text-white/70 text-sm">
+                      <li key={i} className="flex items-start gap-2 text-foreground/70 text-sm">
                         <Briefcase size={14} className="text-green-400 mt-0.5 flex-shrink-0" />
                         {p}
                       </li>
@@ -450,33 +450,33 @@ export default function StrategicPlan25() {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
-                  <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <div className="glass-panel rounded-2xl p-6">
+                  <h3 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
                     <Building2 size={18} className="text-primary" /> Facilities
                   </h3>
-                  <p className="text-white/70 text-sm leading-relaxed">{phase.facilities}</p>
+                  <p className="text-foreground/70 text-sm leading-relaxed">{phase.facilities}</p>
                 </div>
 
-                <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
-                  <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <div className="glass-panel rounded-2xl p-6">
+                  <h3 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
                     <Shield size={18} className="text-amber-400" /> Risks & Mitigation
                   </h3>
                   <ul className="space-y-3">
                     {phase.risks.map((r, i) => (
-                      <li key={i} className="text-white/70 text-sm leading-relaxed">
+                      <li key={i} className="text-foreground/70 text-sm leading-relaxed">
                         <span className="text-amber-400">⚠</span> {r}
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
-                  <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <div className="glass-panel rounded-2xl p-6">
+                  <h3 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
                     <Target size={18} className="text-primary" /> Key Performance Indicators
                   </h3>
                   <ul className="space-y-3">
                     {phase.kpis.map((k, i) => (
-                      <li key={i} className="flex items-start gap-2 text-white/70 text-sm">
+                      <li key={i} className="flex items-start gap-2 text-foreground/70 text-sm">
                         <TrendingUp size={14} className="text-green-400 mt-0.5 flex-shrink-0" />
                         {k}
                       </li>
@@ -502,15 +502,15 @@ export default function StrategicPlan25() {
                 key={section.category}
                 {...fadeIn}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="bg-white/5 border border-white/10 rounded-2xl p-6"
+                className="glass-panel rounded-2xl p-6"
               >
-                <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <h3 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
                   <section.icon size={18} className="text-primary" />
                   {section.category}
                 </h3>
                 <ul className="space-y-3">
                   {section.items.map((item, j) => (
-                    <li key={j} className="text-white/60 text-sm leading-relaxed border-l-2 border-primary/30 pl-3">
+                    <li key={j} className="text-foreground/60 text-sm leading-relaxed border-l-2 border-primary/30 pl-3">
                       {item}
                     </li>
                   ))}
@@ -521,17 +521,17 @@ export default function StrategicPlan25() {
         </motion.div>
 
         <motion.div {...fadeIn} className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 border border-primary/20 rounded-2xl p-8 md:p-12">
+          <div className="section-crimson rounded-2xl p-8 md:p-12">
             <h3 className="text-3xl font-display font-bold text-white mb-4">This Plan Is a Living Document</h3>
-            <p className="text-white/70 max-w-2xl mx-auto mb-8">
+            <p className="text-white/80 max-w-2xl mx-auto mb-8">
               Review and update this strategic plan annually with your board. Adjust timelines based on actual performance,
               funding secured, and market conditions. The 25-year vision guides direction; the annual plan drives execution.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/admin/vault/fundraising" className="px-8 py-4 bg-primary text-white font-bold uppercase tracking-wider hover:bg-primary/90 transition-colors flex items-center gap-2">
+              <Link href="/admin/vault/fundraising" className="px-8 py-4 bg-white text-primary font-bold uppercase tracking-wider hover:bg-white/90 transition-colors flex items-center gap-2 rounded-lg">
                 Fundraising Playbook <DollarSign size={18} />
               </Link>
-              <Link href="/admin/vault/compliance" className="px-8 py-4 bg-white/10 text-white font-bold uppercase tracking-wider hover:bg-white/20 transition-colors flex items-center gap-2">
+              <Link href="/admin/vault/compliance" className="px-8 py-4 bg-white/15 text-white font-bold uppercase tracking-wider hover:bg-white/25 transition-colors flex items-center gap-2 rounded-lg border border-white/20">
                 Compliance Guide <Shield size={18} />
               </Link>
             </div>

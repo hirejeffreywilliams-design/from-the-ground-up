@@ -47,13 +47,15 @@ export default function Navbar() {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out",
-        isScrolled ? "glass-panel py-3" : "bg-transparent py-6"
+        isScrolled 
+          ? "bg-white/80 backdrop-blur-2xl shadow-lg border-b border-white/40 py-3" 
+          : "bg-transparent py-5"
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-4 group">
-            <div className="relative w-12 h-12 overflow-hidden bg-white/90 shadow-xl border border-white/50 group-hover:shadow-2xl transition-all duration-300 flex items-center justify-center" style={{ borderRadius: '4px 16px 4px 16px' }}>
+            <div className="relative w-12 h-12 overflow-hidden bg-white shadow-xl border border-white/50 group-hover:shadow-2xl transition-all duration-300 flex items-center justify-center" style={{ borderRadius: '4px 16px 4px 16px' }}>
               <img 
                 src={`${import.meta.env.BASE_URL}images/logo.png`} 
                 alt="From The Ground Up Logo" 
@@ -64,24 +66,28 @@ export default function Navbar() {
               <span className="font-display font-black text-xl tracking-widest text-foreground uppercase leading-none group-hover:text-primary transition-colors">
                 From The
               </span>
-              <span className="font-sans font-bold text-sm tracking-[0.2em] text-foreground/70 uppercase leading-none mt-1">
+              <span className="font-sans font-bold text-sm tracking-[0.2em] text-foreground/60 uppercase leading-none mt-1">
                 Ground Up
               </span>
             </div>
           </Link>
 
-          {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 href={link.path}
                 className={cn(
-                  "text-sm font-bold uppercase tracking-wider transition-colors hover:text-primary relative py-2",
-                  location === link.path ? "text-primary" : "text-foreground/80"
+                  "text-sm font-bold uppercase tracking-wider transition-all hover:text-primary relative py-2",
+                  location === link.path 
+                    ? "text-primary" 
+                    : "text-foreground/70 hover:text-foreground"
                 )}
               >
                 {link.name}
+                {location === link.path && (
+                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-full"></span>
+                )}
               </Link>
             ))}
 
@@ -92,8 +98,8 @@ export default function Navbar() {
             >
               <button 
                 className={cn(
-                  "text-sm font-bold uppercase tracking-wider transition-colors hover:text-primary relative py-2 flex items-center gap-1",
-                  aboutLinks.some(l => location === l.path) ? "text-primary" : "text-foreground/80"
+                  "text-sm font-bold uppercase tracking-wider transition-all hover:text-primary relative py-2 flex items-center gap-1",
+                  aboutLinks.some(l => location === l.path) ? "text-primary" : "text-foreground/70 hover:text-foreground"
                 )}
               >
                 About <ChevronDown size={14} className={cn("transition-transform", aboutDropdownOpen && "rotate-180")} />
@@ -101,13 +107,13 @@ export default function Navbar() {
               
               {aboutDropdownOpen && (
                 <div className="absolute top-full left-1/2 -translate-x-1/2 w-56 pt-2 animate-in fade-in slide-in-from-top-2">
-                  <div className="glass-panel rounded-xl overflow-hidden py-2 flex flex-col shadow-2xl">
+                  <div className="bg-white/90 backdrop-blur-2xl rounded-xl overflow-hidden py-2 flex flex-col shadow-2xl border border-white/50">
                     {aboutLinks.map((link) => (
                       <Link
                         key={link.path}
                         href={link.path}
                         className={cn(
-                          "px-4 py-2 text-sm font-semibold transition-colors hover:bg-primary/10 hover:text-primary",
+                          "px-4 py-2.5 text-sm font-semibold transition-colors hover:bg-primary/10 hover:text-primary",
                           location === link.path ? "text-primary bg-primary/5" : "text-foreground/80"
                         )}
                       >
@@ -122,30 +128,36 @@ export default function Navbar() {
             <Link
               href="/contact"
               className={cn(
-                "text-sm font-bold uppercase tracking-wider transition-colors hover:text-primary relative py-2",
-                location === "/contact" ? "text-primary" : "text-foreground/80"
+                "text-sm font-bold uppercase tracking-wider transition-all hover:text-primary relative py-2",
+                location === "/contact" 
+                  ? "text-primary" 
+                  : "text-foreground/70 hover:text-foreground"
               )}
             >
               Contact
+              {location === "/contact" && (
+                <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-full"></span>
+              )}
             </Link>
 
-            <div className="flex items-center gap-4 ml-4">
+            <div className="flex items-center gap-3 ml-4">
               <Link 
                 href="/donate"
-                className="px-6 py-2.5 rounded-none border-2 border-primary text-primary font-bold uppercase tracking-wider text-sm hover:bg-primary hover:text-white transition-all duration-300"
+                className="px-6 py-2.5 border-2 border-primary text-primary font-bold uppercase tracking-wider text-sm hover:bg-primary hover:text-white transition-all duration-300"
+                style={{ borderRadius: '4px 12px 4px 12px' }}
               >
                 Donate
               </Link>
               <Link 
                 href="/contact"
-                className="px-6 py-2.5 rounded-none bg-foreground text-background font-bold uppercase tracking-wider text-sm hover:bg-primary hover:text-primary-foreground shadow-xl transition-all duration-300"
+                className="px-6 py-2.5 bg-primary text-white font-bold uppercase tracking-wider text-sm hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl glow-primary"
+                style={{ borderRadius: '12px 4px 12px 4px' }}
               >
                 Enroll Now
               </Link>
             </div>
           </nav>
 
-          {/* Mobile Menu Button */}
           <button
             className="md:hidden p-2 text-foreground"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -155,9 +167,8 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Nav */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 glass-panel border-t border-border/50 animate-in slide-in-from-top-2 max-h-[calc(100vh-80px)] overflow-y-auto">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-2xl border-t border-white/40 shadow-2xl animate-in slide-in-from-top-2 max-h-[calc(100vh-80px)] overflow-y-auto">
           <div className="px-4 py-4 flex flex-col">
             {navLinks.map((link) => (
               <Link
@@ -209,13 +220,15 @@ export default function Navbar() {
                 href="/donate"
                 onClick={() => setMobileMenuOpen(false)}
                 className="w-full py-3.5 text-center border-2 border-primary text-primary font-bold uppercase tracking-wider text-sm hover:bg-primary hover:text-white transition-all"
+                style={{ borderRadius: '4px 12px 4px 12px' }}
               >
                 Donate
               </Link>
               <Link 
                 href="/contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full py-3.5 text-center bg-foreground text-background font-bold uppercase tracking-wider text-sm hover:bg-primary hover:text-primary-foreground transition-all"
+                className="w-full py-3.5 text-center bg-primary text-white font-bold uppercase tracking-wider text-sm hover:bg-primary/90 transition-all shadow-lg"
+                style={{ borderRadius: '12px 4px 12px 4px' }}
               >
                 Enroll Now
               </Link>

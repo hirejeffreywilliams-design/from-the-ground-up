@@ -643,14 +643,14 @@ function GrantDocumentCard({ doc, index }: { doc: GrantDocument; index: number }
     <motion.div
       {...fadeIn}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="bg-white/5 border border-white/10 backdrop-blur-sm rounded-2xl overflow-hidden"
+      className="glass-panel rounded-2xl overflow-hidden"
     >
       <div className="p-6">
         <div className="flex items-start justify-between gap-4 mb-3">
           <div>
             <span className="text-xs font-bold uppercase tracking-wider text-primary">{doc.type}</span>
-            <h3 className="text-xl font-display font-bold text-white mt-1">{doc.title}</h3>
-            <p className="text-sm text-white/50 mt-1">{doc.funder}</p>
+            <h3 className="text-xl font-display font-bold text-foreground mt-1">{doc.title}</h3>
+            <p className="text-sm text-foreground/50 mt-1">{doc.funder}</p>
           </div>
           <div className="text-right flex-shrink-0">
             <div className="text-2xl font-display font-black text-primary">{doc.amount}</div>
@@ -665,7 +665,7 @@ function GrantDocumentCard({ doc, index }: { doc: GrantDocument; index: number }
             {expanded ? "Hide Document" : "View Complete Document"}
             {expanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
           </button>
-          <span className="text-xs text-white/40">{doc.sections.length} sections</span>
+          <span className="text-xs text-foreground/40">{doc.sections.length} sections</span>
         </div>
       </div>
 
@@ -674,7 +674,7 @@ function GrantDocumentCard({ doc, index }: { doc: GrantDocument; index: number }
           {doc.sections.map((section, i) => (
             <div key={i} className="border-b border-white/5 p-6">
               <h4 className="text-lg font-bold text-primary mb-4">{section.heading}</h4>
-              <div className="bg-black/20 border border-white/10 rounded-xl p-5 text-white/80 text-sm leading-relaxed whitespace-pre-line font-mono">
+              <div className="bg-black/20 border border-white/10 rounded-xl p-5 text-foreground/80 text-sm leading-relaxed whitespace-pre-line font-mono">
                 {section.content}
               </div>
             </div>
@@ -715,8 +715,8 @@ export default function GrantApplications() {
           <div className="flex items-start gap-3">
             <CheckCircle size={24} className="text-green-400 flex-shrink-0 mt-1" />
             <div>
-              <h3 className="text-lg font-bold text-white mb-2">These Documents Are Ready to Use</h3>
-              <p className="text-white/70">
+              <h3 className="text-lg font-bold text-foreground mb-2">These Documents Are Ready to Use</h3>
+              <p className="text-foreground/70">
                 Each application is pre-written with FTGU's mission, programs, and differentiators. Simply replace
                 bracketed items like [AMOUNT], [DATE], and [PHONE] with actual information. Have a grant writer or
                 attorney review before submitting.
@@ -732,17 +732,17 @@ export default function GrantApplications() {
         </div>
 
         <motion.div {...fadeIn} className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 border border-primary/20 rounded-2xl p-8 md:p-12">
+          <div className="section-crimson rounded-2xl p-8 md:p-12">
             <h3 className="text-3xl font-display font-bold text-white mb-4">Need More Funding Strategies?</h3>
-            <p className="text-white/70 max-w-2xl mx-auto mb-8">
+            <p className="text-white/80 max-w-2xl mx-auto mb-8">
               These applications are part of FTGU's comprehensive fundraising playbook with 12+ funding sources,
               a 12-month calendar, and 10-year revenue projections.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/admin/vault/fundraising" className="px-8 py-4 bg-primary text-white font-bold uppercase tracking-wider hover:bg-primary/90 transition-colors flex items-center gap-2">
+              <Link href="/admin/vault/fundraising" className="px-8 py-4 bg-white text-primary font-bold uppercase tracking-wider hover:bg-white/90 transition-colors flex items-center gap-2 rounded-lg">
                 Fundraising Playbook <DollarSign size={18} />
               </Link>
-              <Link href="/admin/vault/documents" className="px-8 py-4 bg-white/10 text-white font-bold uppercase tracking-wider hover:bg-white/20 transition-colors flex items-center gap-2">
+              <Link href="/admin/vault/documents" className="px-8 py-4 bg-white/15 text-white font-bold uppercase tracking-wider hover:bg-white/25 transition-colors flex items-center gap-2 rounded-lg border border-white/20">
                 All Documents <FileText size={18} />
               </Link>
             </div>

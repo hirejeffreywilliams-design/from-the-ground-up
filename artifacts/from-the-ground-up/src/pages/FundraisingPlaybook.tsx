@@ -481,7 +481,7 @@ function SourceCard({ source, index }: { source: FundingSource; index: number })
     <motion.div
       {...fadeIn}
       transition={{ duration: 0.5, delay: index * 0.05 }}
-      className="bg-white/5 border border-white/10 backdrop-blur-sm rounded-2xl overflow-hidden"
+      className="glass-panel rounded-2xl overflow-hidden"
     >
       <div className="p-6">
         <div className="flex items-start justify-between gap-4 mb-4">
@@ -490,19 +490,19 @@ function SourceCard({ source, index }: { source: FundingSource; index: number })
               <span className={`text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full border ${priorityColors[source.priority]}`}>
                 {source.priority} priority
               </span>
-              <span className="text-xs font-semibold uppercase tracking-wider text-white/50">
+              <span className="text-xs font-semibold uppercase tracking-wider text-foreground/50">
                 {source.type}
               </span>
             </div>
-            <h3 className="text-xl font-display font-bold text-white">{source.name}</h3>
+            <h3 className="text-xl font-display font-bold text-foreground">{source.name}</h3>
           </div>
           <div className="text-right">
             <div className="text-2xl font-display font-black text-primary">{source.amount}</div>
-            <div className="text-xs text-white/50 mt-1">{source.deadline}</div>
+            <div className="text-xs text-foreground/50 mt-1">{source.deadline}</div>
           </div>
         </div>
 
-        <p className="text-white/70 mb-4 leading-relaxed">{source.description}</p>
+        <p className="text-foreground/70 mb-4 leading-relaxed">{source.description}</p>
 
         <button
           onClick={() => setExpanded(!expanded)}
@@ -516,10 +516,10 @@ function SourceCard({ source, index }: { source: FundingSource; index: number })
       {expanded && (
         <div className="border-t border-white/10 p-6 space-y-6">
           <div>
-            <h4 className="text-sm font-bold uppercase tracking-wider text-white mb-3">Eligibility Requirements</h4>
+            <h4 className="text-sm font-bold uppercase tracking-wider text-foreground mb-3">Eligibility Requirements</h4>
             <ul className="space-y-2">
               {source.eligibility.map((req, i) => (
-                <li key={i} className="flex items-start gap-2 text-white/70 text-sm">
+                <li key={i} className="flex items-start gap-2 text-foreground/70 text-sm">
                   <CheckCircle size={16} className="text-green-400 mt-0.5 flex-shrink-0" />
                   {req}
                 </li>
@@ -528,10 +528,10 @@ function SourceCard({ source, index }: { source: FundingSource; index: number })
           </div>
 
           <div>
-            <h4 className="text-sm font-bold uppercase tracking-wider text-white mb-3">Step-by-Step Application Process</h4>
+            <h4 className="text-sm font-bold uppercase tracking-wider text-foreground mb-3">Step-by-Step Application Process</h4>
             <ol className="space-y-2">
               {source.applicationSteps.map((step, i) => (
-                <li key={i} className="flex items-start gap-3 text-white/70 text-sm">
+                <li key={i} className="flex items-start gap-3 text-foreground/70 text-sm">
                   <span className="w-6 h-6 rounded-full bg-primary/20 text-primary text-xs font-bold flex items-center justify-center flex-shrink-0">
                     {i + 1}
                   </span>
@@ -542,19 +542,19 @@ function SourceCard({ source, index }: { source: FundingSource; index: number })
           </div>
 
           <div>
-            <h4 className="text-sm font-bold uppercase tracking-wider text-white mb-3">
+            <h4 className="text-sm font-bold uppercase tracking-wider text-foreground mb-3">
               Pre-Written Narrative / Proposal Language
             </h4>
-            <div className="bg-black/20 border border-white/10 rounded-xl p-5 text-white/80 text-sm leading-relaxed whitespace-pre-line font-mono">
+            <div className="bg-black/20 border border-white/10 rounded-xl p-5 text-foreground/80 text-sm leading-relaxed whitespace-pre-line font-mono">
               {source.narrative}
             </div>
-            <p className="text-xs text-white/40 mt-2 italic">
+            <p className="text-xs text-foreground/40 mt-2 italic">
               * Replace bracketed items [AMOUNT], [NUMBER], etc. with actual figures before submitting.
             </p>
           </div>
 
           {source.contactInfo && (
-            <div className="flex items-center gap-2 text-sm text-white/60">
+            <div className="flex items-center gap-2 text-sm text-foreground/60">
               <Mail size={14} />
               <span>Contact: {source.contactInfo}</span>
             </div>
@@ -601,7 +601,7 @@ export default function FundraisingPlaybook() {
           </p>
         </motion.div>
 
-        <motion.div {...fadeIn} className="bg-white/5 border border-white/10 backdrop-blur-sm rounded-2xl p-4 mb-8">
+        <motion.div {...fadeIn} className="glass-panel rounded-2xl p-4 mb-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
             {tabs.map((tab) => (
               <button
@@ -610,7 +610,7 @@ export default function FundraisingPlaybook() {
                 className={`flex items-center justify-center gap-1.5 px-3 py-3 rounded-xl font-bold text-xs sm:text-sm uppercase tracking-wider transition-all ${
                   activeTab === tab.id
                     ? "bg-primary text-white shadow-lg"
-                    : "text-white/60 hover:text-white hover:bg-white/5"
+                    : "text-foreground/60 hover:text-foreground hover:bg-white/40"
                 }`}
               >
                 <tab.icon size={16} />
@@ -642,15 +642,15 @@ export default function FundraisingPlaybook() {
                 key={month.month}
                 {...fadeIn}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
-                className="bg-white/5 border border-white/10 backdrop-blur-sm rounded-2xl p-6"
+                className="glass-panel rounded-2xl p-6"
               >
-                <h3 className="text-lg font-display font-bold text-white mb-4 flex items-center gap-2">
+                <h3 className="text-lg font-display font-bold text-foreground mb-4 flex items-center gap-2">
                   <Calendar size={18} className="text-primary" />
                   {month.month}
                 </h3>
                 <ul className="space-y-2">
                   {month.activities.map((activity, j) => (
-                    <li key={j} className="flex items-start gap-2 text-white/70 text-sm">
+                    <li key={j} className="flex items-start gap-2 text-foreground/70 text-sm">
                       <CheckCircle size={14} className="text-primary mt-0.5 flex-shrink-0" />
                       {activity}
                     </li>
@@ -663,44 +663,44 @@ export default function FundraisingPlaybook() {
 
         {activeTab === "projections" && (
           <div className="space-y-8">
-            <motion.div {...fadeIn} className="bg-white/5 border border-white/10 backdrop-blur-sm rounded-2xl p-8">
-              <h3 className="text-2xl font-display font-bold text-white mb-6">10-Year Revenue Growth Projections</h3>
+            <motion.div {...fadeIn} className="glass-panel rounded-2xl p-8">
+              <h3 className="text-2xl font-display font-bold text-foreground mb-6">10-Year Revenue Growth Projections</h3>
               <div className="overflow-x-auto">
                 <table className="w-full text-left">
                   <thead>
                     <tr className="border-b border-white/10">
-                      <th className="py-3 px-4 text-xs font-bold uppercase tracking-wider text-white/50">Year</th>
-                      <th className="py-3 px-4 text-xs font-bold uppercase tracking-wider text-white/50">Government</th>
-                      <th className="py-3 px-4 text-xs font-bold uppercase tracking-wider text-white/50">Foundation</th>
-                      <th className="py-3 px-4 text-xs font-bold uppercase tracking-wider text-white/50">Corporate</th>
-                      <th className="py-3 px-4 text-xs font-bold uppercase tracking-wider text-white/50">Individual</th>
-                      <th className="py-3 px-4 text-xs font-bold uppercase tracking-wider text-white/50">Events</th>
+                      <th className="py-3 px-4 text-xs font-bold uppercase tracking-wider text-foreground/50">Year</th>
+                      <th className="py-3 px-4 text-xs font-bold uppercase tracking-wider text-foreground/50">Government</th>
+                      <th className="py-3 px-4 text-xs font-bold uppercase tracking-wider text-foreground/50">Foundation</th>
+                      <th className="py-3 px-4 text-xs font-bold uppercase tracking-wider text-foreground/50">Corporate</th>
+                      <th className="py-3 px-4 text-xs font-bold uppercase tracking-wider text-foreground/50">Individual</th>
+                      <th className="py-3 px-4 text-xs font-bold uppercase tracking-wider text-foreground/50">Events</th>
                       <th className="py-3 px-4 text-xs font-bold uppercase tracking-wider text-primary font-display">Total</th>
                     </tr>
                   </thead>
                   <tbody>
                     {revenueProjections.map((row) => (
                       <tr key={row.year} className="border-b border-white/5 hover:bg-white/5">
-                        <td className="py-3 px-4 font-bold text-white">{row.year}</td>
-                        <td className="py-3 px-4 text-white/70">{row.government}</td>
-                        <td className="py-3 px-4 text-white/70">{row.foundation}</td>
-                        <td className="py-3 px-4 text-white/70">{row.corporate}</td>
-                        <td className="py-3 px-4 text-white/70">{row.individual}</td>
-                        <td className="py-3 px-4 text-white/70">{row.events}</td>
+                        <td className="py-3 px-4 font-bold text-foreground">{row.year}</td>
+                        <td className="py-3 px-4 text-foreground/70">{row.government}</td>
+                        <td className="py-3 px-4 text-foreground/70">{row.foundation}</td>
+                        <td className="py-3 px-4 text-foreground/70">{row.corporate}</td>
+                        <td className="py-3 px-4 text-foreground/70">{row.individual}</td>
+                        <td className="py-3 px-4 text-foreground/70">{row.events}</td>
                         <td className="py-3 px-4 font-display font-bold text-primary text-lg">{row.total}</td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-white/40 mt-4">
+              <p className="text-xs text-foreground/40 mt-4">
                 * Projections assume successful 501(c)(3) determination, growing program capacity, and strong donor retention.
                 Revenue diversification reduces dependency on any single source.
               </p>
             </motion.div>
 
-            <motion.div {...fadeIn} className="bg-white/5 border border-white/10 backdrop-blur-sm rounded-2xl p-8">
-              <h3 className="text-2xl font-display font-bold text-white mb-6">Revenue Diversification Strategy</h3>
+            <motion.div {...fadeIn} className="glass-panel rounded-2xl p-8">
+              <h3 className="text-2xl font-display font-bold text-foreground mb-6">Revenue Diversification Strategy</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {[
                   { label: "Government Grants", target: "35–40%", description: "DOES, DOL, WIOA, federal workforce grants — reliable but requires compliance", color: "bg-blue-500" },
@@ -713,9 +713,9 @@ export default function FundraisingPlaybook() {
                   <div key={source.label} className="flex items-start gap-4">
                     <div className={`w-4 h-4 rounded-full ${source.color} mt-1 flex-shrink-0`} />
                     <div>
-                      <div className="font-bold text-white">{source.label}</div>
+                      <div className="font-bold text-foreground">{source.label}</div>
                       <div className="text-primary text-sm font-bold">{source.target} of revenue</div>
-                      <div className="text-white/60 text-sm mt-1">{source.description}</div>
+                      <div className="text-foreground/60 text-sm mt-1">{source.description}</div>
                     </div>
                   </div>
                 ))}
@@ -726,28 +726,28 @@ export default function FundraisingPlaybook() {
 
         {activeTab === "strategies" && (
           <div className="space-y-8">
-            <motion.div {...fadeIn} className="bg-white/5 border border-white/10 backdrop-blur-sm rounded-2xl p-8">
-              <h3 className="text-2xl font-display font-bold text-white mb-2">Capital Campaign: "Building Futures"</h3>
-              <p className="text-white/60 mb-8">A 3-year capital campaign to establish FTGU's permanent training facility and endowment.</p>
+            <motion.div {...fadeIn} className="glass-panel rounded-2xl p-8">
+              <h3 className="text-2xl font-display font-bold text-foreground mb-2">Capital Campaign: "Building Futures"</h3>
+              <p className="text-foreground/60 mb-8">A 3-year capital campaign to establish FTGU's permanent training facility and endowment.</p>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                 <div className="text-center p-6 bg-primary/10 border border-primary/20 rounded-xl">
                   <div className="text-4xl font-display font-black text-primary">$5M</div>
-                  <div className="text-sm font-bold uppercase tracking-wider text-white/50 mt-2">Campaign Goal</div>
+                  <div className="text-sm font-bold uppercase tracking-wider text-foreground/50 mt-2">Campaign Goal</div>
                 </div>
-                <div className="text-center p-6 bg-white/5 border border-white/10 rounded-xl">
-                  <div className="text-4xl font-display font-black text-white">3 Years</div>
-                  <div className="text-sm font-bold uppercase tracking-wider text-white/50 mt-2">Campaign Duration</div>
+                <div className="text-center p-6 glass-panel rounded-xl">
+                  <div className="text-4xl font-display font-black text-foreground">3 Years</div>
+                  <div className="text-sm font-bold uppercase tracking-wider text-foreground/50 mt-2">Campaign Duration</div>
                 </div>
-                <div className="text-center p-6 bg-white/5 border border-white/10 rounded-xl">
-                  <div className="text-4xl font-display font-black text-white">36 Months</div>
-                  <div className="text-sm font-bold uppercase tracking-wider text-white/50 mt-2">Quiet + Public Phase</div>
+                <div className="text-center p-6 glass-panel rounded-xl">
+                  <div className="text-4xl font-display font-black text-foreground">36 Months</div>
+                  <div className="text-sm font-bold uppercase tracking-wider text-foreground/50 mt-2">Quiet + Public Phase</div>
                 </div>
               </div>
 
               <div className="space-y-6">
                 <div>
-                  <h4 className="text-lg font-bold text-white mb-3">Campaign Allocation</h4>
+                  <h4 className="text-lg font-bold text-foreground mb-3">Campaign Allocation</h4>
                   <div className="space-y-3">
                     {[
                       { item: "Permanent Training Facility (lease/purchase, renovation)", amount: "$2,500,000", pct: "50%" },
@@ -759,10 +759,10 @@ export default function FundraisingPlaybook() {
                       { item: "Program Expansion", amount: "$150,000", pct: "3%" },
                     ].map((line) => (
                       <div key={line.item} className="flex items-center justify-between bg-black/20 rounded-lg px-4 py-3">
-                        <span className="text-white/80 text-sm">{line.item}</span>
+                        <span className="text-foreground/80 text-sm">{line.item}</span>
                         <div className="flex items-center gap-4">
-                          <span className="text-white/50 text-sm">{line.pct}</span>
-                          <span className="font-bold text-white">{line.amount}</span>
+                          <span className="text-foreground/50 text-sm">{line.pct}</span>
+                          <span className="font-bold text-foreground">{line.amount}</span>
                         </div>
                       </div>
                     ))}
@@ -770,7 +770,7 @@ export default function FundraisingPlaybook() {
                 </div>
 
                 <div>
-                  <h4 className="text-lg font-bold text-white mb-3">Campaign Phases</h4>
+                  <h4 className="text-lg font-bold text-foreground mb-3">Campaign Phases</h4>
                   <div className="space-y-4">
                     {[
                       {
@@ -808,12 +808,12 @@ export default function FundraisingPlaybook() {
                     ].map((phase) => (
                       <div key={phase.phase} className="bg-black/20 border border-white/10 rounded-xl p-5">
                         <div className="flex items-center justify-between mb-3">
-                          <h5 className="font-bold text-white">{phase.phase}</h5>
+                          <h5 className="font-bold text-foreground">{phase.phase}</h5>
                           <span className="text-primary font-bold text-sm">{phase.goal}</span>
                         </div>
                         <ul className="space-y-2">
                           {phase.activities.map((a, i) => (
-                            <li key={i} className="flex items-start gap-2 text-white/60 text-sm">
+                            <li key={i} className="flex items-start gap-2 text-foreground/60 text-sm">
                               <CheckCircle size={14} className="text-primary mt-0.5 flex-shrink-0" />
                               {a}
                             </li>
@@ -825,7 +825,7 @@ export default function FundraisingPlaybook() {
                 </div>
 
                 <div>
-                  <h4 className="text-lg font-bold text-white mb-3">Naming Opportunities</h4>
+                  <h4 className="text-lg font-bold text-foreground mb-3">Naming Opportunities</h4>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {[
                       { name: "Training Facility (Building)", amount: "$1,000,000+" },
@@ -842,7 +842,7 @@ export default function FundraisingPlaybook() {
                       { name: "Dedication Wall Plaque", amount: "$5,000" },
                     ].map((opp) => (
                       <div key={opp.name} className="flex items-center justify-between bg-white/5 rounded-lg px-4 py-3">
-                        <span className="text-white/80 text-sm">{opp.name}</span>
+                        <span className="text-foreground/80 text-sm">{opp.name}</span>
                         <span className="font-bold text-primary text-sm">{opp.amount}</span>
                       </div>
                     ))}
@@ -851,9 +851,9 @@ export default function FundraisingPlaybook() {
               </div>
             </motion.div>
 
-            <motion.div {...fadeIn} className="bg-white/5 border border-white/10 backdrop-blur-sm rounded-2xl p-8">
-              <h3 className="text-2xl font-display font-bold text-white mb-6">Social Enterprise Revenue Streams</h3>
-              <p className="text-white/60 mb-6">Beyond grants and donations, FTGU can generate earned revenue through these social enterprise activities:</p>
+            <motion.div {...fadeIn} className="glass-panel rounded-2xl p-8">
+              <h3 className="text-2xl font-display font-bold text-foreground mb-6">Social Enterprise Revenue Streams</h3>
+              <p className="text-foreground/60 mb-6">Beyond grants and donations, FTGU can generate earned revenue through these social enterprise activities:</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {[
                   { name: "Community Repair Services", description: "Students perform supervised home repairs for community members at below-market rates. Revenue covers materials and student stipends while building real-world experience.", revenue: "$50,000–$150,000/year" },
@@ -864,8 +864,8 @@ export default function FundraisingPlaybook() {
                   { name: "Tool Library Membership", description: "Community members pay monthly fees to access professional-grade tools, generating revenue while serving the community.", revenue: "$10,000–$30,000/year" },
                 ].map((enterprise) => (
                   <div key={enterprise.name} className="bg-black/20 border border-white/10 rounded-xl p-5">
-                    <h5 className="font-bold text-white mb-2">{enterprise.name}</h5>
-                    <p className="text-white/60 text-sm mb-3">{enterprise.description}</p>
+                    <h5 className="font-bold text-foreground mb-2">{enterprise.name}</h5>
+                    <p className="text-foreground/60 text-sm mb-3">{enterprise.description}</p>
                     <div className="text-primary font-bold text-sm">{enterprise.revenue}</div>
                   </div>
                 ))}
@@ -875,17 +875,17 @@ export default function FundraisingPlaybook() {
         )}
 
         <motion.div {...fadeIn} className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 border border-primary/20 rounded-2xl p-8 md:p-12">
+          <div className="section-crimson rounded-2xl p-8 md:p-12">
             <h3 className="text-3xl font-display font-bold text-white mb-4">Ready to Start Fundraising?</h3>
-            <p className="text-white/70 max-w-2xl mx-auto mb-8">
+            <p className="text-white/80 max-w-2xl mx-auto mb-8">
               Use these complete documents and strategies to begin building FTGU's funding base.
               Every application template is pre-written with your organization's details — just fill in the specifics and submit.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/admin/vault/documents" className="px-8 py-4 bg-primary text-white font-bold uppercase tracking-wider hover:bg-primary/90 transition-colors flex items-center gap-2">
+              <Link href="/admin/vault/documents" className="px-8 py-4 bg-white text-primary font-bold uppercase tracking-wider hover:bg-white/90 transition-colors flex items-center gap-2 rounded-lg">
                 View All Documents <FileText size={18} />
               </Link>
-              <Link href="/admin/vault/compliance" className="px-8 py-4 bg-white/10 text-white font-bold uppercase tracking-wider hover:bg-white/20 transition-colors flex items-center gap-2">
+              <Link href="/admin/vault/compliance" className="px-8 py-4 bg-white/15 text-white font-bold uppercase tracking-wider hover:bg-white/25 transition-colors flex items-center gap-2 rounded-lg border border-white/20">
                 Compliance Guide <ArrowRight size={18} />
               </Link>
             </div>

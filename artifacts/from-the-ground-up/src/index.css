@@ -42,34 +42,33 @@
 }
 
 :root {
-  /* Premium Ombre Palette */
-  --background: 20 20% 98%;      
-  --foreground: 220 15% 15%;     
+  --background: 15 30% 96%;      
+  --foreground: 220 20% 12%;     
   
   --card: 0 0% 100%;             
-  --card-foreground: 220 15% 15%;
+  --card-foreground: 220 20% 12%;
   
   --popover: 0 0% 100%;
-  --popover-foreground: 220 15% 15%;
+  --popover-foreground: 220 20% 12%;
   
-  --primary: 350 80% 45%;        /* Deep rose/crimson */
+  --primary: 350 80% 42%;
   --primary-foreground: 0 0% 100%;
   
-  --secondary: 140 25% 35%;      /* Sage/forest green */
+  --secondary: 145 30% 32%;
   --secondary-foreground: 0 0% 100%;
   
-  --muted: 220 10% 90%;          /* Light concrete */
-  --muted-foreground: 220 10% 40%;
+  --muted: 220 12% 90%;
+  --muted-foreground: 220 12% 40%;
   
-  --accent: 40 90% 50%;          /* Rich golden/amber */
-  --accent-foreground: 220 15% 15%;
+  --accent: 38 92% 50%;
+  --accent-foreground: 220 20% 12%;
   
   --destructive: 0 84% 60%;
   --destructive-foreground: 210 40% 98%;
   
-  --border: 220 10% 85%;
-  --input: 220 10% 85%;
-  --ring: 350 80% 45%;
+  --border: 220 12% 85%;
+  --input: 220 12% 85%;
+  --ring: 350 80% 42%;
   
   --radius: 1rem;
 }
@@ -87,13 +86,13 @@
   --primary: 350 80% 55%;        
   --primary-foreground: 0 0% 100%;
   
-  --secondary: 140 25% 45%;      
+  --secondary: 145 30% 45%;      
   --secondary-foreground: 0 0% 100%;
   
   --muted: 220 15% 20%;
   --muted-foreground: 220 10% 65%;
   
-  --accent: 40 90% 60%;
+  --accent: 38 92% 60%;
   --accent-foreground: 220 15% 10%;
   
   --border: 220 15% 25%;
@@ -118,21 +117,28 @@
 
 @layer utilities {
   .glass-panel {
-    @apply bg-background/70 backdrop-blur-xl border border-white/20 shadow-xl;
+    @apply bg-white/60 backdrop-blur-2xl border border-white/40 shadow-2xl;
   }
   
+  .glass-panel-dark {
+    @apply bg-black/40 backdrop-blur-2xl border border-white/10 shadow-2xl;
+  }
+
   .text-balance {
     text-wrap: balance;
   }
   
   .page-gradient {
-    /* Ombre gradient: ambient red/rose at top, warm tones mid, deep dark concrete bottom */
-    background: linear-gradient(180deg, 
-      rgba(220, 20, 60, 0.05) 0%, 
-      rgba(220, 20, 60, 0.02) 15%, 
-      rgba(245, 240, 235, 0.2) 30%, 
-      rgba(100, 105, 115, 0.4) 70%,
-      rgba(35, 40, 45, 1) 100%);
+    background: 
+      linear-gradient(180deg, 
+        hsl(15, 30%, 96%) 0%,
+        hsl(12, 25%, 93%) 8%,
+        hsl(10, 20%, 88%) 20%,
+        hsl(15, 12%, 72%) 40%,
+        hsl(220, 10%, 50%) 60%,
+        hsl(220, 15%, 28%) 80%,
+        hsl(220, 20%, 14%) 100%
+      );
   }
 
   .dark .page-gradient {
@@ -141,5 +147,37 @@
       rgba(220, 20, 60, 0.05) 15%, 
       rgba(30, 35, 45, 0.8) 50%, 
       rgba(20, 22, 25, 1) 100%);
+  }
+
+  .section-dark {
+    @apply bg-foreground text-white;
+  }
+
+  .section-crimson {
+    background: linear-gradient(135deg, hsl(350, 80%, 42%) 0%, hsl(350, 70%, 32%) 100%);
+    @apply text-white;
+  }
+
+  .glow-primary {
+    box-shadow: 0 0 60px -15px hsl(350, 80%, 42%);
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 60px -15px hsl(38, 92%, 50%);
+  }
+
+  .grain-overlay {
+    position: relative;
+  }
+  .grain-overlay::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 1;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 256px 256px;
   }
 }

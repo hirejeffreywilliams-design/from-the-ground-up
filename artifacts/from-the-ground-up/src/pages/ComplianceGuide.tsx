@@ -350,52 +350,52 @@ function ComplianceSection({ title, items, icon: Icon }: { title: string; items:
 
   return (
     <div className="mb-12">
-      <h2 className="text-2xl font-display font-bold text-white mb-6 flex items-center gap-3">
+      <h2 className="text-2xl font-display font-bold text-foreground mb-6 flex items-center gap-3">
         <Icon size={24} className="text-primary" />
         {title}
       </h2>
       <div className="space-y-4">
         {items.map((item) => (
-          <div key={item.id} className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
+          <div key={item.id} className="glass-panel rounded-2xl overflow-hidden">
             <button
               onClick={() => setExpandedId(expandedId === item.id ? null : item.id)}
               className="w-full p-6 text-left flex items-start justify-between gap-4"
             >
               <div className="flex-1">
-                <h3 className="text-lg font-bold text-white mb-1">{item.title}</h3>
+                <h3 className="text-lg font-bold text-foreground mb-1">{item.title}</h3>
                 <div className="flex flex-wrap gap-3 text-xs">
                   <span className="px-2 py-1 bg-primary/10 text-primary rounded-full font-bold">{item.agency}</span>
-                  <span className="px-2 py-1 bg-white/10 text-white/60 rounded-full">{item.frequency}</span>
-                  <span className="px-2 py-1 bg-white/10 text-white/60 rounded-full">{item.fee}</span>
+                  <span className="px-2 py-1 bg-white/10 text-foreground/60 rounded-full">{item.frequency}</span>
+                  <span className="px-2 py-1 bg-white/10 text-foreground/60 rounded-full">{item.fee}</span>
                 </div>
               </div>
-              {expandedId === item.id ? <ChevronUp size={20} className="text-white/40" /> : <ChevronDown size={20} className="text-white/40" />}
+              {expandedId === item.id ? <ChevronUp size={20} className="text-foreground/40" /> : <ChevronDown size={20} className="text-foreground/40" />}
             </button>
 
             {expandedId === item.id && (
               <div className="border-t border-white/10 p-6 space-y-5">
-                <p className="text-white/70 leading-relaxed">{item.description}</p>
+                <p className="text-foreground/70 leading-relaxed">{item.description}</p>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div className="bg-black/20 rounded-xl p-4">
-                    <div className="text-xs font-bold uppercase tracking-wider text-white/40 mb-1">Form</div>
-                    <div className="text-white font-bold text-sm">{item.form}</div>
+                    <div className="text-xs font-bold uppercase tracking-wider text-foreground/40 mb-1">Form</div>
+                    <div className="text-foreground font-bold text-sm">{item.form}</div>
                   </div>
                   <div className="bg-black/20 rounded-xl p-4">
-                    <div className="text-xs font-bold uppercase tracking-wider text-white/40 mb-1">Due Date</div>
-                    <div className="text-white font-bold text-sm">{item.dueDate}</div>
+                    <div className="text-xs font-bold uppercase tracking-wider text-foreground/40 mb-1">Due Date</div>
+                    <div className="text-foreground font-bold text-sm">{item.dueDate}</div>
                   </div>
                   <div className="bg-black/20 rounded-xl p-4">
-                    <div className="text-xs font-bold uppercase tracking-wider text-white/40 mb-1">Fee</div>
-                    <div className="text-white font-bold text-sm">{item.fee}</div>
+                    <div className="text-xs font-bold uppercase tracking-wider text-foreground/40 mb-1">Fee</div>
+                    <div className="text-foreground font-bold text-sm">{item.fee}</div>
                   </div>
                 </div>
 
                 <div>
-                  <h4 className="text-sm font-bold uppercase tracking-wider text-white mb-3">Step-by-Step Process</h4>
+                  <h4 className="text-sm font-bold uppercase tracking-wider text-foreground mb-3">Step-by-Step Process</h4>
                   <ol className="space-y-2">
                     {item.steps.map((step, i) => (
-                      <li key={i} className="flex items-start gap-3 text-white/70 text-sm">
+                      <li key={i} className="flex items-start gap-3 text-foreground/70 text-sm">
                         <span className="w-6 h-6 rounded-full bg-primary/20 text-primary text-xs font-bold flex items-center justify-center flex-shrink-0">
                           {i + 1}
                         </span>
@@ -410,17 +410,17 @@ function ComplianceSection({ title, items, icon: Icon }: { title: string; items:
                     <AlertTriangle size={16} className="text-red-400 mt-0.5 flex-shrink-0" />
                     <div>
                       <div className="text-sm font-bold text-red-400 mb-1">Consequences of Non-Compliance</div>
-                      <div className="text-white/70 text-sm">{item.consequences}</div>
+                      <div className="text-foreground/70 text-sm">{item.consequences}</div>
                     </div>
                   </div>
                 </div>
 
                 <div className="bg-green-500/10 border border-green-500/20 rounded-xl p-4">
                   <div className="flex items-start gap-2">
-                    <Star size={16} className="text-green-400 mt-0.5 flex-shrink-0" />
+                    <Star size={16} className="text-green-600 mt-0.5 flex-shrink-0" />
                     <div>
-                      <div className="text-sm font-bold text-green-400 mb-1">Pro Tips</div>
-                      <div className="text-white/70 text-sm">{item.tips}</div>
+                      <div className="text-sm font-bold text-green-700 mb-1">Pro Tips</div>
+                      <div className="text-foreground/70 text-sm">{item.tips}</div>
                     </div>
                   </div>
                 </div>
@@ -480,10 +480,10 @@ export default function ComplianceGuide() {
             { label: "Employment Law", count: employmentLaw.length, icon: Users },
             { label: "Safety/OSHA", count: safetyCompliance.length, icon: HardHat },
           ].map((stat) => (
-            <div key={stat.label} className="bg-white/5 border border-white/10 rounded-xl p-4 text-center">
+            <div key={stat.label} className="glass-panel rounded-xl p-4 text-center">
               <stat.icon size={24} className="text-primary mx-auto mb-2" />
-              <div className="text-2xl font-display font-black text-white">{stat.count}</div>
-              <div className="text-xs font-bold uppercase tracking-wider text-white/50">{stat.label}</div>
+              <div className="text-2xl font-display font-black text-foreground">{stat.count}</div>
+              <div className="text-xs font-bold uppercase tracking-wider text-foreground/50">{stat.label}</div>
             </div>
           ))}
         </motion.div>
@@ -494,26 +494,26 @@ export default function ComplianceGuide() {
         <ComplianceSection title="Safety & OSHA Compliance" items={safetyCompliance} icon={HardHat} />
 
         <motion.div {...fadeIn} className="mb-12">
-          <h2 className="text-2xl font-display font-bold text-white mb-6 flex items-center gap-3">
+          <h2 className="text-2xl font-display font-bold text-foreground mb-6 flex items-center gap-3">
             <Shield size={24} className="text-primary" />
             Insurance Requirements
           </h2>
-          <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
+          <div className="glass-panel rounded-2xl overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full text-left">
                 <thead>
                   <tr className="border-b border-white/10">
-                    <th className="py-3 px-4 text-xs font-bold uppercase tracking-wider text-white/50">Type</th>
-                    <th className="py-3 px-4 text-xs font-bold uppercase tracking-wider text-white/50">Recommended Coverage</th>
-                    <th className="py-3 px-4 text-xs font-bold uppercase tracking-wider text-white/50">Status</th>
-                    <th className="py-3 px-4 text-xs font-bold uppercase tracking-wider text-white/50">Notes</th>
+                    <th className="py-3 px-4 text-xs font-bold uppercase tracking-wider text-foreground/50">Type</th>
+                    <th className="py-3 px-4 text-xs font-bold uppercase tracking-wider text-foreground/50">Recommended Coverage</th>
+                    <th className="py-3 px-4 text-xs font-bold uppercase tracking-wider text-foreground/50">Status</th>
+                    <th className="py-3 px-4 text-xs font-bold uppercase tracking-wider text-foreground/50">Notes</th>
                   </tr>
                 </thead>
                 <tbody>
                   {insuranceRequirements.map((ins) => (
                     <tr key={ins.type} className="border-b border-white/5 hover:bg-white/5">
-                      <td className="py-3 px-4 font-bold text-white text-sm">{ins.type}</td>
-                      <td className="py-3 px-4 text-white/70 text-sm">{ins.coverage}</td>
+                      <td className="py-3 px-4 font-bold text-foreground text-sm">{ins.type}</td>
+                      <td className="py-3 px-4 text-foreground/70 text-sm">{ins.coverage}</td>
                       <td className="py-3 px-4">
                         <span className={`text-xs font-bold uppercase tracking-wider px-2 py-1 rounded-full ${
                           ins.required === "Legally required" ? "bg-red-500/20 text-red-400" :
@@ -523,7 +523,7 @@ export default function ComplianceGuide() {
                           {ins.required}
                         </span>
                       </td>
-                      <td className="py-3 px-4 text-white/60 text-sm max-w-xs">{ins.notes}</td>
+                      <td className="py-3 px-4 text-foreground/60 text-sm max-w-xs">{ins.notes}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -533,11 +533,11 @@ export default function ComplianceGuide() {
         </motion.div>
 
         <motion.div {...fadeIn} className="mb-12">
-          <h2 className="text-2xl font-display font-bold text-white mb-6 flex items-center gap-3">
+          <h2 className="text-2xl font-display font-bold text-foreground mb-6 flex items-center gap-3">
             <Calendar size={24} className="text-primary" />
             Annual Compliance Calendar
           </h2>
-          <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
+          <div className="glass-panel rounded-2xl p-6">
             <div className="space-y-4">
               {[
                 { month: "January", tasks: ["Begin Form 990 preparation", "Review and update insurance policies", "Check SAM.gov registration renewal date", "Workers' comp audit (if applicable)"] },
@@ -559,8 +559,8 @@ export default function ComplianceGuide() {
                   </div>
                   <ul className="flex-1 space-y-1">
                     {month.tasks.map((task, i) => (
-                      <li key={i} className="flex items-start gap-2 text-white/60 text-sm">
-                        <CheckCircle size={12} className="text-white/30 mt-1 flex-shrink-0" />
+                      <li key={i} className="flex items-start gap-2 text-foreground/60 text-sm">
+                        <CheckCircle size={12} className="text-foreground/30 mt-1 flex-shrink-0" />
                         {task}
                       </li>
                     ))}
@@ -572,17 +572,17 @@ export default function ComplianceGuide() {
         </motion.div>
 
         <motion.div {...fadeIn} className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 border border-primary/20 rounded-2xl p-8 md:p-12">
+          <div className="section-crimson rounded-2xl p-8 md:p-12">
             <h3 className="text-3xl font-display font-bold text-white mb-4">Stay Compliant, Stay Protected</h3>
-            <p className="text-white/70 max-w-2xl mx-auto mb-8">
+            <p className="text-white/80 max-w-2xl mx-auto mb-8">
               Use the admin Compliance Calendar to track all deadlines automatically.
               Consult with a DC nonprofit attorney and CPA annually to ensure full compliance.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/admin/vault/fundraising" className="px-8 py-4 bg-primary text-white font-bold uppercase tracking-wider hover:bg-primary/90 transition-colors flex items-center gap-2">
+              <Link href="/admin/vault/fundraising" className="px-8 py-4 bg-white text-primary font-bold uppercase tracking-wider hover:bg-white/90 transition-colors flex items-center gap-2 rounded-lg">
                 Fundraising Playbook <DollarSign size={18} />
               </Link>
-              <Link href="/admin/vault/strategic-plan" className="px-8 py-4 bg-white/10 text-white font-bold uppercase tracking-wider hover:bg-white/20 transition-colors flex items-center gap-2">
+              <Link href="/admin/vault/strategic-plan" className="px-8 py-4 bg-white/15 text-white font-bold uppercase tracking-wider hover:bg-white/25 transition-colors flex items-center gap-2 rounded-lg border border-white/20">
                 25-Year Strategic Plan <Target size={18} />
               </Link>
             </div>

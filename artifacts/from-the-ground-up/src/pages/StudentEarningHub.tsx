@@ -223,7 +223,7 @@ export default function StudentEarningHub() {
     <div className="min-h-screen pt-32 pb-24 relative z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div {...fadeIn} className="text-center mb-16">
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 text-green-400 text-sm font-bold uppercase tracking-wider mb-6">
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/15 text-green-700 text-sm font-bold uppercase tracking-wider mb-6">
             <DollarSign size={16} /> Start Earning Now
           </span>
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-black text-foreground mb-6">
@@ -242,10 +242,10 @@ export default function StudentEarningHub() {
             { label: "Stadium Jobs", value: "5,000+", sub: "DC Commanders project" },
             { label: "Business Owner", value: "$100K+/yr", sub: "With FTGU support" },
           ].map((stat) => (
-            <div key={stat.label} className="bg-white/5 border border-white/10 rounded-xl p-4 sm:p-5 text-center">
+            <div key={stat.label} className="glass-panel rounded-xl p-4 sm:p-5 text-center">
               <div className="text-xl sm:text-3xl font-display font-black text-primary">{stat.value}</div>
-              <div className="text-xs sm:text-sm font-bold text-white mt-1">{stat.label}</div>
-              <div className="text-[10px] sm:text-xs text-white/50 mt-1">{stat.sub}</div>
+              <div className="text-xs sm:text-sm font-bold text-foreground mt-1">{stat.label}</div>
+              <div className="text-[10px] sm:text-xs text-foreground/50 mt-1">{stat.sub}</div>
             </div>
           ))}
         </motion.div>
@@ -266,7 +266,7 @@ export default function StudentEarningHub() {
                 className={`p-3 rounded-xl text-center transition-all ${
                   activeTrade === i
                     ? "bg-primary text-white shadow-lg shadow-primary/20"
-                    : "bg-white/5 border border-white/10 text-white/60 hover:text-white hover:bg-white/10"
+                    : "glass-panel text-foreground/60 hover:text-foreground hover:bg-white/80"
                 }`}
               >
                 <track.icon size={20} className="mx-auto mb-1" />
@@ -284,22 +284,22 @@ export default function StudentEarningHub() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className={`bg-gradient-to-r ${track.color} border border-white/10 rounded-2xl p-6 mb-6`}>
+                <div className="bg-foreground rounded-2xl p-6 mb-6">
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                    <h3 className="text-2xl font-display font-bold text-white flex items-center gap-3">
+                    <h3 className="text-xl sm:text-2xl font-display font-bold text-white flex items-center gap-3">
                       <track.icon size={28} className="text-primary" />
                       {track.name} — Earning Potential
                     </h3>
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                      <div className="text-center px-2 py-2 bg-black/20 rounded-lg">
+                      <div className="text-center px-2 py-2 bg-white/10 rounded-lg">
                         <div className="text-xs sm:text-sm font-bold text-white">{track.apprenticeWage}</div>
                         <div className="text-[10px] sm:text-xs text-white/50">Apprentice</div>
                       </div>
-                      <div className="text-center px-2 py-2 bg-black/20 rounded-lg">
+                      <div className="text-center px-2 py-2 bg-white/10 rounded-lg">
                         <div className="text-xs sm:text-sm font-bold text-white">{track.journeyWage}</div>
                         <div className="text-[10px] sm:text-xs text-white/50">Journeyman</div>
                       </div>
-                      <div className="text-center px-2 py-2 bg-black/20 rounded-lg">
+                      <div className="text-center px-2 py-2 bg-white/10 rounded-lg">
                         <div className="text-xs sm:text-sm font-bold text-primary">{track.masterWage}</div>
                         <div className="text-[10px] sm:text-xs text-white/50">Master</div>
                       </div>
@@ -313,31 +313,31 @@ export default function StudentEarningHub() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {track.opportunities.map((opp, i) => (
-                    <div key={opp.name} className="bg-white/5 border border-white/10 rounded-2xl p-6">
+                    <div key={opp.name} className="glass-panel rounded-2xl p-6">
                       <div className="flex items-start justify-between mb-3">
                         <div>
-                          <h4 className="text-lg font-bold text-white">{opp.name}</h4>
-                          <div className="text-xs text-white/50">{opp.tradeSkill}</div>
+                          <h4 className="text-lg font-bold text-foreground">{opp.name}</h4>
+                          <div className="text-xs text-foreground/50">{opp.tradeSkill}</div>
                         </div>
                         <div className="text-right">
                           <div className="text-lg font-display font-black text-primary">{opp.earningPotential}</div>
-                          <div className="text-xs text-white/50">Startup: {opp.startupCost}</div>
+                          <div className="text-xs text-foreground/50">Startup: {opp.startupCost}</div>
                         </div>
                       </div>
 
                       {opp.noLicenseRequired && (
-                        <span className="inline-flex items-center gap-1 text-xs font-bold text-green-400 bg-green-500/10 px-2 py-1 rounded-full mb-3">
+                        <span className="inline-flex items-center gap-1 text-xs font-bold text-green-700 bg-green-500/15 px-2 py-1 rounded-full mb-3">
                           <CheckCircle size={12} /> No License Required
                         </span>
                       )}
 
-                      <p className="text-white/60 text-sm mb-4 leading-relaxed">{opp.description}</p>
+                      <p className="text-foreground/60 text-sm mb-4 leading-relaxed">{opp.description}</p>
 
                       <div>
-                        <div className="text-xs font-bold uppercase tracking-wider text-white/40 mb-2">How to Get Started</div>
+                        <div className="text-xs font-bold uppercase tracking-wider text-foreground/40 mb-2">How to Get Started</div>
                         <ul className="space-y-1">
                           {opp.gettingStarted.map((step, j) => (
-                            <li key={j} className="flex items-start gap-2 text-white/60 text-sm">
+                            <li key={j} className="flex items-start gap-2 text-foreground/60 text-sm">
                               <ArrowRight size={12} className="text-primary mt-1 flex-shrink-0" />
                               {step}
                             </li>
@@ -366,7 +366,7 @@ export default function StudentEarningHub() {
                 key={program.name}
                 {...fadeIn}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="bg-white/5 border border-white/10 rounded-2xl p-6"
+                className="glass-panel rounded-2xl p-6"
               >
                 <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
                   <div className="flex items-start gap-4 flex-1">
@@ -374,13 +374,13 @@ export default function StudentEarningHub() {
                       <program.icon size={24} className="text-primary" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-xl font-bold text-white mb-2">{program.name}</h3>
-                      <p className="text-white/60 text-sm mb-4 leading-relaxed">{program.description}</p>
+                      <h3 className="text-xl font-bold text-foreground mb-2">{program.name}</h3>
+                      <p className="text-foreground/60 text-sm mb-4 leading-relaxed">{program.description}</p>
                       <div>
-                        <div className="text-xs font-bold uppercase tracking-wider text-white/40 mb-2">How It Works</div>
+                        <div className="text-xs font-bold uppercase tracking-wider text-foreground/40 mb-2">How It Works</div>
                         <ol className="space-y-2">
                           {program.howItWorks.map((step, j) => (
-                            <li key={j} className="flex items-start gap-2 text-white/60 text-sm">
+                            <li key={j} className="flex items-start gap-2 text-foreground/60 text-sm">
                               <span className="w-5 h-5 rounded-full bg-primary/20 text-primary text-xs font-bold flex items-center justify-center flex-shrink-0">
                                 {j + 1}
                               </span>
@@ -392,8 +392,8 @@ export default function StudentEarningHub() {
                     </div>
                   </div>
                   <div className="text-center px-4 py-3 bg-green-500/10 border border-green-500/20 rounded-xl flex-shrink-0">
-                    <div className="text-lg font-display font-black text-green-400">{program.studentEarning}</div>
-                    <div className="text-xs text-white/50 uppercase tracking-wider">Earning Potential</div>
+                    <div className="text-lg font-display font-black text-green-600">{program.studentEarning}</div>
+                    <div className="text-xs text-foreground/50 uppercase tracking-wider">Earning Potential</div>
                   </div>
                 </div>
               </motion.div>
@@ -410,11 +410,11 @@ export default function StudentEarningHub() {
             FTGU students are first in line.
           </p>
 
-          <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
+          <div className="bg-foreground rounded-2xl overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full text-left">
                 <thead>
-                  <tr className="border-b border-white/10 bg-primary/5">
+                  <tr className="border-b border-white/10 bg-white/5">
                     <th className="py-3 px-4 text-xs font-bold uppercase tracking-wider text-white/50">Trade</th>
                     <th className="py-3 px-4 text-xs font-bold uppercase tracking-wider text-white/50">Estimated Jobs</th>
                     <th className="py-3 px-4 text-xs font-bold uppercase tracking-wider text-white/50">Wage Range</th>
@@ -445,20 +445,20 @@ export default function StudentEarningHub() {
         </motion.div>
 
         <motion.div {...fadeIn} className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-green-500/20 via-primary/10 to-green-500/20 border border-green-500/20 rounded-2xl p-8 md:p-12">
+          <div className="section-crimson rounded-2xl p-8 md:p-12">
             <h3 className="text-3xl font-display font-bold text-white mb-4">Ready to Start Building Your Future?</h3>
-            <p className="text-white/70 max-w-2xl mx-auto mb-8">
+            <p className="text-white/80 max-w-2xl mx-auto mb-8">
               Enroll in FTGU today and start earning while you learn. Our programs are designed to put money in your pocket
               from day one — not just after graduation.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/contact" className="px-8 py-4 bg-primary text-white font-bold uppercase tracking-wider hover:bg-primary/90 transition-colors flex items-center gap-2">
+              <Link href="/contact" className="px-8 py-4 bg-white text-primary font-bold uppercase tracking-wider hover:bg-white/90 transition-colors flex items-center gap-2 rounded-lg">
                 Enroll Now <ArrowRight size={18} />
               </Link>
-              <Link href="/careers" className="px-8 py-4 bg-white/10 text-white font-bold uppercase tracking-wider hover:bg-white/20 transition-colors flex items-center gap-2">
+              <Link href="/careers" className="px-8 py-4 bg-white/15 text-white font-bold uppercase tracking-wider hover:bg-white/25 transition-colors flex items-center gap-2 rounded-lg border border-white/20">
                 Explore Career Paths <Briefcase size={18} />
               </Link>
-              <Link href="/assessment" className="px-8 py-4 bg-white/10 text-white font-bold uppercase tracking-wider hover:bg-white/20 transition-colors flex items-center gap-2">
+              <Link href="/assessment" className="px-8 py-4 bg-white/15 text-white font-bold uppercase tracking-wider hover:bg-white/25 transition-colors flex items-center gap-2 rounded-lg border border-white/20">
                 Find Your Trade <Target size={18} />
               </Link>
             </div>
