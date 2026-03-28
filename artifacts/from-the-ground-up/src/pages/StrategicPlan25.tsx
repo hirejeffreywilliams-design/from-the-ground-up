@@ -528,10 +528,10 @@ export default function StrategicPlan25() {
               funding secured, and market conditions. The 25-year vision guides direction; the annual plan drives execution.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/fundraising" className="px-8 py-4 bg-primary text-white font-bold uppercase tracking-wider hover:bg-primary/90 transition-colors flex items-center gap-2">
+              <Link href="/admin/vault/fundraising" className="px-8 py-4 bg-primary text-white font-bold uppercase tracking-wider hover:bg-primary/90 transition-colors flex items-center gap-2">
                 Fundraising Playbook <DollarSign size={18} />
               </Link>
-              <Link href="/compliance-guide" className="px-8 py-4 bg-white/10 text-white font-bold uppercase tracking-wider hover:bg-white/20 transition-colors flex items-center gap-2">
+              <Link href="/admin/vault/compliance" className="px-8 py-4 bg-white/10 text-white font-bold uppercase tracking-wider hover:bg-white/20 transition-colors flex items-center gap-2">
                 Compliance Guide <Shield size={18} />
               </Link>
             </div>

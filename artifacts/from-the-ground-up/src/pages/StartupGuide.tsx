@@ -499,7 +499,7 @@ export default function StartupGuide() {
             View them all on the Documents page.
           </p>
           <Link
-            href="/documents"
+            href="/admin/vault/documents"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-primary text-primary-foreground font-bold text-lg hover:bg-primary/90 transition-colors"
           >
             View All Documents <ArrowRight size={20} />

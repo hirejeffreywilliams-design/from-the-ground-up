@@ -74,13 +74,7 @@ export default function Footer() {
               <li><Link href="/faq" className="hover:text-primary transition-colors">FAQ</Link></li>
               <li><Link href="/donate" className="hover:text-primary transition-colors">Donate</Link></li>
               <li><Link href="/roadmap" className="hover:text-primary transition-colors">100-Year Roadmap</Link></li>
-              <li><Link href="/strategy" className="hover:text-primary transition-colors">Foundation Strategy</Link></li>
               <li><Link href="/startup-guide" className="hover:text-primary transition-colors">DC Startup Guide</Link></li>
-              <li><Link href="/documents" className="hover:text-primary transition-colors">Documents</Link></li>
-              <li><Link href="/fundraising" className="hover:text-primary transition-colors">Fundraising Playbook</Link></li>
-              <li><Link href="/grant-applications" className="hover:text-primary transition-colors">Grant Applications</Link></li>
-              <li><Link href="/strategic-plan" className="hover:text-primary transition-colors">25-Year Plan</Link></li>
-              <li><Link href="/compliance-guide" className="hover:text-primary transition-colors">Compliance Guide</Link></li>
             </ul>
           </div>
           

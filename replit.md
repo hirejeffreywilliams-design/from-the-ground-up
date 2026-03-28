@@ -107,17 +107,11 @@ artifacts-monorepo/
 - **Bylaws** (`/bylaws`) — Full organizational bylaws with accordion sections (10 articles)
 - **FAQ** (`/faq`) — 12 frequently asked questions organized by category
 - **100-Year Roadmap** (`/roadmap`) — 5-phase century-long strategic roadmap
-- **Foundation Strategy** (`/strategy`) — Comprehensive nonprofit-to-foundation transition plan
 - **DC Startup Guide** (`/startup-guide`) — 13-step checklist for forming a 501(c)(3) in DC
-- **Formation Documents** (`/documents`) — 12 complete organizational documents
 - **Career Pathways** (`/careers`) — Interactive career progression explorer for all 6 trades with salary ranges, certifications, timelines, DC job market data, and Commander Stadium opportunity
 - **Skills Assessment** (`/assessment`) — 10-question interactive quiz that recommends the best trade program based on interests, goals, and aptitude
 - **Resource Library** (`/resources`) — 60+ curated external resources across 8 categories (certifications, apprenticeships, licensing, unions, financial aid, tools, safety, business startup)
 - **Student Earning Hub** (`/earn`) — 25+ side job/freelance opportunities by trade, 5 FTGU earning programs (Project Marketplace, Tool Library, Cert Fast-Track, Apprenticeship Pipeline, Business Launcher), DC Commanders Stadium job table
-- **Fundraising Playbook** (`/fundraising`) — 12 funding sources with pre-written applications, 12-month fundraising calendar, 10-year revenue projections ($315K→$4.5M), $5M capital campaign strategy, social enterprise revenue streams
-- **Grant Applications** (`/grant-applications`) — 4 complete pre-written grant applications: DOES Workforce Development ($250K), Foundation General Template, Corporate Partnership Proposal, Case for Support
-- **25-Year Strategic Plan** (`/strategic-plan`) — 5-phase growth plan (Foundation→Growth→Leadership→Transformation→Legacy) with milestones, KPIs, revenue projections ($315K→$20M+), risk mitigation, "What to Watch Out For" compliance/legal/financial guide
-- **Compliance Guide** (`/compliance-guide`) — Complete federal/DC/employment/safety compliance reference with 15+ filing requirements, step-by-step processes, deadlines, fees, consequences, insurance requirements table, annual compliance calendar
 - **404** — Custom not found page
 
 ### Admin Dashboard (`/admin/*`)
@@ -134,6 +128,15 @@ artifacts-monorepo/
 - **Compliance Calendar** (`/admin/compliance`) — Annual filing deadlines, renewals, regulatory requirements with pre-built DC nonprofit defaults
 - **Board Meetings** (`/admin/meetings`) — Schedule meetings, manage agendas, minutes, decisions, action items, attendees
 - **Activity Log** (`/admin/activity`) — Admin action audit trail
+- **Owner's Vault** (`/admin/vault`) — Secure repository for sensitive documents (grant apps, fundraising playbook, strategic plan, foundation strategy, compliance guide, formation documents) — all moved from public view
+  - `/admin/vault/grants` — Grant Applications (4 pre-written proposals)
+  - `/admin/vault/fundraising` — Fundraising Playbook (12 funding sources, 12-month calendar, 10-year projections)
+  - `/admin/vault/strategic-plan` — 25-Year Strategic Plan (5-phase growth, KPIs, revenue projections)
+  - `/admin/vault/strategy` — Foundation Strategy (nonprofit-to-foundation transition plan)
+  - `/admin/vault/compliance` — Compliance Guide (15+ filing requirements, deadlines, insurance)
+  - `/admin/vault/documents` — Legal & Formation Documents (12 organizational documents)
+- **DMV Partnerships** (`/admin/partnerships`) — Research-backed partnership opportunities and major construction/education/private sector projects across DC, Maryland, and Virginia
+- **Admin Guide** (`/admin/guide`) — Complete how-to guide for running the admin portal, with step-by-step instructions, pro tips, warnings, and daily/weekly/monthly/quarterly checklists
 
 ## Novel Systems
 

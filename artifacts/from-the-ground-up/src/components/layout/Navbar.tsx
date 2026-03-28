@@ -39,14 +39,8 @@ export default function Navbar() {
     { name: "Governance", path: "/governance" },
     { name: "Bylaws", path: "/bylaws" },
     { name: "FAQ", path: "/faq" },
-    { name: "Fundraising Playbook", path: "/fundraising" },
-    { name: "Grant Applications", path: "/grant-applications" },
-    { name: "25-Year Strategic Plan", path: "/strategic-plan" },
-    { name: "Compliance Guide", path: "/compliance-guide" },
     { name: "100-Year Roadmap", path: "/roadmap" },
-    { name: "Foundation Strategy", path: "/strategy" },
     { name: "DC Startup Guide", path: "/startup-guide" },
-    { name: "Documents", path: "/documents" },
   ];
 
   return (
@@ -192,47 +186,9 @@ export default function Navbar() {
             </Link>
 
             <div className="mt-3 mb-1 px-4">
-              <span className="text-xs font-bold uppercase tracking-widest text-foreground/40">Organization</span>
+              <span className="text-xs font-bold uppercase tracking-widest text-foreground/40">About & Organization</span>
             </div>
-            {aboutLinks.slice(0, 4).map((link) => (
-              <Link
-                key={link.path}
-                href={link.path}
-                onClick={() => setMobileMenuOpen(false)}
-                className={cn(
-                  "px-4 py-2.5 rounded-xl text-sm font-semibold transition-colors",
-                  location === link.path 
-                    ? "bg-primary/10 text-primary" 
-                    : "text-foreground/70 hover:bg-muted/50"
-                )}
-              >
-                {link.name}
-              </Link>
-            ))}
-
-            <div className="mt-3 mb-1 px-4">
-              <span className="text-xs font-bold uppercase tracking-widest text-foreground/40">Strategy & Funding</span>
-            </div>
-            {aboutLinks.slice(4, 8).map((link) => (
-              <Link
-                key={link.path}
-                href={link.path}
-                onClick={() => setMobileMenuOpen(false)}
-                className={cn(
-                  "px-4 py-2.5 rounded-xl text-sm font-semibold transition-colors",
-                  location === link.path 
-                    ? "bg-primary/10 text-primary" 
-                    : "text-foreground/70 hover:bg-muted/50"
-                )}
-              >
-                {link.name}
-              </Link>
-            ))}
-
-            <div className="mt-3 mb-1 px-4">
-              <span className="text-xs font-bold uppercase tracking-widest text-foreground/40">Planning & Docs</span>
-            </div>
-            {aboutLinks.slice(8).map((link) => (
+            {aboutLinks.map((link) => (
               <Link
                 key={link.path}
                 href={link.path}

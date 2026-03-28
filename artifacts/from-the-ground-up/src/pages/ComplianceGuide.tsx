@@ -579,10 +579,10 @@ export default function ComplianceGuide() {
               Consult with a DC nonprofit attorney and CPA annually to ensure full compliance.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/fundraising" className="px-8 py-4 bg-primary text-white font-bold uppercase tracking-wider hover:bg-primary/90 transition-colors flex items-center gap-2">
+              <Link href="/admin/vault/fundraising" className="px-8 py-4 bg-primary text-white font-bold uppercase tracking-wider hover:bg-primary/90 transition-colors flex items-center gap-2">
                 Fundraising Playbook <DollarSign size={18} />
               </Link>
-              <Link href="/strategic-plan" className="px-8 py-4 bg-white/10 text-white font-bold uppercase tracking-wider hover:bg-white/20 transition-colors flex items-center gap-2">
+              <Link href="/admin/vault/strategic-plan" className="px-8 py-4 bg-white/10 text-white font-bold uppercase tracking-wider hover:bg-white/20 transition-colors flex items-center gap-2">
                 25-Year Strategic Plan <Target size={18} />
               </Link>
             </div>

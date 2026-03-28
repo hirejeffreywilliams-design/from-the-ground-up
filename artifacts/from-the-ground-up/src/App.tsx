@@ -39,6 +39,9 @@ import AdminActivityLog from "@/pages/admin/ActivityLog";
 import AdminGrantTracker from "@/pages/admin/GrantTracker";
 import AdminComplianceCalendar from "@/pages/admin/ComplianceCalendar";
 import AdminBoardMeetings from "@/pages/admin/BoardMeetings";
+import AdminOwnersVault from "@/pages/admin/OwnersVault";
+import AdminGuide from "@/pages/admin/AdminGuide";
+import AdminDMVPartnerships from "@/pages/admin/DMVPartnerships";
 
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -69,6 +72,15 @@ function AdminRouter() {
         <Route path="/admin/impact" component={AdminImpactCascade} />
         <Route path="/admin/skills-gap" component={AdminSkillsGap} />
         <Route path="/admin/activity" component={AdminActivityLog} />
+        <Route path="/admin/vault" component={AdminOwnersVault} />
+        <Route path="/admin/vault/grants" component={GrantApplications} />
+        <Route path="/admin/vault/fundraising" component={FundraisingPlaybook} />
+        <Route path="/admin/vault/strategic-plan" component={StrategicPlan25} />
+        <Route path="/admin/vault/strategy" component={FoundationStrategy} />
+        <Route path="/admin/vault/compliance" component={ComplianceGuide} />
+        <Route path="/admin/vault/documents" component={Documents} />
+        <Route path="/admin/guide" component={AdminGuide} />
+        <Route path="/admin/partnerships" component={AdminDMVPartnerships} />
       </Switch>
     </AdminLayout>
   );
@@ -96,17 +108,11 @@ function Router() {
           <Route path="/governance" component={Governance} />
           <Route path="/faq" component={FAQ} />
           <Route path="/roadmap" component={Roadmap} />
-          <Route path="/strategy" component={FoundationStrategy} />
           <Route path="/startup-guide" component={StartupGuide} />
-          <Route path="/documents" component={Documents} />
           <Route path="/resources" component={Resources} />
           <Route path="/assessment" component={Assessment} />
           <Route path="/careers" component={CareerPathways} />
-          <Route path="/fundraising" component={FundraisingPlaybook} />
-          <Route path="/strategic-plan" component={StrategicPlan25} />
-          <Route path="/compliance-guide" component={ComplianceGuide} />
           <Route path="/earn" component={StudentEarningHub} />
-          <Route path="/grant-applications" component={GrantApplications} />
           <Route component={NotFound} />
         </Switch>
       </main>

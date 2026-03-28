@@ -16,6 +16,8 @@ import {
   FileSearch,
   Calendar,
   ClipboardList,
+  Lock,
+  Handshake,
 } from "lucide-react";
 
 const sidebarLinks = [
@@ -32,6 +34,9 @@ const sidebarLinks = [
   { name: "Impact Cascade", path: "/admin/impact", icon: TrendingUp },
   { name: "Skills Gap", path: "/admin/skills-gap", icon: BarChart3 },
   { name: "Activity Log", path: "/admin/activity", icon: Activity },
+  { name: "Owner's Vault", path: "/admin/vault", icon: Lock },
+  { name: "DMV Partnerships", path: "/admin/partnerships", icon: Handshake },
+  { name: "Admin Guide", path: "/admin/guide", icon: BookOpen },
 ];
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
