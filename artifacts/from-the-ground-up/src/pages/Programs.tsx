@@ -38,7 +38,7 @@ export default function Programs() {
             <div>
               <div className="flex items-center gap-4 mb-6">
                 <Cpu className="w-12 h-12 text-primary" />
-                <h2 className="text-3xl md:text-4xl font-display font-black uppercase tracking-tight">The AI Advantage</h2>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-black uppercase tracking-tight">The AI Advantage</h2>
               </div>
               <p className="text-xl text-foreground/80 font-medium leading-relaxed mb-6">
                 The trades aren't stuck in the past. We teach you how to use Artificial Intelligence to interpret blueprints, optimize material lists, troubleshoot complex systems, and run a modern contracting business.
@@ -107,7 +107,7 @@ export default function Programs() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
                 className="glass-panel p-6 sm:p-10 md:p-14 flex flex-col h-full relative group border border-white/20 transition-all duration-500 hover:shadow-2xl hover:border-primary/50"
-                style={{ borderRadius: index % 2 === 0 ? '16px 64px 16px 64px' : '64px 16px 64px 16px' }}
+                style={{ borderRadius: index % 2 === 0 ? '16px 40px 16px 40px' : '40px 16px 40px 16px' }}
               >
                 <div className="flex flex-wrap items-start justify-between gap-4 mb-10 relative z-10">
                   <div className="w-20 h-20 bg-white shadow-xl flex items-center justify-center text-primary transform group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-500" style={{ borderRadius: '8px 24px 8px 24px' }}>
@@ -118,7 +118,7 @@ export default function Programs() {
                   </span>
                 </div>
                 
-                <h2 className="text-4xl font-display font-black text-foreground mb-6 uppercase tracking-tight relative z-10">{program.title}</h2>
+                <h2 className="text-3xl sm:text-4xl font-display font-black text-foreground mb-6 uppercase tracking-tight relative z-10">{program.title}</h2>
                 <p className="text-foreground/80 text-xl font-medium mb-10 flex-grow relative z-10 leading-relaxed">
                   {program.longDescription || program.description}
                 </p>

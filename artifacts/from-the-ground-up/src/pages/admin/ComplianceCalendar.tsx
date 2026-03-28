@@ -106,24 +106,24 @@ export default function ComplianceCalendar() {
 
   return (
     <div className="space-y-8">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-wrap items-center justify-between gap-4">
         <div>
           <h1 className="text-3xl font-display font-bold text-foreground">Compliance Calendar</h1>
           <p className="text-muted-foreground mt-1">Track filing deadlines, renewals, and regulatory requirements</p>
         </div>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           {tasks.length === 0 && defaults.length > 0 && (
-            <button onClick={loadDefaults} className="flex items-center gap-2 px-4 py-2 border border-border text-foreground rounded-lg hover:bg-muted transition-colors">
-              <Download size={18} /> Load DC Nonprofit Defaults
+            <button onClick={loadDefaults} className="flex items-center gap-2 px-4 py-2 border border-border text-foreground rounded-lg hover:bg-muted transition-colors text-sm">
+              <Download size={18} /> Load Defaults
             </button>
           )}
-          <button onClick={() => { setShowForm(true); setEditingId(null); setForm({ title: "", description: "", category: "filing", dueDate: "", status: "upcoming", frequency: "annual", filingAgency: "", estimatedCost: "", notes: "" }); }} className="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors">
+          <button onClick={() => { setShowForm(true); setEditingId(null); setForm({ title: "", description: "", category: "filing", dueDate: "", status: "upcoming", frequency: "annual", filingAgency: "", estimatedCost: "", notes: "" }); }} className="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors text-sm">
             <Plus size={18} /> Add Task
           </button>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         <div className="bg-card border border-border rounded-xl p-5">
           <div className="flex items-center gap-3 mb-2">
             <div className="w-10 h-10 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center"><Calendar size={20} /></div>

@@ -16,7 +16,7 @@ export default function Footer() {
             <input 
               type="email" 
               placeholder="Enter your email" 
-              className="px-6 py-4 rounded-none bg-white/10 border border-white/20 text-white placeholder:text-white/50 focus:outline-none focus:border-primary min-w-[300px]"
+              className="px-6 py-4 rounded-none bg-white/10 border border-white/20 text-white placeholder:text-white/50 focus:outline-none focus:border-primary w-full sm:min-w-[300px]"
             />
             <button className="px-8 py-4 bg-primary text-white font-bold uppercase tracking-wider hover:bg-primary/90 transition-colors flex items-center justify-center gap-2">
               Subscribe <ArrowRight size={18} />

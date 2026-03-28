@@ -66,7 +66,7 @@ export default function Dashboard() {
         <p className="text-muted-foreground mt-1 font-sans">Overview of From The Ground Up operations</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         {statCards.map((stat) => {
           const Icon = stat.icon;
           return (

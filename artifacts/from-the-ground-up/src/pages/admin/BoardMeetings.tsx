@@ -91,17 +91,17 @@ export default function BoardMeetings() {
 
   return (
     <div className="space-y-8">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-wrap items-center justify-between gap-4">
         <div>
           <h1 className="text-3xl font-display font-bold text-foreground">Board Meetings</h1>
           <p className="text-muted-foreground mt-1">Schedule meetings, track agendas, minutes, and action items</p>
         </div>
-        <button onClick={() => { setShowForm(true); setEditingId(null); setForm({ title: "", date: "", location: "", type: "regular", status: "scheduled", agenda: "", minutes: "", attendees: "", decisions: "", actionItems: "", nextMeetingDate: "" }); }} className="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors">
+        <button onClick={() => { setShowForm(true); setEditingId(null); setForm({ title: "", date: "", location: "", type: "regular", status: "scheduled", agenda: "", minutes: "", attendees: "", decisions: "", actionItems: "", nextMeetingDate: "" }); }} className="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors text-sm">
           <Plus size={18} /> Schedule Meeting
         </button>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         <div className="bg-card border border-border rounded-xl p-5">
           <div className="flex items-center gap-3 mb-2">
             <div className="w-10 h-10 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center"><Calendar size={20} /></div>

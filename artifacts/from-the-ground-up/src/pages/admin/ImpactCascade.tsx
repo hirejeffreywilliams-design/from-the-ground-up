@@ -71,7 +71,7 @@ export default function AdminImpactCascade() {
 
   return (
     <div className="space-y-8">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-wrap items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-gradient-to-br from-primary to-amber-500 rounded-lg flex items-center justify-center">
@@ -100,7 +100,7 @@ export default function AdminImpactCascade() {
 
       {cascadeData && (
         <>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="bg-card border border-border rounded-xl p-5 shadow-sm text-center">
               <Users size={24} className="text-primary mx-auto mb-2" />
               <p className="text-3xl font-bold">{cascadeData.totalStudentsTracked}</p>
@@ -212,26 +212,26 @@ export default function AdminImpactCascade() {
               <thead className="bg-muted/50">
                 <tr>
                   <th className="text-left px-4 py-3 text-xs font-semibold text-muted-foreground uppercase">Student</th>
-                  <th className="text-left px-4 py-3 text-xs font-semibold text-muted-foreground uppercase">Program</th>
+                  <th className="text-left px-4 py-3 text-xs font-semibold text-muted-foreground uppercase hidden sm:table-cell">Program</th>
                   <th className="text-left px-4 py-3 text-xs font-semibold text-muted-foreground uppercase">Status</th>
                   <th className="text-right px-4 py-3 text-xs font-semibold text-muted-foreground uppercase">Salary</th>
-                  <th className="text-right px-4 py-3 text-xs font-semibold text-muted-foreground uppercase">Projects</th>
-                  <th className="text-right px-4 py-3 text-xs font-semibold text-muted-foreground uppercase">Hired</th>
+                  <th className="text-right px-4 py-3 text-xs font-semibold text-muted-foreground uppercase hidden md:table-cell">Projects</th>
+                  <th className="text-right px-4 py-3 text-xs font-semibold text-muted-foreground uppercase hidden md:table-cell">Hired</th>
                 </tr>
               </thead>
               <tbody>
                 {students.map((s: any) => (
                   <tr key={s.id} className="border-t border-border/50 hover:bg-muted/30">
                     <td className="px-4 py-3 text-sm font-semibold">{s.studentName}</td>
-                    <td className="px-4 py-3 text-sm">{s.programCompleted}</td>
+                    <td className="px-4 py-3 text-sm hidden sm:table-cell">{s.programCompleted}</td>
                     <td className="px-4 py-3">
                       <span className={`text-xs px-2 py-0.5 rounded-full font-semibold ${s.employed ? "bg-green-50 text-green-600" : "bg-amber-50 text-amber-600"}`}>
                         {s.employed ? "Employed" : "Seeking"}
                       </span>
                     </td>
                     <td className="px-4 py-3 text-sm text-right">{s.startingSalary ? `$${s.startingSalary.toLocaleString()}` : "-"}</td>
-                    <td className="px-4 py-3 text-sm text-right">{s.projectsCompleted}</td>
-                    <td className="px-4 py-3 text-sm text-right">{s.peopleHired}</td>
+                    <td className="px-4 py-3 text-sm text-right hidden md:table-cell">{s.projectsCompleted}</td>
+                    <td className="px-4 py-3 text-sm text-right hidden md:table-cell">{s.peopleHired}</td>
                   </tr>
                 ))}
               </tbody>

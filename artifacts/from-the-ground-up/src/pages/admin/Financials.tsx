@@ -65,7 +65,7 @@ export default function AdminFinancials() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-wrap items-center justify-between gap-4">
         <div>
           <h1 className="font-display text-3xl font-bold text-foreground">Financial Overview</h1>
           <p className="text-muted-foreground mt-1 font-sans">Fiscal Year {summary?.fiscalYear || new Date().getFullYear()}</p>
@@ -76,7 +76,7 @@ export default function AdminFinancials() {
       </div>
 
       {summary && (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           <div className="bg-card border border-border rounded-xl p-5 shadow-sm">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-green-50 rounded-lg flex items-center justify-center"><TrendingUp size={20} className="text-green-600" /></div>
@@ -172,10 +172,10 @@ export default function AdminFinancials() {
               <tr>
                 <th className="text-left px-4 py-3 text-xs font-semibold text-muted-foreground uppercase">Date</th>
                 <th className="text-left px-4 py-3 text-xs font-semibold text-muted-foreground uppercase">Type</th>
-                <th className="text-left px-4 py-3 text-xs font-semibold text-muted-foreground uppercase">Category</th>
-                <th className="text-left px-4 py-3 text-xs font-semibold text-muted-foreground uppercase">Description</th>
+                <th className="text-left px-4 py-3 text-xs font-semibold text-muted-foreground uppercase hidden sm:table-cell">Category</th>
+                <th className="text-left px-4 py-3 text-xs font-semibold text-muted-foreground uppercase hidden md:table-cell">Description</th>
                 <th className="text-right px-4 py-3 text-xs font-semibold text-muted-foreground uppercase">Amount</th>
-                <th className="text-left px-4 py-3 text-xs font-semibold text-muted-foreground uppercase">Q</th>
+                <th className="text-left px-4 py-3 text-xs font-semibold text-muted-foreground uppercase hidden sm:table-cell">Q</th>
               </tr>
             </thead>
             <tbody>
@@ -187,12 +187,12 @@ export default function AdminFinancials() {
                       {r.type}
                     </span>
                   </td>
-                  <td className="px-4 py-3 text-sm">{r.category}</td>
-                  <td className="px-4 py-3 text-sm text-muted-foreground">{r.description}</td>
+                  <td className="px-4 py-3 text-sm hidden sm:table-cell">{r.category}</td>
+                  <td className="px-4 py-3 text-sm text-muted-foreground hidden md:table-cell">{r.description}</td>
                   <td className={`px-4 py-3 text-sm text-right font-bold ${r.type === "income" ? "text-green-600" : "text-red-600"}`}>
                     ${r.amount.toLocaleString()}
                   </td>
-                  <td className="px-4 py-3 text-sm">Q{r.quarter}</td>
+                  <td className="px-4 py-3 text-sm hidden sm:table-cell">Q{r.quarter}</td>
                 </tr>
               ))}
               {records.length === 0 && (

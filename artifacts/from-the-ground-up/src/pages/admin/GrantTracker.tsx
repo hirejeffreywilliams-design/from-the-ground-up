@@ -83,7 +83,7 @@ export default function GrantTracker() {
 
   return (
     <div className="space-y-8">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-wrap items-center justify-between gap-4">
         <div>
           <h1 className="text-3xl font-display font-bold text-foreground">Grant Tracker</h1>
           <p className="text-muted-foreground mt-1">Track grant applications, deadlines, and awards</p>
@@ -93,7 +93,7 @@ export default function GrantTracker() {
         </button>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         <div className="bg-card border border-border rounded-xl p-5">
           <div className="flex items-center gap-3 mb-2">
             <div className="w-10 h-10 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center"><Search size={20} /></div>
