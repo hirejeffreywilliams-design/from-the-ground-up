@@ -22,10 +22,12 @@ import {
   MessageSquare,
 } from "lucide-react";
 
+import type { LucideIcon } from "lucide-react";
+
 interface GuideSection {
   id: string;
   title: string;
-  icon: any;
+  icon: LucideIcon;
   overview: string;
   steps: string[];
   tips: string[];
